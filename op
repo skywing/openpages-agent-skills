@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Run any skill script with the project venv:  ./op op.py ping   |   ./op verify_spec.py specs/tpr-example.yaml
+# Scripts are looked up in skills/openpages-solutions/scripts, then skills/openpages-tutorial/scripts.
+cd "$(dirname "$0")"
+dirs="skills/openpages-solutions/scripts skills/openpages-tutorial/scripts"
+usage() {
+  echo "usage: ./op <script>[.py] [args...]     e.g. ./op op.py ping   ./op verify_spec specs/tpr-example.yaml   ./op tutorial next"
+  for d in $dirs; do
+    [ -d "$d" ] && echo "scripts in $d: $(cd "$d" && ls *.py | grep -v '^opclient.py$\|^spec.py$' | sed 's/\.py$//' | tr '\n' ' ')"
+  done
+  echo "ObjectManager: ./om <validate|load|dump> ...  (./om --help)"
+}
+[ $# -ge 1 ] && [ -n "$1" ] || { usage; exit 2; }
+[ -x .venv/bin/python ] || { echo "Run: bash setup_venv.sh"; exit 1; }
+script=$1; shift
+case "$script" in *.py) ;; *) script="$script.py" ;; esac
+for d in $dirs; do
+  [ -f "$d/$script" ] && exec .venv/bin/python "$d/$script" "$@"
+done
+echo "no such script: $script"; usage; exit 2

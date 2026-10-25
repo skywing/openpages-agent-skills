@@ -1,0 +1,3670 @@
+{
+  "id": "6",
+  "name": "SOXIssue",
+  "localized_label": "Issue",
+  "localized_plural_label": "Issues",
+  "description": "OpenPages GRC Object Type",
+  "jsp_path": "/propertyForm/renderProperties.jsp",
+  "root_folder_path": "/_op_sox/Project/Default/Issue",
+  "root_folder_id": "17",
+  "is_title_enabled": false,
+  "is_title_required": false,
+  "field_definitions": [
+    {
+      "id": "28",
+      "name": "Resource ID",
+      "localized_label": "Resource ID",
+      "localized_guidance": "Resource ID",
+      "data_type": "ID_TYPE",
+      "required": true,
+      "description": "Resource ID",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "65",
+      "name": "Comment",
+      "localized_label": "Comment",
+      "localized_guidance": "Comment",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Version Comment",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "62",
+      "name": "Created By",
+      "localized_label": "Created By",
+      "localized_guidance": "The name of the user who created this object. It is set by the application and cannot be edited.",
+      "data_type": "INTEGER_TYPE",
+      "required": true,
+      "description": "The name of the user who created this object. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "61",
+      "name": "Creation Date",
+      "localized_label": "Creation Date",
+      "localized_guidance": "The date and time this object was created. It is set by the application and cannot be edited.",
+      "data_type": "DATE_TYPE",
+      "required": true,
+      "description": "The date and time this object was created. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "59",
+      "name": "Description",
+      "localized_label": "Description",
+      "localized_guidance": "Use to enter or edit a description of this object.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to enter or edit a description of this object.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "63",
+      "name": "Last Modification Date",
+      "localized_label": "Last Modification Date",
+      "localized_guidance": "The most recent date and time this object was changed. It is set by the application and cannot be edited.",
+      "data_type": "DATE_TYPE",
+      "required": true,
+      "description": "The most recent date and time this object was changed. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "64",
+      "name": "Last Modified By",
+      "localized_label": "Last Modified By",
+      "localized_guidance": "The name of the last user who edited this object. It is set by the application and cannot be edited.",
+      "data_type": "INTEGER_TYPE",
+      "required": true,
+      "description": "The name of the last user who edited this object. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "60",
+      "name": "Location",
+      "localized_label": "Folder",
+      "localized_guidance": "The path of this object within this object hierarchy. It cannot be edited after it is created.",
+      "data_type": "STRING_TYPE",
+      "required": true,
+      "description": "The path of this object within this object hierarchy. It cannot be edited after it is created.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "57",
+      "name": "Name",
+      "localized_label": "Name",
+      "localized_guidance": "The name of this object.",
+      "data_type": "STRING_TYPE",
+      "required": true,
+      "description": "The name of this object.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "68",
+      "name": "Orphan",
+      "localized_label": "Orphan",
+      "localized_guidance": "Indicates Direct if an object has no parents, and Indirect if the object has one or more parents but all parent paths contain a Direct orphan.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Displays the orphan status of the object.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "58",
+      "name": "Title",
+      "localized_label": "Title",
+      "localized_guidance": "The title of this object.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "The title of this object.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "179",
+      "name": "OPLC-Std:LCAssignee",
+      "localized_label": "Assignee",
+      "localized_guidance": "Automatically identified by the lifecycle",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "The Assignee is automatically defined by the lifecycle stage",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "181",
+      "name": "OPLC-Std:LCComment",
+      "localized_label": "Lifecycle Comment",
+      "localized_guidance": "Automatically identified by the lifecycle",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Automatically identified by the lifecycle",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "182",
+      "name": "OPLC-Std:LCDueDate",
+      "localized_label": "Lifecycle Due Date",
+      "localized_guidance": "Automatically identified by the lifecycle",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "Automatically identified by the lifecycle",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "184",
+      "name": "OPLC-Std:LCInReview",
+      "localized_label": "In Review",
+      "localized_guidance": "Automatically identified by the lifecycle",
+      "data_type": "BOOLEAN_TYPE",
+      "required": false,
+      "description": "Automatically identified by the lifecycle",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "183",
+      "name": "OPLC-Std:LCReadOnly",
+      "localized_label": "Read Only",
+      "localized_guidance": "Automatically identified by the lifecycle",
+      "data_type": "BOOLEAN_TYPE",
+      "required": false,
+      "description": "Automatically identified by the lifecycle",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "180",
+      "name": "OPLC-Std:LCUpdateAssignee",
+      "localized_label": "Update Assignee",
+      "localized_guidance": "Set this option to Yes, to update the Assignee. This should be used if the owner involved in the current stage of the Lifecycle has been changed.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Set this option to Yes, to update the Assignee. This should be used if the owner involved in the current stage of the Lifecycle has been changed.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "306",
+          "name": "Yes",
+          "localized_label": "Yes",
+          "index": 1,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1049",
+      "name": "OPSS-Iss:Additional Description",
+      "localized_label": "Additional Description",
+      "localized_guidance": "Use to enter or edit additional information about this issue.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to enter or edit additional information about this issue.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Regulatory",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Investigation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Policy/Standard Violation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Other",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1052",
+      "name": "OPSS-Iss:Assignee",
+      "localized_label": "Issue Owner",
+      "localized_guidance": "Use to assign a person ownership or responsibility for this issue.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to assign a person ownership or responsibility for this issue.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Regulatory",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Investigation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Policy/Standard Violation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Other",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1064",
+      "name": "OPSS-Iss:Conclusion",
+      "localized_label": "Conclusion",
+      "localized_guidance": "Use to indicate the final outcome of this issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the final outcome of this issue.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Investigation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Third Party",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enum_values": [
+        {
+          "id": "2710",
+          "name": "Deficiency",
+          "localized_label": "Deficiency",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2711",
+          "name": "Significant Deficiency",
+          "localized_label": "Significant Deficiency",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2712",
+          "name": "Material Weakness",
+          "localized_label": "Material Weakness",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2713",
+          "name": "Not a Deficiency",
+          "localized_label": "Not a Deficiency",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "2714",
+          "name": "Not Determined",
+          "localized_label": "Not Determined",
+          "index": 5,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1051",
+      "name": "OPSS-Iss:Domain",
+      "localized_label": "Domain",
+      "localized_guidance": "Use to indicate which areas apply to this issue.",
+      "data_type": "MULTI_VALUE_ENUM",
+      "required": false,
+      "description": "Use to indicate which areas apply to this issue.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Investigation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enum_values": [
+        {
+          "id": "2733",
+          "name": "Compliance",
+          "localized_label": "Compliance",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2734",
+          "name": "Operational",
+          "localized_label": "Operational",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2735",
+          "name": "Technology",
+          "localized_label": "Technology",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2736",
+          "name": "Financial Management",
+          "localized_label": "Financial Management",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "2737",
+          "name": "Internal Audit",
+          "localized_label": "Audit",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "2738",
+          "name": "ESG",
+          "localized_label": "ESG",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "2739",
+          "name": "Model governance",
+          "localized_label": "Model governance",
+          "index": 7,
+          "hidden": false
+        },
+        {
+          "id": "2740",
+          "name": "Data Privacy",
+          "localized_label": "Data Privacy",
+          "index": 8,
+          "hidden": false
+        },
+        {
+          "id": "2741",
+          "name": "Business Continuity and Resilience",
+          "localized_label": "Business Continuity and Resilience",
+          "index": 9,
+          "hidden": false
+        },
+        {
+          "id": "2742",
+          "name": "Policy Management",
+          "localized_label": "Policy Management",
+          "index": 10,
+          "hidden": false
+        },
+        {
+          "id": "2743",
+          "name": "Third Party Management",
+          "localized_label": "Third Party Management",
+          "index": 11,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1062",
+      "name": "OPSS-Iss:Due Date",
+      "localized_label": "Due Date",
+      "localized_guidance": "Use to indicate the target date for closing this issue.",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "Use to indicate the target date for closing this issue.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Regulatory",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Policy/Standard Violation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Other",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1061",
+      "name": "OPSS-Iss:Expected Closure Date",
+      "localized_label": "Expected Closure Date",
+      "localized_guidance": "Use to indicate the target date for closing this issue.",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "Use to indicate the target date for closing this issue.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "1055",
+      "name": "OPSS-Iss:Identified By Group",
+      "localized_label": "Identified By Group",
+      "localized_guidance": "Use to indicate the group that identified the issue.",
+      "data_type": "MULTI_VALUE_ENUM",
+      "required": false,
+      "description": "Use to indicate the group that identified the issue.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enum_values": [
+        {
+          "id": "2703",
+          "name": "Internal Audit",
+          "localized_label": "Internal Audit",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2704",
+          "name": "External Audit",
+          "localized_label": "External Audit",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2705",
+          "name": "Business Unit",
+          "localized_label": "Business Unit",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2706",
+          "name": "Compliance Management",
+          "localized_label": "Compliance Management",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "2707",
+          "name": "Risk Management",
+          "localized_label": "Risk Management",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "2708",
+          "name": "IT",
+          "localized_label": "IT",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "2709",
+          "name": "Other",
+          "localized_label": "Other",
+          "index": 7,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1054",
+      "name": "OPSS-Iss:Identified By Individual",
+      "localized_label": "Identified By Individual",
+      "localized_guidance": "Use to indicate the person who identified the issue.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to indicate the person who identified the issue.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "EDITABILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Policy/Standard Violation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Policy/Standard Violation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1057",
+      "name": "OPSS-Iss:Impact",
+      "localized_label": "Impact",
+      "localized_guidance": "Use to indicate the severity of the impact of the issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the severity of the impact of the issue.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enum_values": [
+        {
+          "id": "2685",
+          "name": "Significant",
+          "localized_label": "Significant",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2686",
+          "name": "More Than Inconsequential",
+          "localized_label": "More Than Inconsequential",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2687",
+          "name": "Inconsequential",
+          "localized_label": "Inconsequential",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2688",
+          "name": "Not Determined",
+          "localized_label": "Not Determined",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1067",
+      "name": "OPSS-Iss:Issue Approver",
+      "localized_label": "Issue Approver",
+      "localized_guidance": "Issue Approver",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Issue Approver",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "1053",
+      "name": "OPSS-Iss:Issue Type",
+      "localized_label": "Issue Type",
+      "localized_guidance": "Use to identify the nature of the issue as it relates to the activity that initially generated the issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to identify the nature of the issue as it relates to the activity that initially generated the issue.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2689",
+          "name": "Design Effectiveness",
+          "localized_label": "Design Effectiveness",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2690",
+          "name": "Control Activity Missing",
+          "localized_label": "Control Activity Missing",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2691",
+          "name": "Operating Effectiveness",
+          "localized_label": "Operating Effectiveness",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2692",
+          "name": "Scoping",
+          "localized_label": "Scoping",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "2693",
+          "name": "Test Failure",
+          "localized_label": "Test Failure",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "2694",
+          "name": "Regulatory",
+          "localized_label": "Regulatory",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "2695",
+          "name": "Investigation",
+          "localized_label": "Investigation",
+          "index": 7,
+          "hidden": false
+        },
+        {
+          "id": "2696",
+          "name": "Review Comment",
+          "localized_label": "Review Comment",
+          "index": 8,
+          "hidden": false
+        },
+        {
+          "id": "2697",
+          "name": "Policy/Standard Violation",
+          "localized_label": "Policy/Standard Violation",
+          "index": 9,
+          "hidden": false
+        },
+        {
+          "id": "2698",
+          "name": "Third Party",
+          "localized_label": "Third Party",
+          "index": 10,
+          "hidden": false
+        },
+        {
+          "id": "2699",
+          "name": "Data Privacy",
+          "localized_label": "Data Privacy",
+          "index": 11,
+          "hidden": false
+        },
+        {
+          "id": "2700",
+          "name": "Other",
+          "localized_label": "Other",
+          "index": 12,
+          "hidden": false
+        },
+        {
+          "id": "2701",
+          "name": "Indicator Breach",
+          "localized_label": "Indicator Breach",
+          "index": 13,
+          "hidden": false
+        },
+        {
+          "id": "2702",
+          "name": "Model Performance",
+          "localized_label": "Model Performance",
+          "index": 14,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1066",
+      "name": "OPSS-Iss:Management Response",
+      "localized_label": "Management Response",
+      "localized_guidance": "Use to enter or edit a summary of the management remediation plan for this issue.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to enter or edit a summary of the management remediation plan for this issue.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "1060",
+      "name": "OPSS-Iss:Original Due Date",
+      "localized_label": "Original Due Date",
+      "localized_guidance": "Original Due Date",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "Original Due Date",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "1065",
+      "name": "OPSS-Iss:Priority",
+      "localized_label": "Priority",
+      "localized_guidance": "Use to indicate the level of urgency for this issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the level of urgency for this issue.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Regulatory",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Investigation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Policy/Standard Violation",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Other",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enum_values": [
+        {
+          "id": "2715",
+          "name": "High",
+          "localized_label": "High",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2716",
+          "name": "Medium",
+          "localized_label": "Medium",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2717",
+          "name": "Low",
+          "localized_label": "Low",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2718",
+          "name": "Not Determined",
+          "localized_label": "Not Determined",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1056",
+      "name": "OPSS-Iss:Probability",
+      "localized_label": "Probability",
+      "localized_guidance": "Use to indicate the likelihood of this issue re-occurring.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the likelihood of this issue re-occurring.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enum_values": [
+        {
+          "id": "2682",
+          "name": "Likely",
+          "localized_label": "Likely",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2683",
+          "name": "Unlikely",
+          "localized_label": "Unlikely",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2684",
+          "name": "Not Determined",
+          "localized_label": "Not Determined",
+          "index": 3,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1068",
+      "name": "OPSS-Iss:Requested Due Date",
+      "localized_label": "Requested Due Date",
+      "localized_guidance": "Requested Due Date",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "Requested Due Date",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "1063",
+      "name": "OPSS-Iss:Resolution Status",
+      "localized_label": "Resolution Status",
+      "localized_guidance": "Use to indicate the status of the resolution for this issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the status of the resolution for this issue.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Third Party",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enum_values": [
+        {
+          "id": "2726",
+          "name": "Evaluation in Progress",
+          "localized_label": "Evaluation in Progress",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2727",
+          "name": "Remediated - Pending Testing",
+          "localized_label": "Remediated - Pending Testing",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2728",
+          "name": "Closed",
+          "localized_label": "Closed",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2729",
+          "name": "Risk Accepted",
+          "localized_label": "Risk Accepted",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "2730",
+          "name": "Deferred",
+          "localized_label": "Deferred",
+          "index": 5,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1059",
+      "name": "OPSS-Iss:Root Cause Description",
+      "localized_label": "Root Cause Description",
+      "localized_guidance": "Use to subjectively describe the primary reason for the issue to have arisen.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to subjectively describe the primary reason for the issue to have arisen.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Third Party",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1058",
+      "name": "OPSS-Iss:Root Cause Type",
+      "localized_label": "Root Cause Type",
+      "localized_guidance": "Use to objectively select the primary reason for the issue to have arisen.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to objectively select the primary reason for the issue to have arisen.",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "VISIBILITY",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1053",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Scoping",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Design Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Operating Effectiveness",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Third Party",
+                  "dependent_values": []
+                },
+                {
+                  "controller_value_name": "Control Activity Missing",
+                  "dependent_values": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enum_values": [
+        {
+          "id": "2719",
+          "name": "Policies not being adhered to",
+          "localized_label": "Policies not being adhered to",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2720",
+          "name": "Established business process not being followed",
+          "localized_label": "Established business process not being followed",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2721",
+          "name": "Adequate business process not established",
+          "localized_label": "Adequate business process not established",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2722",
+          "name": "Policies can be improved",
+          "localized_label": "Policies can be improved",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "2723",
+          "name": "Policies do not exist",
+          "localized_label": "Policies do not exist",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "2724",
+          "name": "Established business process can be improved",
+          "localized_label": "Established business process can be improved",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "2725",
+          "name": "Unknown",
+          "localized_label": "Unknown",
+          "index": 7,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1050",
+      "name": "OPSS-Iss:Status",
+      "localized_label": "Issue Status",
+      "localized_guidance": "Use to set the current status of this issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to set the current status of this issue.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2731",
+          "name": "Open",
+          "localized_label": "Open",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2732",
+          "name": "Closed",
+          "localized_label": "Closed",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1069",
+      "name": "OPLC-SOXIssue:LCAppData",
+      "localized_label": "LCAppData",
+      "localized_guidance": "Provides data from LifeCycle to OpenPages Apps",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Provides data from LifeCycle to OpenPages Apps",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "PICKLIST",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1071",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "Close Request",
+                  "dependent_values": [
+                    {
+                      "id": "2761",
+                      "name": "Review Approve Attest Link",
+                      "localized_label": "Review Approve Attest Link",
+                      "index": 1,
+                      "hidden": false
+                    },
+                    {
+                      "id": "2762",
+                      "name": "Review Approve Attest",
+                      "localized_label": "Review Approve Attest",
+                      "index": 2,
+                      "hidden": false
+                    }
+                  ]
+                },
+                {
+                  "controller_value_name": "In Progress",
+                  "dependent_values": [
+                    {
+                      "id": "2763",
+                      "name": "OpenPages Link",
+                      "localized_label": "OpenPages Link",
+                      "index": 3,
+                      "hidden": false
+                    }
+                  ]
+                },
+                {
+                  "controller_value_name": "Due Date Change Request",
+                  "dependent_values": [
+                    {
+                      "id": "2761",
+                      "name": "Review Approve Attest Link",
+                      "localized_label": "Review Approve Attest Link",
+                      "index": 1,
+                      "hidden": false
+                    },
+                    {
+                      "id": "2762",
+                      "name": "Review Approve Attest",
+                      "localized_label": "Review Approve Attest",
+                      "index": 2,
+                      "hidden": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enum_values": [
+        {
+          "id": "2761",
+          "name": "Review Approve Attest Link",
+          "localized_label": "Review Approve Attest Link",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2762",
+          "name": "Review Approve Attest",
+          "localized_label": "Review Approve Attest",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2763",
+          "name": "OpenPages Link",
+          "localized_label": "OpenPages Link",
+          "index": 3,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1070",
+      "name": "OPLC-SOXIssue:LCName",
+      "localized_label": "LCName",
+      "localized_guidance": "Identifies the lifecycle used",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Identifies the lifecycle used",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2764",
+          "name": "1StageRequest",
+          "localized_label": "1StageRequest",
+          "index": 1,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1071",
+      "name": "OPLC-SOXIssue:LCStage",
+      "localized_label": "LCStage",
+      "localized_guidance": "Automatically set by the lifecycle",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Automatically set by the lifecycle",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2765",
+          "name": "In Progress",
+          "localized_label": "In Progress",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2766",
+          "name": "Close Request",
+          "localized_label": "Close Request",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2767",
+          "name": "Due Date Change Request",
+          "localized_label": "Due Date Change Request",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2768",
+          "name": "Closed",
+          "localized_label": "Closed",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "2769",
+          "name": "New",
+          "localized_label": "New",
+          "index": 5,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1072",
+      "name": "OPLC-SOXIssue:LCStatus",
+      "localized_label": "LCStatus",
+      "localized_guidance": "Automatically set by the lifecycle",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Automatically set by the lifecycle",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2744",
+          "name": "In Progress",
+          "localized_label": "In Progress",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2745",
+          "name": "Requesting Closure",
+          "localized_label": "Requesting Closure",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2746",
+          "name": "Closed",
+          "localized_label": "Closed",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2747",
+          "name": "Close Request Denied",
+          "localized_label": "Close Request Denied",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "2748",
+          "name": "Requesting Due Date Change",
+          "localized_label": "Requesting Due Date Change",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "2749",
+          "name": "Date Change Denied",
+          "localized_label": "Date Change Denied",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "2750",
+          "name": "Date Change Granted",
+          "localized_label": "Date Change Granted",
+          "index": 7,
+          "hidden": false
+        },
+        {
+          "id": "2751",
+          "name": "Re-Opened",
+          "localized_label": "Re-Opened",
+          "index": 8,
+          "hidden": false
+        },
+        {
+          "id": "2752",
+          "name": "New",
+          "localized_label": "New",
+          "index": 9,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "1073",
+      "name": "OPLC-SOXIssue:LCTransition",
+      "localized_label": "LCTransition",
+      "localized_guidance": "Automatically set by the lifecycle",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Automatically set by the lifecycle",
+      "computed": false,
+      "read_only": false,
+      "dependencies": [
+        {
+          "dependency_type": "PICKLIST",
+          "logical_operator": "AND",
+          "controller_field_map_types": [
+            {
+              "type_definition_id": "6",
+              "controller_field_definition_id": "1071",
+              "controller_value_types": [
+                {
+                  "controller_value_name": "New",
+                  "dependent_values": [
+                    {
+                      "id": "2760",
+                      "name": "Start",
+                      "localized_label": "Start",
+                      "index": 8,
+                      "hidden": false
+                    }
+                  ]
+                },
+                {
+                  "controller_value_name": "Closed",
+                  "dependent_values": [
+                    {
+                      "id": "2759",
+                      "name": "Re-Open",
+                      "localized_label": "Re-Open",
+                      "index": 7,
+                      "hidden": false
+                    }
+                  ]
+                },
+                {
+                  "controller_value_name": "Close Request",
+                  "dependent_values": [
+                    {
+                      "id": "2755",
+                      "name": "Close Request Denied",
+                      "localized_label": "Close Request Denied",
+                      "index": 3,
+                      "hidden": false
+                    },
+                    {
+                      "id": "2754",
+                      "name": "Approve Close",
+                      "localized_label": "Approve Close",
+                      "index": 2,
+                      "hidden": false
+                    }
+                  ]
+                },
+                {
+                  "controller_value_name": "In Progress",
+                  "dependent_values": [
+                    {
+                      "id": "2753",
+                      "name": "Request Closure",
+                      "localized_label": "Request Closure",
+                      "index": 1,
+                      "hidden": false
+                    },
+                    {
+                      "id": "2756",
+                      "name": "Request Due Date Change",
+                      "localized_label": "Request Due Date Change",
+                      "index": 4,
+                      "hidden": false
+                    }
+                  ]
+                },
+                {
+                  "controller_value_name": "Due Date Change Request",
+                  "dependent_values": [
+                    {
+                      "id": "2757",
+                      "name": "Due Date Change Granted",
+                      "localized_label": "Due Date Change Granted",
+                      "index": 5,
+                      "hidden": false
+                    },
+                    {
+                      "id": "2758",
+                      "name": "Due Date Change Denied",
+                      "localized_label": "Due Date Change Denied",
+                      "index": 6,
+                      "hidden": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enum_values": [
+        {
+          "id": "2753",
+          "name": "Request Closure",
+          "localized_label": "Request Closure",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2754",
+          "name": "Approve Close",
+          "localized_label": "Approve Close",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2755",
+          "name": "Close Request Denied",
+          "localized_label": "Close Request Denied",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2756",
+          "name": "Request Due Date Change",
+          "localized_label": "Request Due Date Change",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "2757",
+          "name": "Due Date Change Granted",
+          "localized_label": "Due Date Change Granted",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "2758",
+          "name": "Due Date Change Denied",
+          "localized_label": "Due Date Change Denied",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "2759",
+          "name": "Re-Open",
+          "localized_label": "Re-Open",
+          "index": 7,
+          "hidden": false
+        },
+        {
+          "id": "2760",
+          "name": "Start",
+          "localized_label": "Start",
+          "index": 8,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3238",
+      "name": "OPSS-Issue:Additional Description",
+      "localized_label": "Additional Description",
+      "localized_guidance": "Use to enter or edit additional information about this issue.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to enter or edit additional information about this issue.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "3239",
+      "name": "OPSS-Issue:Assignee",
+      "localized_label": "Assignee",
+      "localized_guidance": "Use to assign a person ownership or responsibility for this issue.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to assign a person ownership or responsibility for this issue.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "3251",
+      "name": "OPSS-Issue:Conclusion",
+      "localized_label": "Conclusion",
+      "localized_guidance": "Use to indicate the final outcome of this issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the final outcome of this issue.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "8177",
+          "name": "Deficiency",
+          "localized_label": "Deficiency",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "8178",
+          "name": "Significant Deficiency",
+          "localized_label": "Significant Deficiency",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "8179",
+          "name": "Material Weakness",
+          "localized_label": "Material Weakness",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "8180",
+          "name": "Not a Deficiency",
+          "localized_label": "Not a Deficiency",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "8181",
+          "name": "Not Determined",
+          "localized_label": "Not Determined",
+          "index": 5,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3244",
+      "name": "OPSS-Issue:Domain",
+      "localized_label": "Domain",
+      "localized_guidance": "Use to indicate which areas apply to this issue.",
+      "data_type": "MULTI_VALUE_ENUM",
+      "required": false,
+      "description": "Use to indicate which areas apply to this issue.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "8168",
+          "name": "Compliance",
+          "localized_label": "Compliance",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "8169",
+          "name": "Operational",
+          "localized_label": "Operational",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "8170",
+          "name": "Technology",
+          "localized_label": "Technology",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "8171",
+          "name": "Financial Management",
+          "localized_label": "Financial Management",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "8172",
+          "name": "Internal Audit",
+          "localized_label": "Internal Audit",
+          "index": 5,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3240",
+      "name": "OPSS-Issue:Due Date",
+      "localized_label": "Due Date",
+      "localized_guidance": "Use to indicate the target date for closing this issue.",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "Use to indicate the target date for closing this issue.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "3248",
+      "name": "OPSS-Issue:Identified By Group",
+      "localized_label": "Identified By Group",
+      "localized_guidance": "Use to indicate the group that identified the issue.",
+      "data_type": "MULTI_VALUE_ENUM",
+      "required": false,
+      "description": "Use to indicate the group that identified the issue.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "8154",
+          "name": "Internal Audit",
+          "localized_label": "Internal Audit",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "8155",
+          "name": "External Audit",
+          "localized_label": "External Audit",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "8156",
+          "name": "Business Unit",
+          "localized_label": "Business Unit",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "8157",
+          "name": "Compliance Management",
+          "localized_label": "Compliance Management",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "8158",
+          "name": "Risk Management",
+          "localized_label": "Risk Management",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "8159",
+          "name": "IT",
+          "localized_label": "IT",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "8160",
+          "name": "Other",
+          "localized_label": "Other",
+          "index": 7,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3247",
+      "name": "OPSS-Issue:Identified By Individual",
+      "localized_label": "Identified By Individual",
+      "localized_guidance": "Use to indicate the person who identified the issue.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to indicate the person who identified the issue.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "3242",
+      "name": "OPSS-Issue:Impact",
+      "localized_label": "Impact",
+      "localized_guidance": "Use to indicate the severity of the impact of the issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the severity of the impact of the issue.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "8187",
+          "name": "Significant",
+          "localized_label": "Significant",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "8188",
+          "name": "More Than Inconsequential",
+          "localized_label": "More Than Inconsequential",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "8189",
+          "name": "Inconsequential",
+          "localized_label": "Inconsequential",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "8190",
+          "name": "Not Determined",
+          "localized_label": "Not Determined",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3243",
+      "name": "OPSS-Issue:Issue Type",
+      "localized_label": "Issue Type",
+      "localized_guidance": "Use to identify the nature of the issue as it relates to the activity that initially generated the issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to identify the nature of the issue as it relates to the activity that initially generated the issue.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "8193",
+          "name": "Design Effectiveness",
+          "localized_label": "Design Effectiveness",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "8194",
+          "name": "Control Activity Missing",
+          "localized_label": "Control Activity Missing",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "8195",
+          "name": "Operating Effectiveness",
+          "localized_label": "Operating Effectiveness",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "8196",
+          "name": "Scoping",
+          "localized_label": "Scoping",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3252",
+      "name": "OPSS-Issue:Priority",
+      "localized_label": "Priority",
+      "localized_guidance": "Use to indicate the level of urgency for this issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the level of urgency for this issue.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "8173",
+          "name": "High",
+          "localized_label": "High",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "8174",
+          "name": "Medium",
+          "localized_label": "Medium",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "8175",
+          "name": "Low",
+          "localized_label": "Low",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "8176",
+          "name": "Not Determined",
+          "localized_label": "Not Determined",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3241",
+      "name": "OPSS-Issue:Probability",
+      "localized_label": "Probability",
+      "localized_guidance": "Use to indicate the likelihood of this issue re-occurring.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the likelihood of this issue re-occurring.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "8191",
+          "name": "Likely",
+          "localized_label": "Likely",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "8192",
+          "name": "Unlikely",
+          "localized_label": "Unlikely",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3250",
+      "name": "OPSS-Issue:Resolution Status",
+      "localized_label": "Resolution Status",
+      "localized_guidance": "Use to indicate the status of the resolution for this issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the status of the resolution for this issue.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "8182",
+          "name": "Evaluation in Progress",
+          "localized_label": "Evaluation in Progress",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "8183",
+          "name": "Remediated - Pending Testing",
+          "localized_label": "Remediated - Pending Testing",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "8184",
+          "name": "Closed",
+          "localized_label": "Closed",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "8185",
+          "name": "Risk Accepted",
+          "localized_label": "Risk Accepted",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "8186",
+          "name": "Deferred",
+          "localized_label": "Deferred",
+          "index": 5,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3246",
+      "name": "OPSS-Issue:Root Cause Description",
+      "localized_label": "Root Cause Description",
+      "localized_guidance": "Use to subjectively describe the primary reason for the issue to have arisen.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to subjectively describe the primary reason for the issue to have arisen.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "3245",
+      "name": "OPSS-Issue:Root Cause Type",
+      "localized_label": "Root Cause Type",
+      "localized_guidance": "Use to objectively select the primary reason for the issue to have arisen.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to objectively select the primary reason for the issue to have arisen.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "8161",
+          "name": "Policies not being adhered to",
+          "localized_label": "Policies not being adhered to",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "8162",
+          "name": "Established business process not being followed",
+          "localized_label": "Established business process not being followed",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "8163",
+          "name": "Adequate business process not established",
+          "localized_label": "Adequate business process not established",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "8164",
+          "name": "Policies can be improved",
+          "localized_label": "Policies can be improved",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "8165",
+          "name": "Policies do not exist",
+          "localized_label": "Policies do not exist",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "8166",
+          "name": "Established business process can be improved",
+          "localized_label": "Established business process can be improved",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "8167",
+          "name": "Unknown",
+          "localized_label": "Unknown",
+          "index": 7,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3249",
+      "name": "OPSS-Issue:Status",
+      "localized_label": "Status",
+      "localized_guidance": "Use to set the current status of this issue.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to set the current status of this issue.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "8151",
+          "name": "New",
+          "localized_label": "New",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "8152",
+          "name": "Open",
+          "localized_label": "Open",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "8153",
+          "name": "Closed",
+          "localized_label": "Closed",
+          "index": 3,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    }
+  ],
+  "file_types": [],
+  "display_name": "titleOnly",
+  "associations": [
+    {
+      "id": "2",
+      "name": "SOXProject",
+      "localized_label": "SOXProject",
+      "localized_plural_label": "SOXProject",
+      "association_definition_id": "2",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "5",
+      "name": "SOXBusEntity",
+      "localized_label": "Business Entity",
+      "localized_plural_label": "Business Entities",
+      "association_definition_id": "4",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "22",
+      "name": "SOXAccount",
+      "localized_label": "Account",
+      "localized_plural_label": "Accounts",
+      "association_definition_id": "654",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "23",
+      "name": "Assertion",
+      "localized_label": "Assertion",
+      "localized_plural_label": "Assertions",
+      "association_definition_id": "43",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": false,
+      "relationship": "Parent"
+    },
+    {
+      "id": "24",
+      "name": "Attestation",
+      "localized_label": "Attestation",
+      "localized_plural_label": "Attestations",
+      "association_definition_id": "47",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "25",
+      "name": "AuditProgram",
+      "localized_label": "Audit",
+      "localized_plural_label": "Audits",
+      "association_definition_id": "78",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "26",
+      "name": "ReviewComment",
+      "localized_label": "Audit Review Comment",
+      "localized_plural_label": "Audit Review Comments",
+      "association_definition_id": "569",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "27",
+      "name": "AuditPhase",
+      "localized_label": "Audit Section",
+      "localized_plural_label": "Audit Sections",
+      "association_definition_id": "64",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "28",
+      "name": "AuditableEntity",
+      "localized_label": "Auditable Entity",
+      "localized_plural_label": "Auditable Entities",
+      "association_definition_id": "53",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "29",
+      "name": "Auditor",
+      "localized_label": "Auditor",
+      "localized_plural_label": "Auditors",
+      "association_definition_id": "57",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "30",
+      "name": "RiskSubEntity",
+      "localized_label": "Baseline",
+      "localized_plural_label": "Baselines",
+      "association_definition_id": "628",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "31",
+      "name": "Campaign",
+      "localized_label": "Campaign",
+      "localized_plural_label": "Campaigns",
+      "association_definition_id": "132",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "32",
+      "name": "Challenge",
+      "localized_label": "Challenge",
+      "localized_plural_label": "Challenges",
+      "association_definition_id": "138",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "33",
+      "name": "ChangeRequest",
+      "localized_label": "Change Request",
+      "localized_plural_label": "Change Requests",
+      "association_definition_id": "141",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "34",
+      "name": "Committee",
+      "localized_label": "Committee",
+      "localized_plural_label": "Committees",
+      "association_definition_id": "145",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "35",
+      "name": "CompliancePlan",
+      "localized_label": "Compliance Plan",
+      "localized_plural_label": "Compliance Plans",
+      "association_definition_id": "150",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "36",
+      "name": "ComplianceTheme",
+      "localized_label": "Compliance Theme",
+      "localized_plural_label": "Compliance Themes",
+      "association_definition_id": "168",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "37",
+      "name": "Contract",
+      "localized_label": "Contract",
+      "localized_plural_label": "Contracts",
+      "association_definition_id": "179",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "38",
+      "name": "SOXControl",
+      "localized_label": "Control",
+      "localized_plural_label": "Controls",
+      "association_definition_id": "729",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "39",
+      "name": "CtlEval",
+      "localized_label": "Control Eval",
+      "localized_plural_label": "Control Evals",
+      "association_definition_id": "188",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": false,
+      "relationship": "Parent"
+    },
+    {
+      "id": "40",
+      "name": "SOXControlObjective",
+      "localized_label": "Control Objective",
+      "localized_plural_label": "Control Objectives",
+      "association_definition_id": "742",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": false,
+      "relationship": "Parent"
+    },
+    {
+      "id": "41",
+      "name": "RiskEntity",
+      "localized_label": "System",
+      "localized_plural_label": "Systems",
+      "association_definition_id": "612",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "42",
+      "name": "CostCenter",
+      "localized_label": "Cost Center",
+      "localized_plural_label": "Cost Centers",
+      "association_definition_id": "184",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": false,
+      "relationship": "Parent"
+    },
+    {
+      "id": "43",
+      "name": "Employee",
+      "localized_label": "Employee",
+      "localized_plural_label": "Employees",
+      "association_definition_id": "199",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "44",
+      "name": "Engagement",
+      "localized_label": "Engagement",
+      "localized_plural_label": "Engagements",
+      "association_definition_id": "209",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "45",
+      "name": "Finding",
+      "localized_label": "Finding",
+      "localized_plural_label": "Findings",
+      "association_definition_id": "215",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "46",
+      "name": "FIRSTLoss",
+      "localized_label": "FIRST Loss",
+      "localized_plural_label": "FIRST Losses",
+      "association_definition_id": "219",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "47",
+      "name": "Incident",
+      "localized_label": "Incident",
+      "localized_plural_label": "Incidents",
+      "association_definition_id": "224",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "48",
+      "name": "KeyPerfIndicator",
+      "localized_label": "KPI",
+      "localized_plural_label": "KPIs",
+      "association_definition_id": "230",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "49",
+      "name": "KeyPerfIndicatorValue",
+      "localized_label": "KPI Value",
+      "localized_plural_label": "KPI Values",
+      "association_definition_id": "234",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "50",
+      "name": "KeyRiskIndicator",
+      "localized_label": "KRI",
+      "localized_plural_label": "KRIs",
+      "association_definition_id": "239",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "51",
+      "name": "KeyRiskIndicatorValue",
+      "localized_label": "KRI Value",
+      "localized_plural_label": "KRI Values",
+      "association_definition_id": "243",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "52",
+      "name": "LossEvent",
+      "localized_label": "Loss Event",
+      "localized_plural_label": "Loss Events",
+      "association_definition_id": "266",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "53",
+      "name": "LossImpact",
+      "localized_label": "Loss Impact",
+      "localized_plural_label": "Loss Impacts",
+      "association_definition_id": "271",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "54",
+      "name": "LossRecovery",
+      "localized_label": "Loss Recovery",
+      "localized_plural_label": "Loss Recoveries",
+      "association_definition_id": "275",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "55",
+      "name": "Mandate",
+      "localized_label": "Mandate",
+      "localized_plural_label": "Mandates",
+      "association_definition_id": "294",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "56",
+      "name": "Metric",
+      "localized_label": "Metric",
+      "localized_plural_label": "Metrics",
+      "association_definition_id": "301",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "57",
+      "name": "MetricValue",
+      "localized_label": "Metric Value",
+      "localized_plural_label": "Metric Values",
+      "association_definition_id": "304",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "58",
+      "name": "Model",
+      "localized_label": "Model",
+      "localized_plural_label": "Models",
+      "association_definition_id": "318",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "59",
+      "name": "ModelInput",
+      "localized_label": "Model Input",
+      "localized_plural_label": "Model Inputs",
+      "association_definition_id": "326",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "60",
+      "name": "ModelLink",
+      "localized_label": "Model Link",
+      "localized_plural_label": "Model Links",
+      "association_definition_id": "329",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "61",
+      "name": "ModelOutput",
+      "localized_label": "Model Output",
+      "localized_plural_label": "Model Outputs",
+      "association_definition_id": "333",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "62",
+      "name": "ORICLoss",
+      "localized_label": "ORIC Loss",
+      "localized_plural_label": "ORIC Losses",
+      "association_definition_id": "378",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "63",
+      "name": "ORXLoss",
+      "localized_label": "ORX Loss",
+      "localized_plural_label": "ORX Losses",
+      "association_definition_id": "382",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "64",
+      "name": "Plan",
+      "localized_label": "Plan",
+      "localized_plural_label": "Plans",
+      "association_definition_id": "387",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "65",
+      "name": "Policy",
+      "localized_label": "Policy",
+      "localized_plural_label": "Policies",
+      "association_definition_id": "404",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "66",
+      "name": "PolicyReviewComment",
+      "localized_label": "Policy Review Comment",
+      "localized_plural_label": "Policy Review Comments",
+      "association_definition_id": "409",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "67",
+      "name": "ComplianceReviewComment",
+      "localized_label": "Compliance Review Comment",
+      "localized_plural_label": "Compliance Review Comments",
+      "association_definition_id": "159",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "68",
+      "name": "Preference",
+      "localized_label": "Preference",
+      "localized_plural_label": "Preferences",
+      "association_definition_id": "413",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "69",
+      "name": "PrefGrp",
+      "localized_label": "Preference Group",
+      "localized_plural_label": "Preference Groups",
+      "association_definition_id": "418",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "70",
+      "name": "Procedure",
+      "localized_label": "Procedure",
+      "localized_plural_label": "Procedures",
+      "association_definition_id": "429",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "71",
+      "name": "SOXProcess",
+      "localized_label": "Process",
+      "localized_plural_label": "Processes",
+      "association_definition_id": "761",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "72",
+      "name": "ProcessEval",
+      "localized_label": "Process Eval",
+      "localized_plural_label": "Process Evals",
+      "association_definition_id": "435",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": false,
+      "relationship": "Parent"
+    },
+    {
+      "id": "73",
+      "name": "Project",
+      "localized_label": "Project",
+      "localized_plural_label": "Projects",
+      "association_definition_id": "458",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "74",
+      "name": "Register",
+      "localized_label": "Model Use Case",
+      "localized_plural_label": "Model Use Cases",
+      "association_definition_id": "487",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "75",
+      "name": "RegulatoryInitiative",
+      "localized_label": "Regulatory Initiative",
+      "localized_plural_label": "Regulatory Initiatives",
+      "association_definition_id": "508",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "76",
+      "name": "RegApp",
+      "localized_label": "Regulation Applicability",
+      "localized_plural_label": "Regulation Applicabilities",
+      "association_definition_id": "469",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "77",
+      "name": "Regulator",
+      "localized_label": "Regulator",
+      "localized_plural_label": "Regulators",
+      "association_definition_id": "498",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "78",
+      "name": "RegInt",
+      "localized_label": "Regulator Interaction",
+      "localized_plural_label": "Regulator Interactions",
+      "association_definition_id": "482",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "79",
+      "name": "RegChange",
+      "localized_label": "Regulatory Change",
+      "localized_plural_label": "Regulatory Changes",
+      "association_definition_id": "475",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "80",
+      "name": "RegTask",
+      "localized_label": "Regulatory Task",
+      "localized_plural_label": "Regulatory Tasks",
+      "association_definition_id": "491",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "81",
+      "name": "Requirement",
+      "localized_label": "Requirement",
+      "localized_plural_label": "Requirements",
+      "association_definition_id": "541",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "82",
+      "name": "ReqEval",
+      "localized_label": "Requirement Evaluation",
+      "localized_plural_label": "Requirement Evaluations",
+      "association_definition_id": "516",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "83",
+      "name": "ReqEvalValue",
+      "localized_label": "Requirement Evaluation Value",
+      "localized_plural_label": "Requirement Evaluation Values",
+      "association_definition_id": "520",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "84",
+      "name": "Resource",
+      "localized_label": "Asset",
+      "localized_plural_label": "Assets",
+      "association_definition_id": "554",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "85",
+      "name": "ResourceLink",
+      "localized_label": "Asset Link",
+      "localized_plural_label": "Asset Links",
+      "association_definition_id": "561",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "86",
+      "name": "Review",
+      "localized_label": "Review",
+      "localized_plural_label": "Reviews",
+      "association_definition_id": "566",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "87",
+      "name": "RICat",
+      "localized_label": "RI Component",
+      "localized_plural_label": "RI Components",
+      "association_definition_id": "576",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "88",
+      "name": "RIReq",
+      "localized_label": "RI Sub-Component",
+      "localized_plural_label": "RI Sub-Components",
+      "association_definition_id": "582",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "89",
+      "name": "SOXRisk",
+      "localized_label": "Risk",
+      "localized_plural_label": "Risks",
+      "association_definition_id": "788",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "90",
+      "name": "RiskAssessment",
+      "localized_label": "Risk Assessment",
+      "localized_plural_label": "Risk Assessments",
+      "association_definition_id": "596",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "91",
+      "name": "RAEval",
+      "localized_label": "Risk Assessment Eval",
+      "localized_plural_label": "Risk Assessment Evals",
+      "association_definition_id": "463",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": false,
+      "relationship": "Parent"
+    },
+    {
+      "id": "92",
+      "name": "RiskEval",
+      "localized_label": "Risk Eval",
+      "localized_plural_label": "Risk Evals",
+      "association_definition_id": "620",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": false,
+      "relationship": "Parent"
+    },
+    {
+      "id": "93",
+      "name": "ScenarioAnalysis",
+      "localized_label": "Scenario Analysis",
+      "localized_plural_label": "Scenario Analyses",
+      "association_definition_id": "641",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "94",
+      "name": "ScenarioResult",
+      "localized_label": "Scenario Result",
+      "localized_plural_label": "Scenario Results",
+      "association_definition_id": "648",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": false,
+      "relationship": "Parent"
+    },
+    {
+      "id": "95",
+      "name": "SOXSubaccount",
+      "localized_label": "Sub-Account",
+      "localized_plural_label": "Sub-Accounts",
+      "association_definition_id": "798",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "96",
+      "name": "Submandate",
+      "localized_label": "Sub-Mandate",
+      "localized_plural_label": "Sub-Mandates",
+      "association_definition_id": "868",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "97",
+      "name": "SOXSubprocess",
+      "localized_label": "Sub-Process",
+      "localized_plural_label": "Sub-Processes",
+      "association_definition_id": "814",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "98",
+      "name": "SOXTest",
+      "localized_label": "Test Plan",
+      "localized_plural_label": "Test Plans",
+      "association_definition_id": "825",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "99",
+      "name": "SOXTestResult",
+      "localized_label": "Test Result",
+      "localized_plural_label": "Test Results",
+      "association_definition_id": "832",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "100",
+      "name": "Timesheet",
+      "localized_label": "Timesheet",
+      "localized_plural_label": "Timesheets",
+      "association_definition_id": "889",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "101",
+      "name": "Usage",
+      "localized_label": "Model Deployment",
+      "localized_plural_label": "Model Deployments",
+      "association_definition_id": "898",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "102",
+      "name": "Vendor",
+      "localized_label": "Vendor",
+      "localized_plural_label": "Vendors",
+      "association_definition_id": "908",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "103",
+      "name": "Vulnerability",
+      "localized_label": "Vulnerability",
+      "localized_plural_label": "Vulnerabilities",
+      "association_definition_id": "927",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "104",
+      "name": "Waiver",
+      "localized_label": "Waiver",
+      "localized_plural_label": "Waivers",
+      "association_definition_id": "932",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "105",
+      "name": "Workpaper",
+      "localized_label": "Workpaper",
+      "localized_plural_label": "Workpapers",
+      "association_definition_id": "938",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "106",
+      "name": "ModelAttestation",
+      "localized_label": "Model Attestation",
+      "localized_plural_label": "Model Attestations",
+      "association_definition_id": "322",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "107",
+      "name": "ModelScorecard",
+      "localized_label": "Model Risk Scorecard",
+      "localized_plural_label": "Model Risk Scorecards",
+      "association_definition_id": "336",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "108",
+      "name": "BCBusinessImpactAnalysis",
+      "localized_label": "Business Impact Analysis",
+      "localized_plural_label": "Business Impact Analyses",
+      "association_definition_id": "87",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "109",
+      "name": "BCEvent",
+      "localized_label": "Business Continuity Event",
+      "localized_plural_label": "Business Continuity Events",
+      "association_definition_id": "93",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "110",
+      "name": "BCPlan",
+      "localized_label": "Business Continuity Plan",
+      "localized_plural_label": "Business Continuity Plans",
+      "association_definition_id": "99",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "111",
+      "name": "BCTest",
+      "localized_label": "Business Continuity Test Plan",
+      "localized_plural_label": "Business Continuity Test Plans",
+      "association_definition_id": "105",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "112",
+      "name": "BCTestResult",
+      "localized_label": "Business Continuity Test Result",
+      "localized_plural_label": "Business Continuity Test Results",
+      "association_definition_id": "110",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "113",
+      "name": "Location",
+      "localized_label": "Location",
+      "localized_plural_label": "Locations",
+      "association_definition_id": "253",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "114",
+      "name": "Team",
+      "localized_label": "Team",
+      "localized_plural_label": "Teams",
+      "association_definition_id": "881",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "115",
+      "name": "BusService",
+      "localized_label": "Business Service",
+      "localized_plural_label": "Business Services",
+      "association_definition_id": "120",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "116",
+      "name": "BusServiceEval",
+      "localized_label": "Business Service Eval",
+      "localized_plural_label": "Business Service Evals",
+      "association_definition_id": "127",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "117",
+      "name": "CompliancePlanEval",
+      "localized_label": "Compliance Plan Eval",
+      "localized_plural_label": "Compliance Plan Evals",
+      "association_definition_id": "155",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "118",
+      "name": "ComplianceThemeEval",
+      "localized_label": "Compliance Theme Eval",
+      "localized_plural_label": "Compliance Theme Evals",
+      "association_definition_id": "173",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "119",
+      "name": "Obligation",
+      "localized_label": "Obligation",
+      "localized_plural_label": "Obligations",
+      "association_definition_id": "372",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "120",
+      "name": "OblEval",
+      "localized_label": "Obligation Evaluation",
+      "localized_plural_label": "Obligation Evaluations",
+      "association_definition_id": "354",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "121",
+      "name": "OblEvalValue",
+      "localized_label": "Obligation Evaluation Value",
+      "localized_plural_label": "Obligation Evaluation Values",
+      "association_definition_id": "358",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "122",
+      "name": "DisclosureStatement",
+      "localized_label": "Disclosure Statement",
+      "localized_plural_label": "Disclosure Statements",
+      "association_definition_id": "193",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "123",
+      "name": "Product",
+      "localized_label": "Product",
+      "localized_plural_label": "Products",
+      "association_definition_id": "442",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "124",
+      "name": "Objective",
+      "localized_label": "Objective",
+      "localized_plural_label": "Objectives",
+      "association_definition_id": "345",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "125",
+      "name": "SummaryAuditPlan",
+      "localized_label": "Summary Audit Plan",
+      "localized_plural_label": "Summary Audit Plans",
+      "association_definition_id": "876",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "126",
+      "name": "Threat",
+      "localized_label": "Threat",
+      "localized_plural_label": "Threats",
+      "association_definition_id": "885",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "127",
+      "name": "RegulatoryEvent",
+      "localized_label": "Regulatory Event",
+      "localized_plural_label": "Regulatory Events",
+      "association_definition_id": "503",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "128",
+      "name": "VendorSubsidiary",
+      "localized_label": "Vendor Subsidiary",
+      "localized_plural_label": "Vendor Subsidiaries",
+      "association_definition_id": "921",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "129",
+      "name": "Subcontractor",
+      "localized_label": "Subcontractor",
+      "localized_plural_label": "Subcontractors",
+      "association_definition_id": "849",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "133",
+      "name": "StrategicObjective",
+      "localized_label": "Strategic Objective",
+      "localized_plural_label": "Strategic Objectives",
+      "association_definition_id": "837",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "141",
+      "name": "LevelOne",
+      "localized_label": "Level One",
+      "localized_plural_label": "Level Ones",
+      "association_definition_id": "967",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "142",
+      "name": "LevelTwo",
+      "localized_label": "Level Two",
+      "localized_plural_label": "Level Twos",
+      "association_definition_id": "971",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "143",
+      "name": "LevelThree",
+      "localized_label": "Level Three",
+      "localized_plural_label": "Level Threes",
+      "association_definition_id": "975",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "4",
+      "name": "SOXDocument",
+      "localized_label": "File",
+      "localized_plural_label": "Files",
+      "association_definition_id": "9",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "7",
+      "name": "SOXTask",
+      "localized_label": "Action Item",
+      "localized_plural_label": "Action Items",
+      "association_definition_id": "8",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "8",
+      "name": "SOXExternalDocument",
+      "localized_label": "Link",
+      "localized_plural_label": "Links",
+      "association_definition_id": "10",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "9",
+      "name": "SOXSignature",
+      "localized_label": "Signature",
+      "localized_plural_label": "Signatures",
+      "association_definition_id": "11",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    }
+  ]
+}

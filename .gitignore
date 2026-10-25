@@ -1,0 +1,55 @@
+# ---------------------------------------------------------------------------------------------------------------
+# OpenPages solutions workspace - what stays OUT of git.
+# Kept IN git: skills/, specs/, config/environments.yaml + type_map.yaml (no secrets), schema/ snapshots,
+# build/<KEY>/ (BUILD/PACKAGE/QUESTIONNAIRE/TEST-EVIDENCE, template/ reference/ target/ dumps, types/ fields/ loaders),
+# tests/, docs (except IBM's own files), op, setup_venv.sh, first_check.sh, requirements*.txt, .python-version.
+# ---------------------------------------------------------------------------------------------------------------
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Secrets and machine-specific trust material (each developer exports their own container cert)
+.env
+.env.*
+*.key
+*.p12
+*.pfx
+*.jks
+config/certs/
+config/*.local.yaml
+
+# Claude Code: the skill link is an absolute, per-machine symlink (recreate it with README "One-time setup")
+.claude/skills/
+.claude/settings.local.json
+
+# Run output: transient, and runs/audit.jsonl holds user names and request payloads (audit trail belongs in a
+# controlled store, not git). Keep evidence by summarising it in build/<KEY>/TEST-EVIDENCE.md, or copy chosen raw
+# files into build/<KEY>/evidence/ (tracked).
+runs/*
+!runs/.gitkeep
+
+# ObjectManager / packaging working files
+build/*/export/
+build/**/_*.py
+*.log
+# Configuration Packaging / Export Configuration archives: store in the artifact repository, reference them from PACKAGE.md
+*.zip
+*.jar
+
+# IBM documentation is IBM copyright and large (PDFs ~18 MB): download per docs/ibm/README.md
+docs/ibm/*.pdf
+docs/ibm/*.txt
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# IBM ObjectManager desktop client (IBM files, jars, properties): never commit
+openpages-tools-client/

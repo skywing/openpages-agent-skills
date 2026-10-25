@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE openpagesConfiguration [
+
+<!ELEMENT openpagesConfiguration (systemInformation | fileTypes | applicationPermissions | actors | tags | queryDefinitions | objectStringSet | rlsRuleSet | apiExtensions | agenticPlatformConfigs | customMachineLearningModels | responsiveViews | dashboardViews | jobDetails | processDefinitions | tbRules | tbCalculations | solutions | themes | canvases | webhooks | userPreferencesList | roleTemplates | roleAssignments | administrators | dependencies | dependentPicklistSet | dependency | dependentPicklist | objectProfileViewsSet | subsystemExclusionFields | recursiveHierarchies | objectTypeDimensions | dateDimensionTypes | recursiveHierarchyStrings | objectTypeDimensionStrings | dateDimensionTypeStrings | dateDimensionTypeAssociations | actorMetadataTypes | modules | bundleTypes | fileUploadContentTypes | jspBasedContentTypes | contentTypeRelationshipSets | actorGroupMemberships | actorObjectProfileAssociationSets | nonFormBasedResources | formBasedContentTypes | formBasedResources | channels | resourceSets | ruleSets | ruleSetExecuteSessions | registry | objectProfiles | locales | applicationStringKeyCategories | applicationStringKeys | applicationStrings | errorStrings | objectStrings | moveResources | deleteResources | deleteAssociatedResources | renameResources | unlockAssociatedResources | systemAdminMode | jobTypes | baseCurrency | currencies | exchangeRates)*>
+<!ATTLIST openpagesConfiguration xmlFormatVersion CDATA #REQUIRED>
+
+<!ELEMENT fileTypes (fileType)*>
+
+<!ELEMENT fileType EMPTY>
+<!ATTLIST fileType name CDATA #REQUIRED>
+<!ATTLIST fileType mimeType CDATA #REQUIRED>
+<!ATTLIST fileType fileExtension CDATA #REQUIRED>
+<!ATTLIST fileType searchEnabled CDATA #REQUIRED>
+
+<!ELEMENT applicationPermissions (applicationPermission)*>
+
+<!ELEMENT applicationPermission EMPTY>
+<!ATTLIST applicationPermission name CDATA #REQUIRED>
+<!ATTLIST applicationPermission description CDATA #REQUIRED>
+<!ATTLIST applicationPermission parent CDATA #REQUIRED>
+<!ATTLIST applicationPermission fullName CDATA #REQUIRED>
+<!ATTLIST applicationPermission editable CDATA #REQUIRED>
+
+<!ELEMENT actors (actor)*>
+
+<!ELEMENT actor (actorApplicationPermission*, actormetadata?)>
+<!ATTLIST actor name CDATA #REQUIRED>
+<!ATTLIST actor type CDATA #REQUIRED>
+<!ATTLIST actor password CDATA #IMPLIED>
+<!ATTLIST actor firstName CDATA #IMPLIED>
+<!ATTLIST actor middleName CDATA #IMPLIED>
+<!ATTLIST actor lastName CDATA #IMPLIED>
+<!ATTLIST actor canChangePassword CDATA #IMPLIED>
+<!ATTLIST actor isTemporaryPassword CDATA #IMPLIED>
+<!ATTLIST actor passwordExpiresInDays CDATA #IMPLIED>
+<!ATTLIST actor description CDATA #REQUIRED>
+<!ATTLIST actor emailAddress CDATA #REQUIRED>
+<!ATTLIST actor locale CDATA #IMPLIED>
+<!ATTLIST actor adminLevel CDATA #REQUIRED>
+<!ATTLIST actor enabled CDATA #REQUIRED>
+<!ATTLIST actor hidden CDATA #REQUIRED>
+<!ATTLIST actor editable CDATA #REQUIRED>
+<!ATTLIST actor locked CDATA #IMPLIED>
+
+<!ELEMENT actorApplicationPermission EMPTY>
+<!ATTLIST actorApplicationPermission name CDATA #REQUIRED>
+
+<!ELEMENT actormetadata (metadata)*>
+<!ELEMENT metadata EMPTY>
+<!ATTLIST metadata name CDATA #REQUIRED>
+<!ATTLIST metadata value CDATA #REQUIRED>
+
+
+<!ELEMENT tags (tag)*>
+
+
+<!ELEMENT tag EMPTY>
+<!ATTLIST tag name CDATA #REQUIRED>
+<!ATTLIST tag description CDATA #REQUIRED>
+<!ATTLIST tag enabled CDATA #REQUIRED>
+
+<!ELEMENT queryDefinitions (queryDefinition)*>
+<!ATTLIST queryDefinitions explicitListing CDATA #IMPLIED>
+
+<!ELEMENT queryDefinition (criteriaList*, sortOrders*)>
+<!ATTLIST queryDefinition name CDATA #REQUIRED>
+<!ATTLIST queryDefinition description CDATA #REQUIRED>
+<!ATTLIST queryDefinition type CDATA #REQUIRED>
+<!ATTLIST queryDefinition visibility CDATA #REQUIRED>
+<!ATTLIST queryDefinition contentType CDATA #REQUIRED>
+<!ATTLIST queryDefinition creator CDATA #REQUIRED>
+<!ATTLIST queryDefinition creationDate CDATA #REQUIRED>
+<!ATTLIST queryDefinition lastModifiedOn CDATA #REQUIRED>
+<!ATTLIST queryDefinition lastModifiedBy CDATA #REQUIRED>
+<!ATTLIST queryDefinition checkAcl CDATA #REQUIRED>
+<!ATTLIST queryDefinition expression CDATA #REQUIRED>
+<!ATTLIST queryDefinition honorPrimaryAssociation CDATA #IMPLIED>
+<!ATTLIST queryDefinition suppliedByVendor CDATA #REQUIRED>
+
+<!ELEMENT criteriaList (conditions)*>
+
+<!ELEMENT conditions (condition | conditionGroup)*>
+<!ATTLIST conditions logicalOperator CDATA #REQUIRED>
+<!ATTLIST conditions contentType CDATA #REQUIRED>
+<!ATTLIST conditions parentTypes CDATA #IMPLIED>
+
+<!ELEMENT condition (searchValues)*>
+<!ATTLIST condition not CDATA #REQUIRED>
+<!ATTLIST condition propertyType CDATA #REQUIRED>
+<!ATTLIST condition bundleType CDATA #REQUIRED>
+<!ATTLIST condition searchOperator CDATA #REQUIRED>
+<!ATTLIST condition searchType CDATA #REQUIRED>
+<!ATTLIST condition label CDATA #REQUIRED>
+
+<!ELEMENT searchValues (searchValue)*>
+
+<!ELEMENT searchValue EMPTY>
+<!ATTLIST searchValue searchConditionValue CDATA #IMPLIED>
+<!ATTLIST searchValue searchLowValue CDATA #IMPLIED>
+<!ATTLIST searchValue searchHighValue CDATA #IMPLIED>
+
+<!ELEMENT conditionGroup (condition | conditionGroup)*>
+<!ATTLIST conditionGroup logicalOperator CDATA #REQUIRED>
+<!ATTLIST conditionGroup not CDATA #REQUIRED>
+
+
+<!ELEMENT objectStringSet (localeStringSet)*>
+
+<!ELEMENT rlsRuleSets (rlsRuleSet)*>
+<!ELEMENT rlsRuleSet (rlsRule,flsRule)>
+<!ATTLIST rlsRuleSet contentType CDATA #REQUIRED>
+
+<!ELEMENT rlsRule (rlsAccess)*>
+<!ATTLIST rlsRule name CDATA #REQUIRED>
+<!ATTLIST rlsRule description CDATA #REQUIRED>
+<!ATTLIST rlsRule enabled CDATA #REQUIRED>
+<!ATTLIST rlsRule suppliedByVendor CDATA #IMPLIED>
+
+<!ELEMENT rlsAccess EMPTY>
+<!ATTLIST rlsAccess read CDATA #REQUIRED>
+<!ATTLIST rlsAccess update CDATA #REQUIRED>
+<!ATTLIST rlsAccess associate CDATA #REQUIRED>
+<!ATTLIST rlsAccess delete CDATA #REQUIRED>
+<!ATTLIST rlsAccess create CDATA #REQUIRED>
+
+
+
+<!ELEMENT apiExtensions (apiExtension)*>
+<!ATTLIST apiExtensions explicitListing CDATA #REQUIRED>
+<!ELEMENT apiExtension (serverVariables?, apiExtensionAuthentications, apiExtensionAuthentication)>
+<!ATTLIST apiExtension name CDATA #REQUIRED>
+<!ATTLIST apiExtension description CDATA #IMPLIED>
+<!ATTLIST apiExtension label CDATA #REQUIRED>
+<!ATTLIST apiExtension baseServerUrl CDATA #REQUIRED>
+<!ATTLIST apiExtension openApiSpecFormat CDATA #IMPLIED>
+<!ATTLIST apiExtension enabled CDATA #REQUIRED>
+<!ELEMENT apiExtensionContent EMPTY>
+<!ELEMENT serverVariables (serverVariable)*>
+<!ELEMENT serverVariable EMPTY>
+<!ATTLIST serverVariable key CDATA #REQUIRED>
+<!ATTLIST serverVariable value CDATA #REQUIRED>
+<!ELEMENT apiExtensionAuthentications (apiExtensionAuthentication)+>
+<!ELEMENT apiExtensionAuthentication EMPTY>
+<!ATTLIST apiExtension authType CDATA #IMPLIED>
+<!ATTLIST apiExtension grantType CDATA #IMPLIED>
+<!ATTLIST apiExtension authToken CDATA #IMPLIED>
+<!ATTLIST apiExtension authHeader CDATA #IMPLIED>
+<!ATTLIST apiExtension tokenPrefix CDATA #IMPLIED>
+<!ATTLIST apiExtension clientCredentialsMethod CDATA #IMPLIED>
+<!ATTLIST apiExtension oauth2Endpoint CDATA #IMPLIED>
+<!ATTLIST apiExtension authSchemeName CDATA #IMPLIED>
+
+
+<!ELEMENT agenticPlatformConfigs (agenticPlatformConfig)*>
+<!ATTLIST agenticPlatformConfigs explicitListing CDATA #REQUIRED>
+
+<!ELEMENT agenticPlatformConfig EMPTY>
+<!ATTLIST agenticPlatformConfig name CDATA #REQUIRED>
+<!ATTLIST agenticPlatformConfig description CDATA #IMPLIED>
+<!ATTLIST agenticPlatformConfig platform CDATA #REQUIRED>
+<!ATTLIST agenticPlatformConfig enabled CDATA #REQUIRED>
+<!ATTLIST agenticPlatformConfig configurationHash CDATA #IMPLIED>
+<!ELEMENT agenticPlatformConfigContent EMPTY>
+
+
+<!ELEMENT customMachineLearningModels (customMachineLearningModel)*>
+<!ATTLIST customMachineLearningModels explicitListing CDATA #IMPLIED>
+
+
+<!ELEMENT customMachineLearningModel EMPTY>
+<!ATTLIST customMachineLearningModel name CDATA #REQUIRED>
+<!ATTLIST customMachineLearningModel assetTypeName CDATA #REQUIRED>
+<!ATTLIST customMachineLearningModel class CDATA #REQUIRED>
+<!ATTLIST customMachineLearningModel configurationType CDATA #REQUIRED>
+<!ATTLIST customMachineLearningModel isReady CDATA #REQUIRED>
+<!ATTLIST customMachineLearningModel serviceType CDATA #REQUIRED>
+<!ELEMENT customMachineLearningModelContent EMPTY>
+
+
+<!ELEMENT responsiveViews (responsiveView)*>
+<!ATTLIST responsiveViews explicitListing CDATA #IMPLIED>
+
+<!ELEMENT responsiveView (viewContent*,viewRuleCondition)>
+<!ATTLIST responsiveView name CDATA #REQUIRED>
+<!ATTLIST responsiveView description CDATA #IMPLIED>
+<!ATTLIST responsiveView isDefault CDATA #IMPLIED>
+<!ATTLIST responsiveView suppliedByVendor CDATA #IMPLIED>
+<!ATTLIST responsiveView isEnabled CDATA #IMPLIED>
+<!ATTLIST responsiveView viewType CDATA #REQUIRED>
+<!ATTLIST responsiveView objectTypeName CDATA #REQUIRED>
+<!ATTLIST responsiveView ruleOrder CDATA #IMPLIED>
+
+<!ELEMENT viewContent EMPTY>
+<!ELEMENT viewRuleCondition EMPTY>
+
+
+<!ELEMENT dashboardViews (dashboardView)*>
+<!ATTLIST dashboardViews explicitListing CDATA #IMPLIED>
+
+<!ELEMENT dashboardView (dashboardViewContent*)>
+<!ATTLIST dashboardView name CDATA #REQUIRED>
+<!ATTLIST dashboardView description CDATA #IMPLIED>
+<!ATTLIST dashboardView isActive CDATA #IMPLIED>
+<!ATTLIST dashboardView suppliedByVendor CDATA #IMPLIED>
+<!ATTLIST dashboardView isEnabled CDATA #IMPLIED>
+<!ATTLIST dashboardView objectProfileName CDATA #IMPLIED>
+
+<!ELEMENT dashboardViewContent EMPTY>
+
+
+<!ELEMENT jobDetails (jobDetail)*>
+<!ATTLIST jobDetails explicitListing CDATA #REQUIRED>
+<!ELEMENT jobDetail (jobSchedules, jobConfiguration)>
+<!ATTLIST jobDetail name CDATA #REQUIRED>
+<!ATTLIST jobDetail description CDATA #IMPLIED>
+<!ATTLIST jobDetail category CDATA #REQUIRED>
+<!ATTLIST jobDetail type CDATA #REQUIRED>
+<!ATTLIST jobDetail class CDATA #REQUIRED>
+<!ATTLIST jobDetail enabled CDATA #IMPLIED>
+<!ELEMENT jobSchedules (jobSchedule)+>
+<!ELEMENT jobSchedule EMPTY>
+<!ATTLIST jobSchedule name CDATA #REQUIRED>
+<!ATTLIST jobSchedule description CDATA #REQUIRED>
+<!ATTLIST jobSchedule jsonDisplay CDATA #REQUIRED>
+<!ATTLIST jobSchedule triggerName CDATA #REQUIRED>
+<!ATTLIST jobSchedule triggerGroup CDATA #REQUIRED>
+<!ATTLIST jobSchedule cronExpression CDATA #REQUIRED>
+<!ATTLIST jobSchedule startTime CDATA #REQUIRED>
+<!ATTLIST jobSchedule endTime CDATA #REQUIRED>
+<!ELEMENT jobConfiguration (jobConfigurationItem)+>
+<!ELEMENT jobConfigurationItem EMPTY>
+<!ATTLIST jobConfigurationItem fieldName CDATA #REQUIRED>
+<!ATTLIST jobConfigurationItem fieldType CDATA #REQUIRED>
+<!ATTLIST jobConfigurationItem fieldValue CDATA #REQUIRED>
+<!ATTLIST jobConfigurationItem encrypted CDATA #IMPLIED>
+
+
+<!ELEMENT processDefinitions (processDefinition)*>
+<!ATTLIST processDefinitions explicitListing CDATA #IMPLIED>
+
+<!ELEMENT processDefinition (activity)*>
+<!ATTLIST processDefinition name CDATA #REQUIRED>
+<!ATTLIST processDefinition type CDATA #REQUIRED>
+<!ATTLIST processDefinition objectType CDATA #REQUIRED>
+<!ATTLIST processDefinition enabled CDATA #REQUIRED>
+<!ATTLIST processDefinition displayOnTaskview CDATA #REQUIRED>
+<!ATTLIST processDefinition automated CDATA #IMPLIED>
+<!ATTLIST processDefinition execAsSystem CDATA #IMPLIED>
+<!ATTLIST processDefinition scheduledJob CDATA #IMPLIED>
+
+<!ELEMENT activities (processDefinitionContent)*>
+<!ATTLIST activity name CDATA #REQUIRED>
+<!ATTLIST activity type CDATA #REQUIRED>
+<!ATTLIST activity objectType CDATA #REQUIRED>
+
+<!ELEMENT processDefinitionContent EMPTY>
+
+
+
+<!ELEMENT tbRules (tbRule)*>
+<!ATTLIST tbRules explicitListing CDATA #REQUIRED>
+<!ELEMENT tbRule (tbRuleCriteria, tbRuleActions)>
+<!ATTLIST tbRule name CDATA #REQUIRED>
+<!ATTLIST tbRule description CDATA #IMPLIED>
+<!ATTLIST tbRule type CDATA #REQUIRED>
+<!ATTLIST tbRule category CDATA #REQUIRED>
+<!ATTLIST tbRule enabled CDATA #IMPLIED>
+<!ATTLIST tbRule objectType CDATA #REQUIRED>
+<!ELEMENT tbRuleCriteria EMPTY>
+<!ELEMENT tbRuleActions (tbRuleAction)+>
+<!ELEMENT tbRuleAction (tbRuleActionProperties)>
+<!ATTLIST tbRuleAction type CDATA #REQUIRED>
+<!ATTLIST tbRuleAction objectType CDATA #IMPLIED>
+<!ATTLIST tbRuleAction processDefinition CDATA #IMPLIED>
+<!ELEMENT tbRuleActionProperties EMPTY>
+
+
+<!ELEMENT tbCalculations (tbCalculation)*>
+<!ATTLIST tbCalculations explicitListing CDATA #REQUIRED>
+<!ELEMENT tbCalculation (tbCalculationCriteria, tbCalculationActions)>
+<!ATTLIST tbCalculation name CDATA #REQUIRED>
+<!ATTLIST tbCalculation description CDATA #IMPLIED>
+<!ATTLIST tbCalculation type CDATA #REQUIRED>
+<!ATTLIST tbCalculation enabled CDATA #IMPLIED>
+<!ATTLIST tbCalculation objectType CDATA #REQUIRED>
+<!ELEMENT tbCalculationCriteria EMPTY>
+<!ELEMENT tbCalculationActions (tbCalculationAction)+>
+<!ELEMENT tbCalculationAction (tbCalculationActionProperties)>
+<!ATTLIST tbCalculationAction type CDATA #REQUIRED>
+<!ATTLIST tbCalculationAction objectType CDATA #IMPLIED>
+<!ATTLIST tbCalculationAction processDefinition CDATA #IMPLIED>
+<!ELEMENT tbCalculationActionProperties EMPTY>
+<!ELEMENT tbCalculationActionContent EMPTY>
+
+
+<!ELEMENT solutions (solution)*>
+
+<!ELEMENT solution (solutionObjectType, solutionLayout)>
+<!ATTLIST solution name CDATA #REQUIRED>
+<!ATTLIST solution description CDATA #REQUIRED>
+<!ATTLIST solution id CDATA #IMPLIED>
+<!ATTLIST solution buildInfo CDATA #REQUIRED>
+<!ATTLIST solution enabled CDATA #IMPLIED>
+<!ATTLIST solution major CDATA #IMPLIED>
+<!ATTLIST solution minor CDATA #IMPLIED>
+<!ATTLIST solution mod CDATA #IMPLIED>
+<!ATTLIST solution fixpack CDATA #IMPLIED>
+<!ATTLIST solution suppliedByVendor CDATA #IMPLIED>
+<!ELEMENT solutionObjectTypes (solutionObjectType)*>
+
+<!ELEMENT solutionObjectType EMPTY>
+<!ATTLIST solution name CDATA #REQUIRED>
+<!ATTLIST solution enabled CDATA #IMPLIED>
+<!ATTLIST solution suppliedByVendor CDATA #IMPLIED>
+<!ELEMENT solutionLayouts (solutionLayout)*>
+
+<!ELEMENT solutionLayout EMPTY>
+<!ATTLIST solutionLayout name CDATA #REQUIRED>
+<!ATTLIST solutionLayout enabled CDATA #IMPLIED>
+<!ATTLIST solutionLayout isDefault CDATA #IMPLIED>
+<!ATTLIST solutionLayout suppliedByVendor CDATA #IMPLIED>
+<!ELEMENT solutionLayoutContent EMPTY>
+
+
+
+<!ELEMENT themes (theme)*>
+<!ATTLIST themes explicitListing CDATA #IMPLIED>
+
+
+<!ELEMENT theme EMPTY>
+<!ATTLIST theme name CDATA #REQUIRED>
+<!ATTLIST theme description CDATA #REQUIRED>
+<!ATTLIST theme isDefault CDATA #IMPLIED>
+<!ATTLIST theme enabled CDATA #IMPLIED>
+<!ATTLIST theme suppliedByVendor CDATA #IMPLIED>
+<!ATTLIST theme baseThemeName CDATA #IMPLIED>
+<!ELEMENT themeContent EMPTY>
+
+
+<!ELEMENT canvases (canvas)*>
+<!ATTLIST canvases explicitListing CDATA #IMPLIED>
+
+<!ELEMENT canvas (canvasContent)>
+<!ATTLIST canvas name CDATA #REQUIRED>
+<!ATTLIST canvas objectType CDATA #REQUIRED>
+<!ATTLIST canvas canvasType CDATA #REQUIRED>
+<!ATTLIST canvas primaryResourcePath CDATA #IMPLIED>
+<!ATTLIST canvas description CDATA #IMPLIED>
+
+<!ELEMENT canvasContent EMPTY>
+
+
+<!ELEMENT webhooks (webhook)*>
+<!ATTLIST webhooks explicitListing CDATA #REQUIRED>
+<!ELEMENT webhook (subscriptions, subscription)>
+<!ATTLIST webhook name CDATA #REQUIRED>
+<!ATTLIST webhook description CDATA #IMPLIED>
+<!ATTLIST webhook label CDATA #REQUIRED>
+<!ATTLIST webhook endpoint CDATA #REQUIRED>
+<!ATTLIST webhook enabled CDATA #REQUIRED>
+<!ATTLIST webhook internal CDATA #IMPLIED>
+<!ATTLIST webhook authEndpoint CDATA #IMPLIED>
+<!ATTLIST webhook authHeader CDATA #IMPLIED>
+<!ATTLIST webhook authScheme CDATA #IMPLIED>
+<!ATTLIST webhook authToken CDATA #IMPLIED>
+<!ATTLIST webhook authTokenPrefix CDATA #IMPLIED>
+<!ELEMENT subscriptions (subscription)+>
+<!ELEMENT subscription EMPTY>
+<!ATTLIST subscription contentTypeName CDATA #REQUIRED>
+<!ATTLIST subscription eventType CDATA #REQUIRED>
+<!ATTLIST subscription event CDATA #REQUIRED>
+
+<!ELEMENT userPreferencesList (userPreferences)*>
+
+<!ELEMENT userPreferences (userPreferencesEntry)*>
+<!ATTLIST userPreferences actor CDATA #REQUIRED>
+
+<!ELEMENT userPreferencesEntry EMPTY>
+<!ATTLIST userPreferencesEntry name CDATA #REQUIRED>
+<!ATTLIST userPreferencesEntry value CDATA #IMPLIED>
+
+
+<!ELEMENT roleTemplates (roleTemplate)*>
+<!ATTLIST roleTemplates explicitListing CDATA #IMPLIED>
+
+<!ELEMENT roleTemplate (roleAcl*,roleApplicationPermission*)>
+<!ATTLIST roleTemplate name CDATA #REQUIRED>
+<!ATTLIST roleTemplate description CDATA #REQUIRED>
+<!ATTLIST roleTemplate isEnabled CDATA #IMPLIED>
+<!ATTLIST roleTemplate roleType CDATA #IMPLIED>
+<!ATTLIST roleTemplate explicitListing CDATA #IMPLIED>
+<!ELEMENT roleAcl EMPTY>
+<!ATTLIST roleAcl objectTypeName CDATA #REQUIRED>
+<!ATTLIST roleAcl canRead CDATA #REQUIRED>
+<!ATTLIST roleAcl canWrite CDATA #REQUIRED>
+<!ATTLIST roleAcl canDelete CDATA #REQUIRED>
+<!ATTLIST roleAcl canAssociate CDATA #REQUIRED>
+<!ELEMENT roleApplicationPermission EMPTY>
+<!ATTLIST roleApplicationPermission name CDATA #REQUIRED>
+
+
+<!ELEMENT roleAssignments (roleAssignment)*>
+<!ELEMENT roleAssignment (businessUnits*,roleActors*,roles*)>
+<!ATTLIST roleAssignment type CDATA #REQUIRED>
+<!ATTLIST roleAssignment status CDATA #REQUIRED>
+<!ELEMENT businessUnits (businessUnit*)>
+<!ELEMENT businessUnit EMPTY>
+<!ATTLIST businessUnit name CDATA #REQUIRED>
+<!ELEMENT roleActors (roleActor*)>
+<!ELEMENT roleActor EMPTY>
+<!ATTLIST roleActor name CDATA #REQUIRED>
+<!ELEMENT roles (role*)>
+<!ELEMENT role EMPTY>
+<!ATTLIST role name CDATA #REQUIRED>
+
+
+<!ELEMENT administrators (entityGroup*,organizationalGroup*)>
+
+<!ELEMENT entityGroup (groupAdministrator*)>
+<!ATTLIST entityGroup name CDATA #REQUIRED>
+
+<!ELEMENT organizationalGroup (groupAdministrator*)>
+<!ATTLIST organizationalGroup name CDATA #REQUIRED>
+
+<!ELEMENT groupAdministrator (actorAcl*)>
+<!ATTLIST groupAdministrator name CDATA #REQUIRED>
+<!ATTLIST groupAdministrator status CDATA #REQUIRED>
+
+
+<!ELEMENT actorAcl EMPTY>
+<!ATTLIST actorAcl canBrowse CDATA #IMPLIED>
+<!ATTLIST actorAcl canLock CDATA #IMPLIED>
+<!ATTLIST actorAcl canUnLock CDATA #IMPLIED>
+<!ATTLIST actorAcl canAssignRoles CDATA #IMPLIED>
+<!ATTLIST actorAcl canRevokeRoles CDATA #IMPLIED>
+<!ATTLIST actorAcl canManageActors CDATA #IMPLIED>
+<!ATTLIST actorAcl canResetPassword CDATA #IMPLIED>
+<!ATTLIST actorAcl canManage CDATA #IMPLIED>
+
+
+
+<!ELEMENT dependencies (dependencySet)>
+<!ELEMENT dependencySet (dependency+)>
+<!ATTLIST dependencySet objectType CDATA #REQUIRED>
+
+<!ELEMENT dependentPicklists (dependentPicklistSet)>
+<!ELEMENT dependentPicklistSet (dependentPicklist+)>
+<!ATTLIST dependentPicklistSet objectType CDATA #REQUIRED>
+
+<!ELEMENT dependency (controllers, dependents)>
+<!ATTLIST dependency enabled CDATA #REQUIRED>
+<!ATTLIST dependency suppliedByVendor CDATA #IMPLIED>
+<!ATTLIST dependency name CDATA #IMPLIED>
+<!ELEMENT controllers (controller+)>
+<!ATTLIST controllers operator (AND|OR) "AND">
+<!ELEMENT controller (controllerValue+)>
+<!ATTLIST controller name CDATA #REQUIRED>
+<!ATTLIST controller fieldGroup CDATA #REQUIRED>
+<!ELEMENT controllerValue EMPTY>
+<!ATTLIST controllerValue name CDATA #REQUIRED>
+<!ELEMENT dependents (dependent)>
+<!ELEMENT dependent EMPTY>
+<!ATTLIST dependent name CDATA #REQUIRED>
+<!ATTLIST dependent fieldGroup CDATA #REQUIRED>
+<!ATTLIST dependent type (REQUIRED|VISIBLE|EDITABLE) #REQUIRED>
+
+<!ELEMENT dependentPicklist (controllingValue )>
+<!ATTLIST dependentPicklist isDimension CDATA #REQUIRED>
+<!ATTLIST dependentPicklist controllingField CDATA #REQUIRED>
+<!ATTLIST dependentPicklist controllingFieldGroup CDATA #REQUIRED>
+<!ATTLIST dependentPicklist dependentField CDATA #REQUIRED>
+<!ATTLIST dependentPicklist dependentFieldGroup CDATA #REQUIRED>
+<!ATTLIST dependentPicklist enabled CDATA #REQUIRED>
+<!ATTLIST dependentPicklist name CDATA #REQUIRED>
+<!ATTLIST dependentPicklist suppliedByVendor CDATA #IMPLIED>
+
+<!ELEMENT objectProfileViewsSet (objectProfileViews)*>
+
+<!ELEMENT objectProfileViews (objectProfileViewsForObjectType*,homePageReports*,homePageTabs)>
+<!ATTLIST objectProfileViews name CDATA #REQUIRED>
+<!ATTLIST objectProfileViews explicitListing CDATA #IMPLIED>
+
+<!ELEMENT objectProfileViewsForObjectType (objectProfileView)*>
+<!ATTLIST objectProfileViewsForObjectType name CDATA #REQUIRED>
+<!ATTLIST objectProfileViewsForObjectType explicitListing CDATA #IMPLIED>
+
+<!ELEMENT objectProfileView (viewNameTranslations*,objectProfileViewField*,objectProfileViewSection*,innerObjectProfileViews*,objectProfileViewReferenceObjectType*,objectProfileViewAssociatedQueryDefs)>
+<!ATTLIST objectProfileView name CDATA #REQUIRED>
+<!ATTLIST objectProfileView description CDATA #REQUIRED>
+<!ATTLIST objectProfileView showDescription CDATA #REQUIRED>
+<!ATTLIST objectProfileView isDefault CDATA #REQUIRED>
+<!ATTLIST objectProfileView isDisabled CDATA #REQUIRED>
+<!ATTLIST objectProfileView isViewSelector CDATA #IMPLIED>
+
+<!ELEMENT viewNameTranslations (viewNameTranslation*)>
+<!ELEMENT viewNameTranslation EMPTY>
+<!ATTLIST viewNameTranslation locale CDATA #REQUIRED>
+<!ATTLIST viewNameTranslation value CDATA #REQUIRED>
+
+<!ELEMENT innerObjectProfileViews (innerObjectProfileView*)>
+<!ELEMENT innerObjectProfileView (objectProfileViewFilter,objectProfileViewHierarchyPathList*,objectProfileViewField*,objectProfileViewSection*,innerObjectProfileViews*)>
+<!ATTLIST innerObjectProfileView childObjectTypeName CDATA #REQUIRED>
+<!ATTLIST innerObjectProfileView isSeparatePage CDATA #IMPLIED>
+
+<!ELEMENT objectProfileViewFilter EMPTY>
+<!ATTLIST objectProfileViewFilter name CDATA #REQUIRED>
+<!ELEMENT objectProfileViewHierarchyPathList (objectProfileViewHierarchyPath*)>
+<!ELEMENT objectProfileViewHierarchyPath EMPTY>
+<!ATTLIST objectProfileViewHierarchyPath name CDATA #REQUIRED>
+
+<!ELEMENT objectProfileViewField EMPTY>
+<!ATTLIST objectProfileViewField name CDATA #REQUIRED>
+<!ATTLIST objectProfileViewField fieldGroup CDATA #REQUIRED>
+<!ATTLIST objectProfileViewField displayOrder CDATA #REQUIRED>
+<!ATTLIST objectProfileViewField columnWidth CDATA #REQUIRED>
+<!ATTLIST objectProfileViewField isVisible CDATA #REQUIRED>
+<!ATTLIST objectProfileViewField isCompactMode CDATA #REQUIRED>
+<!ATTLIST objectProfileViewField isReadOnly CDATA #REQUIRED>
+<!ATTLIST objectProfileViewField sectionName CDATA #IMPLIED>
+
+<!ELEMENT objectProfileViewSection (sectionNameTranslations*)>
+<!ATTLIST objectProfileViewSection name CDATA #REQUIRED>
+<!ELEMENT sectionNameTranslations (sectionNameTranslation*)>
+<!ELEMENT sectionNameTranslation EMPTY>
+<!ATTLIST sectionNameTranslation locale CDATA #REQUIRED>
+<!ATTLIST sectionNameTranslation value CDATA #REQUIRED>
+
+
+<!ELEMENT objectProfileViewReferenceObjectType EMPTY>
+<!ATTLIST objectProfileViewReferenceObjectType name CDATA #REQUIRED>
+
+<!ELEMENT objectProfileViewAssociatedQueryDefs (objectProfileViewAssociatedQueryDefinition*)>
+<!ELEMENT objectProfileViewAssociatedQueryDefinition EMPTY>
+<!ATTLIST objectProfileViewAssociatedQueryDefinition name CDATA #REQUIRED>
+<!ELEMENT objectProfileViewSortOrder (objectProfileViewSortCriteria*)>
+<!ELEMENT objectProfileViewSortCriteria EMPTY>
+<!ATTLIST objectProfileViewSortCriteria name CDATA #REQUIRED>
+<!ATTLIST objectProfileViewSortCriteria fieldGroup CDATA #REQUIRED>
+<!ATTLIST objectProfileViewSortCriteria field CDATA #REQUIRED>
+<!ATTLIST objectProfileViewSortCriteria direction CDATA #REQUIRED>
+
+<!ELEMENT homePageReports (homePageReport)*>
+<!ATTLIST homePageReports explicitListing CDATA #IMPLIED>
+
+<!ELEMENT homePageReport EMPTY>
+<!ATTLIST homePageReport type CDATA #REQUIRED>
+<!ATTLIST homePageReport name CDATA #REQUIRED>
+<!ELEMENT homePageTabs (homePageTab*)>
+<!ATTLIST homePageTabs explicitListing CDATA #REQUIRED>
+
+<!ELEMENT homePageTab EMPTY>
+<!ATTLIST homePageTab name CDATA #REQUIRED>
+<!ATTLIST homePageTab enabled CDATA #REQUIRED>
+<!ATTLIST homePageTab displayOrder CDATA #REQUIRED>
+<!ATTLIST homePageTab type CDATA #REQUIRED>
+
+<!ELEMENT subsystemExclusionFields (subsystemExclusionObjectType*)>
+<!ATTLIST subsystemExclusionFields explicitListing CDATA #IMPLIED>
+<!ELEMENT subsystemExclusionObjectType (subsystemExclusionField*)>
+<!ATTLIST subsystemExclusionObjectType name CDATA #REQUIRED>
+<!ELEMENT subsystemExclusionField EMPTY>
+<!ATTLIST subsystemExclusionField name CDATA #REQUIRED>
+<!ATTLIST subsystemExclusionField fieldGroup CDATA #REQUIRED>
+<!ATTLIST subsystemExclusionField subsystem CDATA #REQUIRED>
+<!ATTLIST subsystemExclusionField isExcluded CDATA #REQUIRED>
+
+<!ELEMENT recursiveHierarchies (hierarchy)*>
+<!ATTLIST recursiveHierarchies explicitListing CDATA #IMPLIED>
+<!ELEMENT hierarchies (hierarchy)*>
+
+<!ELEMENT hierarchy (hierarchyLevels*)>
+<!ATTLIST hierarchy name CDATA #REQUIRED>
+<!ATTLIST hierarchy description CDATA #REQUIRED>
+<!ATTLIST hierarchy contentType CDATA #IMPLIED>
+<!ATTLIST hierarchy rootFullPath CDATA #IMPLIED>
+<!ATTLIST hierarchy isEnabled CDATA #REQUIRED>
+<!ATTLIST hierarchy isSuppliedByVendor CDATA #REQUIRED>
+
+<!ELEMENT hierarchyLevels (hierarchyLevel*)>
+<!ELEMENT hierarchyLevel EMPTY>
+<!ATTLIST hierarchyLevel name CDATA #REQUIRED>
+<!ATTLIST hierarchyLevel description CDATA #REQUIRED>
+<!ATTLIST hierarchyLevel ordinalNumber CDATA #REQUIRED>
+<!ATTLIST hierarchyLevel contentType CDATA #IMPLIED>
+<!ATTLIST hierarchyLevel typeForDates CDATA #IMPLIED>
+<!ATTLIST hierarchyLevel associatedHierarchy CDATA #IMPLIED>
+<!ATTLIST hierarchyLevel associatedHierarchyLevel CDATA #IMPLIED>
+
+
+<!ELEMENT objectTypeDimensions (hierarchy)*>
+<!ATTLIST objectTypeDimensions explicitListing CDATA #IMPLIED>
+
+
+<!ELEMENT dateDimensionTypes (hierarchy)*>
+<!ATTLIST dateDimensionTypes explicitListing CDATA #IMPLIED>
+
+
+<!ELEMENT recursiveHierarchyStrings (localeStringSet)*>
+<!ELEMENT localeStringSet (hierarchyString | hierarchyLevelString | queryDefinitionString)*>
+<!ATTLIST localeStringSet name CDATA #REQUIRED>
+
+<!ELEMENT hierarchyString EMPTY>
+<!ATTLIST hierarchyString name CDATA #REQUIRED>
+<!ATTLIST hierarchyString value CDATA #REQUIRED>
+
+
+<!ELEMENT hierarchyLevelString EMPTY>
+<!ATTLIST hierarchyLevelString hierarchyName CDATA #REQUIRED>
+<!ATTLIST hierarchyLevelString name CDATA #REQUIRED>
+<!ATTLIST hierarchyLevelString value CDATA #REQUIRED>
+
+
+<!ELEMENT queryDefinitionString EMPTY>
+<!ATTLIST queryDefinitionString name CDATA #REQUIRED>
+<!ATTLIST queryDefinitionString label CDATA #REQUIRED>
+<!ATTLIST queryDefinitionString suppliedByVendor CDATA #REQUIRED>
+<!ATTLIST queryDefinitionString overriddenByUser CDATA #REQUIRED>
+
+
+
+<!ELEMENT objectTypeDimensionStrings (localeStringSet)*>
+
+
+<!ELEMENT dateDimensionTypeStrings (localeStringSet)*>
+
+
+<!ELEMENT dateDimensionTypeAssociations (dateDimensionTypeAssociation)*>
+<!ATTLIST dateDimensionTypeAssociations explicitListing CDATA #IMPLIED>
+
+<!ELEMENT dateDimensionTypeAssociation (dateDimensionType* )>
+<!ATTLIST dateDimensionTypeAssociation bundleName CDATA #REQUIRED>
+<!ATTLIST dateDimensionTypeAssociation propertyName CDATA #REQUIRED>
+
+<!ELEMENT dateDimensionType EMPTY>
+<!ATTLIST dateDimensionType name CDATA #REQUIRED>
+
+
+
+<!ELEMENT actorMetadataTypes (actorMetadataType)*>
+
+
+<!ELEMENT actorMetadataType EMPTY>
+<!ATTLIST actorMetadataType name CDATA #REQUIRED>
+<!ATTLIST actorMetadataType description CDATA #IMPLIED>
+
+<!ELEMENT systemInformation EMPTY>
+<!ATTLIST systemInformation name CDATA #REQUIRED>
+<!ATTLIST systemInformation retrievalDate CDATA #REQUIRED>
+<!ATTLIST systemInformation openpages CDATA #REQUIRED>
+<!ATTLIST systemInformation operatingSystem CDATA #IMPLIED>
+<!ATTLIST systemInformation javaRuntimeEnvironment CDATA #IMPLIED>
+<!ATTLIST systemInformation database CDATA #IMPLIED>
+<!ATTLIST systemInformation databaseDriver CDATA #IMPLIED>
+<!ATTLIST systemInformation systemAdminMode CDATA #IMPLIED>
+
+<!ELEMENT modules (module)*>
+
+<!ELEMENT module EMPTY>
+<!ATTLIST module name CDATA #REQUIRED>
+<!ATTLIST module description CDATA #IMPLIED>
+<!ATTLIST module version CDATA #IMPLIED>
+<!ATTLIST module enabled CDATA #IMPLIED>
+<!ATTLIST module lastModifiedOn CDATA #IMPLIED>
+
+<!ELEMENT bundleTypes (bundleType)*>
+
+<!ELEMENT bundleType (propertyType)*>
+<!ATTLIST bundleType name CDATA #REQUIRED>
+<!ATTLIST bundleType description CDATA #REQUIRED>
+<!ATTLIST bundleType type CDATA #REQUIRED>
+<!ATTLIST bundleType suppliedByVendor CDATA #IMPLIED>
+
+<!ELEMENT propertyType (enumType?, computationHandler?, displayType?)>
+<!ATTLIST propertyType name CDATA #REQUIRED>
+<!ATTLIST propertyType description CDATA #REQUIRED>
+<!ATTLIST propertyType dataType CDATA #REQUIRED>
+<!ATTLIST propertyType minValue CDATA #REQUIRED>
+<!ATTLIST propertyType maxValue CDATA #REQUIRED>
+<!ATTLIST propertyType defaultValue CDATA #REQUIRED>
+<!ATTLIST propertyType required CDATA #REQUIRED>
+<!ATTLIST propertyType encrypted CDATA #REQUIRED>
+<!ATTLIST propertyType currencyCode CDATA #REQUIRED>
+<!ATTLIST propertyType isDimension CDATA #REQUIRED>
+<!ATTLIST propertyType isFact CDATA #REQUIRED>
+<!ATTLIST propertyType multiValued CDATA #REQUIRED>
+<!ATTLIST propertyType searchEnabled CDATA #REQUIRED>
+<!ATTLIST propertyType lookupTable CDATA #IMPLIED>
+<!ATTLIST propertyType lookupColumn CDATA #IMPLIED>
+<!ATTLIST propertyType includeConversion CDATA #IMPLIED>
+<!ATTLIST propertyType suppliedByVendor CDATA #IMPLIED>
+<!ATTLIST propertyType dataLength CDATA #IMPLIED>
+<!ATTLIST propertyType isHierarchical CDATA #IMPLIED>
+
+<!ELEMENT enumType (enumValue)*>
+<!ATTLIST enumType name CDATA #REQUIRED>
+<!ATTLIST enumType description CDATA #REQUIRED>
+
+<!ELEMENT enumValue EMPTY>
+<!ATTLIST enumValue name CDATA #REQUIRED>
+<!ATTLIST enumValue value CDATA #REQUIRED>
+<!ATTLIST enumValue displayOrder CDATA #IMPLIED>
+<!ATTLIST enumValue hidden CDATA #IMPLIED>
+<!ATTLIST enumValue score CDATA #IMPLIED>
+<!ATTLIST enumValue isCommentRequired CDATA #IMPLIED>
+<!ATTLIST enumValue isAttachmentRequired CDATA #IMPLIED>
+<!ATTLIST enumValue parentName CDATA #IMPLIED>
+<!ATTLIST enumValue description CDATA #IMPLIED>
+
+<!ELEMENT computationHandler (computationHandlerAttribute)*>
+<!ATTLIST computationHandler name CDATA #REQUIRED>
+
+<!ELEMENT computationHandlerAttribute EMPTY>
+<!ATTLIST computationHandlerAttribute name CDATA #REQUIRED>
+<!ATTLIST computationHandlerAttribute value CDATA #REQUIRED>
+<!ELEMENT displayTypeAttributes EMPTY>
+
+<!ELEMENT fileUploadContentTypes (contentType)*>
+
+<!ELEMENT contentType (bundleTypeAssignment*, fileTypeAssignment*)>
+<!ATTLIST contentType name CDATA #REQUIRED>
+<!ATTLIST contentType description CDATA #REQUIRED>
+<!ATTLIST contentType rootFolder CDATA #IMPLIED>
+<!ATTLIST contentType category CDATA #IMPLIED>
+<!ATTLIST contentType multiVersionable CDATA #REQUIRED>
+<!ATTLIST contentType searchEnabled CDATA #REQUIRED>
+<!ATTLIST contentType jspPath CDATA #IMPLIED>
+<!ATTLIST contentType schema CDATA #IMPLIED>
+<!ATTLIST contentType emptyDoc CDATA #IMPLIED>
+<!ATTLIST contentType suppliedByVendor CDATA #IMPLIED>
+
+<!ELEMENT bundleTypeAssignment EMPTY>
+<!ATTLIST bundleTypeAssignment name CDATA #REQUIRED>
+
+<!ELEMENT fileTypeAssignment EMPTY>
+<!ATTLIST fileTypeAssignment name CDATA #REQUIRED>
+
+<!ELEMENT jspBasedContentTypes (contentType)*>
+
+<!ELEMENT contentTypeRelationshipSets (contentTypeRelationshipSet)*>
+
+<!ELEMENT contentTypeRelationshipSet (contentTypeRelationship*)>
+<!ATTLIST contentTypeRelationshipSet name CDATA #REQUIRED>
+<!ATTLIST contentTypeRelationshipSet inheritsFrom CDATA #REQUIRED>
+
+<!ELEMENT contentTypeRelationship EMPTY>
+<!ATTLIST contentTypeRelationship parent CDATA #REQUIRED>
+<!ATTLIST contentTypeRelationship child CDATA #REQUIRED>
+<!ATTLIST contentTypeRelationship type CDATA #REQUIRED>
+<!ATTLIST contentTypeRelationship enabled CDATA #IMPLIED>
+<!ATTLIST contentTypeRelationship minParents CDATA #IMPLIED>
+<!ATTLIST contentTypeRelationship maxParents CDATA #IMPLIED>
+<!ATTLIST contentTypeRelationship minChildren CDATA #IMPLIED>
+<!ATTLIST contentTypeRelationship maxChildren CDATA #IMPLIED>
+
+<!ELEMENT actorGroupMemberships (actorGroupMembership)*>
+
+<!ELEMENT actorGroupMembership (group)*>
+
+<!ATTLIST actorGroupMembership name CDATA #REQUIRED>
+<!ATTLIST actorGroupMembership explicitGroupListing CDATA #IMPLIED>
+
+<!ELEMENT group EMPTY>
+<!ATTLIST group name CDATA #REQUIRED>
+
+<!ELEMENT actorObjectProfileAssociationSets (actorObjectProfileAssociationSet)*>
+
+<!ELEMENT actorObjectProfileAssociationSet (actorObjectProfileAssociation)*>
+
+<!ATTLIST actorObjectProfileAssociationSet name CDATA #REQUIRED>
+<!ATTLIST actorObjectProfileAssociationSet explicitListing CDATA #IMPLIED>
+<!ATTLIST actorObjectProfileAssociationSet extractGroup CDATA #IMPLIED>
+
+<!ELEMENT actorObjectProfileAssociation EMPTY>
+<!ATTLIST actorObjectProfileAssociation name CDATA #REQUIRED>
+<!ATTLIST actorObjectProfileAssociation preferred CDATA #IMPLIED>
+
+<!ELEMENT nonFormBasedResources (resource)*>
+
+<!ELEMENT resource (acl*, bundle*)>
+<!ATTLIST resource name CDATA #REQUIRED>
+<!ATTLIST resource title CDATA #IMPLIED>
+<!ATTLIST resource shortName CDATA #REQUIRED>
+<!ATTLIST resource parentFolder CDATA #REQUIRED>
+<!ATTLIST resource referenceKey CDATA #IMPLIED>
+<!ATTLIST resource description CDATA #IMPLIED>
+<!ATTLIST resource resourceType CDATA #REQUIRED>
+<!ATTLIST resource subResourceType CDATA #REQUIRED>
+<!ATTLIST resource storageServer CDATA #REQUIRED>
+<!ATTLIST resource contentLength CDATA #REQUIRED>
+<!ATTLIST resource contentLocation CDATA #IMPLIED>
+<!ATTLIST resource multiVersionable CDATA #REQUIRED>
+<!ATTLIST resource contentLanguage CDATA #REQUIRED>
+<!ATTLIST resource fileType CDATA #REQUIRED>
+<!ATTLIST resource contentType CDATA #REQUIRED>
+<!ATTLIST resource sourceResource CDATA #REQUIRED>
+<!ATTLIST resource creator CDATA #REQUIRED>
+<!ATTLIST resource creationDate CDATA #REQUIRED>
+<!ATTLIST resource checkedOut CDATA #REQUIRED>
+<!ATTLIST resource checkedOutBy CDATA #REQUIRED>
+<!ATTLIST resource checkedOutDate CDATA #REQUIRED>
+<!ATTLIST resource modifiedBy CDATA #REQUIRED>
+<!ATTLIST resource modificationDate CDATA #REQUIRED>
+<!ATTLIST resource visibilityType CDATA #REQUIRED>
+<!ATTLIST resource inheritAcls CDATA #REQUIRED>
+<!ATTLIST resource explicitAclListing CDATA #IMPLIED>
+
+<!ELEMENT acl EMPTY>
+<!ATTLIST acl name CDATA #REQUIRED>
+<!ATTLIST acl canRead CDATA #REQUIRED>
+<!ATTLIST acl canWrite CDATA #REQUIRED>
+<!ATTLIST acl canDelete CDATA #REQUIRED>
+<!ATTLIST acl canManage CDATA #REQUIRED>
+<!ATTLIST acl canAssociate CDATA #IMPLIED>
+
+<!ELEMENT bundle (property)*>
+<!ATTLIST bundle name CDATA #REQUIRED>
+
+<!ELEMENT property (propertyValue*,nestedProperty*,enumType?)>
+<!ATTLIST property name CDATA #REQUIRED>
+<!ATTLIST property value CDATA #IMPLIED>
+<!ATTLIST property useDefaultValue CDATA #IMPLIED>
+
+<!ELEMENT propertyValue EMPTY>
+<!ATTLIST propertyValue name CDATA #REQUIRED>
+
+<!ELEMENT nestedProperty (nestedPropertyValue*)>
+<!ATTLIST nestedProperty name CDATA #REQUIRED>
+
+<!ELEMENT nestedPropertyValue EMPTY>
+<!ATTLIST nestedPropertyValue name CDATA #REQUIRED>
+
+<!ELEMENT formBasedContentTypes (contentType)*>
+
+<!ELEMENT formBasedResources (resource)*>
+
+<!ELEMENT channels (channel)*>
+
+<!ELEMENT channel (channelDestination*, channelFolder*)>
+<!ATTLIST channel name CDATA #REQUIRED>
+<!ATTLIST channel description CDATA #REQUIRED>
+<!ATTLIST channel type CDATA #REQUIRED>
+
+<!ELEMENT channelDestination EMPTY>
+<!ATTLIST channelDestination name CDATA #REQUIRED>
+<!ATTLIST channelDestination ftpPath CDATA #REQUIRED>
+<!ATTLIST channelDestination userName CDATA #REQUIRED>
+<!ATTLIST channelDestination password CDATA #REQUIRED>
+<!ATTLIST channelDestination url CDATA #REQUIRED>
+
+<!ELEMENT channelFolder (acl*, pageTemplate*, page*)>
+<!ATTLIST channelFolder name CDATA #REQUIRED>
+<!ATTLIST channelFolder shortName CDATA #REQUIRED>
+<!ATTLIST channelFolder parentFolder CDATA #REQUIRED>
+<!ATTLIST channelFolder description CDATA #REQUIRED>
+<!ATTLIST channelFolder storageServer CDATA #REQUIRED>
+<!ATTLIST channelFolder creator CDATA #REQUIRED>
+<!ATTLIST channelFolder creationDate CDATA #REQUIRED>
+<!ATTLIST channelFolder modifiedBy CDATA #REQUIRED>
+<!ATTLIST channelFolder modificationDate CDATA #REQUIRED>
+<!ATTLIST channelFolder inheritAcls CDATA #REQUIRED>
+<!ATTLIST channelFolder explicitAclListing CDATA #IMPLIED>
+
+<!ELEMENT pageTemplate (jspParameterType)*>
+<!ATTLIST pageTemplate name CDATA #REQUIRED>
+<!ATTLIST pageTemplate description CDATA #REQUIRED>
+<!ATTLIST pageTemplate outputFileExtension CDATA #REQUIRED>
+<!ATTLIST pageTemplate jspResource CDATA #REQUIRED>
+
+<!ELEMENT jspParameterType (jspBooleanParameterTypeDetail?, jspDateParameterTypeDetail?, jspDecimalParameterTypeDetail?, jspEnumeratedStringParameterTypeDetail?, jspIntegerParameterTypeDetail?, jspMultipleFilesParameterTypeDetail?, jspSimpleStringParameterTypeDetail?, jspSingleFileParameterTypeDetail?, jspTimeParameterTypeDetail?)>
+<!ATTLIST jspParameterType name CDATA #REQUIRED>
+<!ATTLIST jspParameterType inputFieldLabel CDATA #REQUIRED>
+<!ATTLIST jspParameterType inputFieldTooltip CDATA #REQUIRED>
+<!ATTLIST jspParameterType dataType CDATA #REQUIRED>
+<!ATTLIST jspParameterType defaultValue CDATA #REQUIRED>
+<!ATTLIST jspParameterType hidden CDATA #REQUIRED>
+<!ATTLIST jspParameterType required CDATA #REQUIRED>
+<!ATTLIST jspParameterType interactive CDATA #IMPLIED>
+<!ATTLIST jspParameterType overwrite CDATA #IMPLIED>
+
+<!ELEMENT jspBooleanParameterTypeDetail EMPTY>
+<!ATTLIST jspBooleanParameterTypeDetail name CDATA #REQUIRED>
+<!ATTLIST jspBooleanParameterTypeDetail trueString CDATA #REQUIRED>
+<!ATTLIST jspBooleanParameterTypeDetail falseString CDATA #REQUIRED>
+
+<!ELEMENT jspDateParameterTypeDetail EMPTY>
+<!ATTLIST jspDateParameterTypeDetail name CDATA #REQUIRED>
+<!ATTLIST jspDateParameterTypeDetail minYear CDATA #REQUIRED>
+<!ATTLIST jspDateParameterTypeDetail maxYear CDATA #REQUIRED>
+<!ATTLIST jspDateParameterTypeDetail formatString CDATA #REQUIRED>
+
+<!ELEMENT jspDecimalParameterTypeDetail EMPTY>
+<!ATTLIST jspDecimalParameterTypeDetail name CDATA #REQUIRED>
+<!ATTLIST jspDecimalParameterTypeDetail unitsLabel CDATA #REQUIRED>
+<!ATTLIST jspDecimalParameterTypeDetail minValue CDATA #REQUIRED>
+<!ATTLIST jspDecimalParameterTypeDetail maxValue CDATA #REQUIRED>
+
+<!ELEMENT jspEnumeratedStringParameterTypeDetail (jspEnumeratedStringParameterTypeDetailValue)*>
+<!ATTLIST jspEnumeratedStringParameterTypeDetail name CDATA #REQUIRED>
+
+<!ELEMENT jspEnumeratedStringParameterTypeDetailValue EMPTY>
+<!ATTLIST jspEnumeratedStringParameterTypeDetailValue name CDATA #REQUIRED>
+
+<!ELEMENT jspIntegerParameterTypeDetail EMPTY>
+<!ATTLIST jspIntegerParameterTypeDetail name CDATA #REQUIRED>
+<!ATTLIST jspIntegerParameterTypeDetail unitsLabel CDATA #REQUIRED>
+<!ATTLIST jspIntegerParameterTypeDetail minValue CDATA #REQUIRED>
+<!ATTLIST jspIntegerParameterTypeDetail maxValue CDATA #REQUIRED>
+
+<!ELEMENT jspMultipleFilesParameterTypeDetail EMPTY>
+<!ATTLIST jspMultipleFilesParameterTypeDetail name CDATA #REQUIRED>
+<!ATTLIST jspMultipleFilesParameterTypeDetail contentTypeList CDATA #REQUIRED>
+<!ATTLIST jspMultipleFilesParameterTypeDetail fileTypeList CDATA #REQUIRED>
+<!ATTLIST jspMultipleFilesParameterTypeDetail initialFolder CDATA #REQUIRED>
+<!ATTLIST jspMultipleFilesParameterTypeDetail navigationAllowed CDATA #REQUIRED>
+
+<!ELEMENT jspSimpleStringParameterTypeDetail EMPTY>
+<!ATTLIST jspSimpleStringParameterTypeDetail name CDATA #REQUIRED>
+<!ATTLIST jspSimpleStringParameterTypeDetail fieldLength CDATA #REQUIRED>
+
+<!ELEMENT jspSingleFileParameterTypeDetail EMPTY>
+<!ATTLIST jspSingleFileParameterTypeDetail name CDATA #REQUIRED>
+<!ATTLIST jspSingleFileParameterTypeDetail contentTypeList CDATA #REQUIRED>
+<!ATTLIST jspSingleFileParameterTypeDetail fileTypeList CDATA #REQUIRED>
+<!ATTLIST jspSingleFileParameterTypeDetail initialFolder CDATA #REQUIRED>
+<!ATTLIST jspSingleFileParameterTypeDetail navigationAllowed CDATA #REQUIRED>
+
+<!ELEMENT jspTimeParameterTypeDetail EMPTY>
+<!ATTLIST jspTimeParameterTypeDetail name CDATA #REQUIRED>
+<!ATTLIST jspTimeParameterTypeDetail earliestTime CDATA #REQUIRED>
+<!ATTLIST jspTimeParameterTypeDetail latestTime CDATA #REQUIRED>
+
+<!ELEMENT page (jspParameterBinding)*>
+<!ATTLIST page name CDATA #REQUIRED>
+<!ATTLIST page description CDATA #REQUIRED>
+<!ATTLIST page pageTemplate CDATA #REQUIRED>
+
+<!ELEMENT jspParameterBinding EMPTY>
+<!ATTLIST jspParameterBinding name CDATA #REQUIRED>
+<!ATTLIST jspParameterBinding value CDATA #REQUIRED>
+<!ATTLIST jspParameterBinding overwrite CDATA #IMPLIED>
+
+<!ELEMENT resourceSets (resourceSet)*>
+
+<!ELEMENT resourceSet (resourceNode)*>
+<!ATTLIST resourceSet name CDATA #REQUIRED>
+<!ATTLIST resourceSet description CDATA #REQUIRED>
+
+<!ELEMENT resourceNode (resourceNodeChild)*>
+<!ATTLIST resourceNode name CDATA #REQUIRED>
+<!ATTLIST resourceNode referenceKey CDATA #IMPLIED>
+
+<!ELEMENT resourceNodeChild EMPTY>
+<!ATTLIST resourceNodeChild name CDATA #REQUIRED>
+<!ATTLIST resourceNodeChild primary CDATA #IMPLIED>
+<!ATTLIST resourceNodeChild referenceKey CDATA #IMPLIED>
+
+<!ELEMENT ruleSets (ruleSet)*>
+
+<!ELEMENT ruleSet (rule)*>
+<!ATTLIST ruleSet name CDATA #REQUIRED>
+<!ATTLIST ruleSet description CDATA #REQUIRED>
+<!ATTLIST ruleSet type CDATA #REQUIRED>
+<!ATTLIST ruleSet creator CDATA #IMPLIED>
+<!ATTLIST ruleSet creationDate CDATA #IMPLIED>
+<!ATTLIST ruleSet defunct CDATA #IMPLIED>
+
+<!ELEMENT rule (objectDeleteRule?, objectDisassociateRule?, propertyUpdateRule?, criteria?)>
+<!ATTLIST rule name CDATA #REQUIRED>
+<!ATTLIST rule description CDATA #REQUIRED>
+<!ATTLIST rule type CDATA #REQUIRED>
+
+<!ELEMENT criteria (criterion)*>
+<!ATTLIST criteria logicalOperator CDATA #REQUIRED>
+
+<!ELEMENT criterion (propertyValue)*>
+<!ATTLIST criterion bundle CDATA #REQUIRED>
+<!ATTLIST criterion property CDATA #REQUIRED>
+<!ATTLIST criterion operator CDATA #REQUIRED>
+
+<!ELEMENT objectDeleteRule EMPTY>
+<!ATTLIST objectDeleteRule contentType CDATA #REQUIRED>
+
+<!ELEMENT objectDisassociateRule EMPTY>
+<!ATTLIST objectDisassociateRule parentContentType CDATA #REQUIRED>
+<!ATTLIST objectDisassociateRule childContentType CDATA #REQUIRED>
+
+<!ELEMENT propertyUpdateRule (bundle)*>
+<!ATTLIST propertyUpdateRule contentType CDATA #REQUIRED>
+
+<!ELEMENT ruleSetExecuteSessions (ruleSetExecuteSession)*>
+
+<!ELEMENT ruleSetExecuteSession (sourceResource*, logEntry*)>
+<!ATTLIST ruleSetExecuteSession name CDATA #REQUIRED>
+<!ATTLIST ruleSetExecuteSession description CDATA #REQUIRED>
+<!ATTLIST ruleSetExecuteSession ruleSet CDATA #REQUIRED>
+<!ATTLIST ruleSetExecuteSession checkAcls CDATA #REQUIRED>
+<!ATTLIST ruleSetExecuteSession ignoreLocks CDATA #REQUIRED>
+<!ATTLIST ruleSetExecuteSession continueOnError CDATA #REQUIRED>
+<!ATTLIST ruleSetExecuteSession loggingLevel CDATA #REQUIRED>
+<!ATTLIST ruleSetExecuteSession creator CDATA #IMPLIED>
+<!ATTLIST ruleSetExecuteSession creationDate CDATA #IMPLIED>
+<!ATTLIST ruleSetExecuteSession startTime CDATA #IMPLIED>
+<!ATTLIST ruleSetExecuteSession endTime CDATA #IMPLIED>
+<!ATTLIST ruleSetExecuteSession elapsedTime CDATA #IMPLIED>
+<!ATTLIST ruleSetExecuteSession status CDATA #IMPLIED>
+
+<!ELEMENT logEntry EMPTY>
+<!ATTLIST logEntry timestamp CDATA #IMPLIED>
+<!ATTLIST logEntry type CDATA #REQUIRED>
+<!ATTLIST logEntry message CDATA #REQUIRED>
+
+<!ELEMENT registry (registryEntry)*>
+
+<!ELEMENT registryEntry EMPTY>
+<!ATTLIST registryEntry name CDATA #REQUIRED>
+<!ATTLIST registryEntry description CDATA #IMPLIED>
+<!ATTLIST registryEntry hidden CDATA #IMPLIED>
+<!ATTLIST registryEntry appEntry CDATA #IMPLIED>
+<!ATTLIST registryEntry encrypted CDATA #IMPLIED>
+<!ATTLIST registryEntry protected CDATA #IMPLIED>
+<!ATTLIST registryEntry value CDATA #IMPLIED>
+
+<!ELEMENT objectProfiles (objectProfile)*>
+<!ATTLIST objectProfiles explicitListing CDATA #IMPLIED>
+
+<!ELEMENT objectProfile (includedObjectType)*>
+<!ATTLIST objectProfile name CDATA #REQUIRED>
+<!ATTLIST objectProfile description CDATA #IMPLIED>
+<!ATTLIST objectProfile defaultSelection CDATA #IMPLIED>
+<!ATTLIST objectProfile fallback CDATA #IMPLIED>
+<!ATTLIST objectProfile enabled CDATA #IMPLIED>
+
+<!ELEMENT objectProfile (profileLabelTranslations)*>
+<!ELEMENT profileLabelTranslations (profileLabelTranslation)*>
+<!ATTLIST profileLabelTranslation locale CDATA #IMPLIED>
+<!ATTLIST profileLabelTranslation value CDATA #IMPLIED>
+<!ELEMENT objectProfile (profileDescriptionTranslations)*>
+<!ELEMENT profileDescriptionTranslations (profileDescriptionTranslation)*>
+<!ATTLIST profileDescriptionTranslation locale CDATA #IMPLIED>
+<!ATTLIST profileDescriptionTranslation value CDATA #IMPLIED>
+<!ELEMENT includedObjectType (overview?, filteredListView?, homePageView?, includedFieldGroup*)>
+<!ATTLIST includedObjectType name CDATA #REQUIRED>
+<!ATTLIST includedObjectType displayOrder CDATA #IMPLIED>
+
+<!ELEMENT overview (objectTypeReference)*>
+<!ATTLIST overview showDescription CDATA #IMPLIED>
+
+<!ELEMENT objectTypeReference EMPTY>
+<!ATTLIST objectTypeReference name CDATA #REQUIRED>
+
+<!ELEMENT filteredListView (associatedQueryDefinition)*>
+
+<!ELEMENT homePageView (associatedQueryDefinition)*>
+
+<!ELEMENT associatedQueryDefinition EMPTY>
+<!ATTLIST associatedQueryDefinition name CDATA #REQUIRED>
+
+<!ELEMENT includedFieldGroup (includedField)*>
+<!ATTLIST includedFieldGroup name CDATA #REQUIRED>
+
+<!ELEMENT includedField (displayType?, view*)>
+<!ATTLIST includedField name CDATA #REQUIRED>
+<!ATTLIST includedField readOnly CDATA #IMPLIED>
+<!ATTLIST includedField required CDATA #IMPLIED>
+
+<!ELEMENT displayType (displayTypeProperty)*>
+<!ATTLIST displayType name CDATA #REQUIRED>
+
+<!ELEMENT displayTypeProperty (displayTypePropertyValue)*>
+<!ATTLIST displayTypeProperty name CDATA #REQUIRED>
+
+<!ELEMENT displayTypePropertyValue EMPTY>
+<!ATTLIST displayTypePropertyValue name CDATA #REQUIRED>
+<!ATTLIST displayTypePropertyValue fullPath CDATA #IMPLIED>
+
+<!ELEMENT view EMPTY>
+<!ATTLIST view name CDATA #REQUIRED>
+<!ATTLIST view displayOrder CDATA #IMPLIED>
+
+<!ELEMENT locales (locale)*>
+
+<!ELEMENT locale EMPTY>
+<!ATTLIST locale name CDATA #REQUIRED>
+<!ATTLIST locale description CDATA #IMPLIED>
+<!ATTLIST locale enabled CDATA #REQUIRED>
+<!ATTLIST locale isoLanguageCode CDATA #REQUIRED>
+<!ATTLIST locale isoTerritoryCode CDATA #REQUIRED>
+<!ATTLIST locale nlsLanguage CDATA #REQUIRED>
+<!ATTLIST locale nlsTerritory CDATA #REQUIRED>
+<!ATTLIST locale nlsSort CDATA #REQUIRED>
+<!ATTLIST locale lastModifiedOn CDATA #IMPLIED>
+<!ATTLIST locale lastModifiedBy CDATA #IMPLIED>
+
+<!ELEMENT applicationStringKeyCategories (applicationStringKeyCategory)*>
+
+<!ELEMENT applicationStringKeyCategory EMPTY>
+<!ATTLIST applicationStringKeyCategory name CDATA #REQUIRED>
+<!ATTLIST applicationStringKeyCategory description CDATA #IMPLIED>
+
+<!ELEMENT applicationStringKeys (applicationStringKey)*>
+
+<!ELEMENT applicationStringKey EMPTY>
+<!ATTLIST applicationStringKey name CDATA #REQUIRED>
+<!ATTLIST applicationStringKey description CDATA #IMPLIED>
+<!ATTLIST applicationStringKey enabled CDATA #REQUIRED>
+<!ATTLIST applicationStringKey category CDATA #REQUIRED>
+<!ATTLIST applicationStringKey value CDATA #REQUIRED>
+<!ATTLIST applicationStringKey suppliedByVendor CDATA #REQUIRED>
+<!ATTLIST applicationStringKey overriddenByUser CDATA #REQUIRED>
+
+<!ELEMENT applicationStrings (localeStrings)*>
+
+<!ELEMENT errorStrings (localeStrings)*>
+
+<!ELEMENT objectStrings (localeStrings)*>
+
+<!ELEMENT localeStrings (applicationString | errorString | objectTypeString | fieldString | enumValueString | viewString | sectionString)*>
+<!ATTLIST localeStrings name CDATA #REQUIRED>
+
+<!ELEMENT applicationString EMPTY>
+<!ATTLIST applicationString name CDATA #REQUIRED>
+<!ATTLIST applicationString category CDATA #REQUIRED>
+<!ATTLIST applicationString value CDATA #REQUIRED>
+<!ATTLIST applicationString suppliedByVendor CDATA #REQUIRED>
+<!ATTLIST applicationString overriddenByUser CDATA #REQUIRED>
+
+<!ELEMENT errorString EMPTY>
+<!ATTLIST errorString name CDATA #REQUIRED>
+<!ATTLIST errorString value CDATA #REQUIRED>
+<!ATTLIST errorString suppliedByVendor CDATA #REQUIRED>
+<!ATTLIST errorString overriddenByUser CDATA #REQUIRED>
+
+<!ELEMENT objectTypeString EMPTY>
+<!ATTLIST objectTypeString name CDATA #REQUIRED>
+<!ATTLIST objectTypeString singularValue CDATA #REQUIRED>
+<!ATTLIST objectTypeString pluralValue CDATA #REQUIRED>
+<!ATTLIST objectTypeString suppliedByVendor CDATA #REQUIRED>
+<!ATTLIST objectTypeString overriddenByUser CDATA #REQUIRED>
+
+<!ELEMENT fieldString EMPTY>
+<!ATTLIST fieldString name CDATA #REQUIRED>
+<!ATTLIST fieldString fieldGroup CDATA #REQUIRED>
+<!ATTLIST fieldString singularValue CDATA #REQUIRED>
+<!ATTLIST fieldString pluralValue CDATA #IMPLIED>
+<!ATTLIST fieldString guidance CDATA #IMPLIED>
+<!ATTLIST fieldString suppliedByVendor CDATA #REQUIRED>
+<!ATTLIST fieldString overriddenByUser CDATA #REQUIRED>
+
+<!ELEMENT enumValueString EMPTY>
+<!ATTLIST enumValueString name CDATA #REQUIRED>
+<!ATTLIST enumValueString field CDATA #REQUIRED>
+<!ATTLIST enumValueString fieldGroup CDATA #REQUIRED>
+<!ATTLIST enumValueString value CDATA #REQUIRED>
+<!ATTLIST enumValueString suppliedByVendor CDATA #REQUIRED>
+<!ATTLIST enumValueString overriddenByUser CDATA #REQUIRED>
+
+<!ELEMENT viewString EMPTY>
+<!ATTLIST viewString name CDATA #REQUIRED>
+<!ATTLIST viewString objectType CDATA #REQUIRED>
+<!ATTLIST viewString profile CDATA #REQUIRED>
+<!ATTLIST viewString value CDATA #REQUIRED>
+<!ATTLIST viewString suppliedByVendor CDATA #REQUIRED>
+<!ATTLIST viewString overriddenByUser CDATA #REQUIRED>
+
+<!ELEMENT sectionString EMPTY>
+<!ATTLIST sectionString name CDATA #REQUIRED>
+<!ATTLIST sectionString objectView CDATA #REQUIRED>
+<!ATTLIST sectionString objectType CDATA #REQUIRED>
+<!ATTLIST sectionString objectContext CDATA #REQUIRED>
+<!ATTLIST sectionString profile CDATA #REQUIRED>
+<!ATTLIST sectionString value CDATA #REQUIRED>
+<!ATTLIST sectionString suppliedByVendor CDATA #REQUIRED>
+<!ATTLIST sectionString overriddenByUser CDATA #REQUIRED>
+
+<!ELEMENT moveResources (targetFolder)*>
+
+<!ELEMENT targetFolder (sourceResource)*>
+<!ATTLIST targetFolder name CDATA #REQUIRED>
+
+<!ELEMENT sourceResource EMPTY>
+<!ATTLIST sourceResource name CDATA #REQUIRED>
+<!ATTLIST sourceResource recursive CDATA #IMPLIED>
+
+<!ELEMENT deleteResources (sourceResource)*>
+
+<!ELEMENT deleteAssociatedResources (sourceResourceSet)*>
+
+<!ELEMENT renameResources (renameResource)*>
+
+<!ELEMENT renameResource EMPTY>
+<!ATTLIST renameResource oldFullName CDATA #REQUIRED>
+<!ATTLIST renameResource newShortName CDATA #REQUIRED>
+
+<!ELEMENT unlockAssociatedResources (sourceResourceSet)*>
+
+<!ELEMENT sourceResourceSet (includeContentType*, sourceResource*)>
+<!ATTLIST sourceResourceSet name CDATA #REQUIRED>
+
+<!ELEMENT includeContentType EMPTY>
+<!ATTLIST includeContentType name CDATA #REQUIRED>
+
+<!ELEMENT systemAdminMode EMPTY>
+<!ATTLIST systemAdminMode enabled CDATA #REQUIRED>
+
+<!ELEMENT jobTypes (jobType)*>
+
+<!ELEMENT jobType EMPTY>
+<!ATTLIST jobType name CDATA #REQUIRED>
+<!ATTLIST jobType bundleTypeName CDATA #REQUIRED>
+
+<!ELEMENT baseCurrency EMPTY>
+<!ATTLIST baseCurrency isoCode CDATA #REQUIRED>
+
+<!ELEMENT currencies (currency)*>
+
+<!ELEMENT currency EMPTY>
+<!ATTLIST currency isoCode CDATA #REQUIRED>
+<!ATTLIST currency enabled CDATA #IMPLIED>
+
+<!ELEMENT exchangeRates (exchangeRate)*>
+
+<!ELEMENT exchangeRate EMPTY>
+<!ATTLIST exchangeRate isoCode CDATA #REQUIRED>
+<!ATTLIST exchangeRate startDate CDATA #REQUIRED>
+<!ATTLIST exchangeRate rate CDATA #IMPLIED>
+
+<!ELEMENT uploadFile EMPTY>
+<!ATTLIST uploadFile name CDATA #REQUIRED>
+<!ATTLIST uploadFile dataType CDATA #REQUIRED>
+
+]>
+
+<openpagesConfiguration xmlFormatVersion="1.31">
+    <systemInformation name="opapp"
+                       retrievalDate="Sat Oct 03 17:07:30 EDT 2026"
+                       openpages="11.2.1 (Build: 9.2.1-89 2026/06/19 20:44:03)"
+
+                       installDate="2026-06-20 03:41:01.0"
+                       systemAdminMode="false"/>
+    <systemAdminMode enabled="false"/>
+    <nonFormBasedResources>
+        <resource name="/_op_sox/Project/Default/Issue"
+                  shortName="Issue"
+                  title=""
+                  parentFolder="/_op_sox/Project/Default"
+                  description="Application Folder"
+                  resourceType="Folder"
+                  subResourceType="Normal"
+                  storageServer="default-lfs"
+                  contentLength=""
+                  contentLocation=""
+                  multiVersionable="true"
+                  contentLanguage="en"
+                  fileType=""
+                  contentType=""
+                  sourceResource=""
+                  creator="OPSystem"
+                  creationDate="2026-06-20 03:40:15.0"
+                  primaryParent=""
+                  checkedOut="false"
+                  checkedOutBy=""
+                  checkedOutDate=""
+                  modifiedBy="OPSystem"
+                  modificationDate="2026-06-20 03:40:15.0"
+                  visibilityType="Normal"
+                  inheritAcls="false">
+        </resource>
+    </nonFormBasedResources>
+    <systemAdminMode enabled="true"/>
+    <jspBasedContentTypes>
+        <contentType name="SOXIssue"
+                     description="OpenPages GRC Object Type"
+                     rootFolder="/_op_sox/Project/Default/Issue"
+                     category="Secondary Compliance"
+                     multiVersionable="true"
+                     suppliedByVendor="true"
+                     searchEnabled="true"
+                     titleEnabled="false"
+                     titleRequired="false"
+                     nameDisplay="titleOnly"
+                     taggingEnabled="true"
+                     jspPath="/propertyForm/renderProperties.jsp">
+            <fileTypeAssignment name="txt (text/plain)"/>
+        </contentType>
+    </jspBasedContentTypes>
+    <systemAdminMode enabled="false"/>
+
+    <dependencies>
+        <dependencySet
+                objectType="SOXIssue">
+        </dependencySet>
+    </dependencies>    <objectStrings>
+        <localeStrings name="U.S. English">
+            <objectTypeString name="SOXIssue"
+                              singularValue="Issue"
+                              pluralValue="Issues"
+                              suppliedByVendor="true"
+                              overriddenByUser="false"/>
+        </localeStrings>
+    </objectStrings>
+</openpagesConfiguration>

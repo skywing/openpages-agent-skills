@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Run IBM ObjectManager (desktop client) for an environment in config/environments.yaml:
+#   ./om validate build/TPR/fields tpr-fields --env local     ./om dump relationships --env uat     ./om --help
+cd "$(dirname "$0")"
+[ -x .venv/bin/python ] || { echo "Run: bash setup_venv.sh"; exit 1; }
+exec .venv/bin/python skills/openpages-solutions/scripts/om.py "$@"

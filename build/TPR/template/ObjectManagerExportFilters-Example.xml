@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=============================================================================
+    Licensed Materials - Property of IBM
+    
+   
+    OpenPages GRC Platform (PID: 5725-D51)
+   
+    © Copyright IBM Corporation 2019 - 2026. All Rights Reserved.
+     
+    US Government Users Restricted Rights- Use, duplication or 
+    disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+==============================================================================-->
+
+<openpagesConfigurationBOM xmlFormatVersion="1.0">
+
+    <objectProfiles>
+        <!-- List of names of profiles to export -->
+        <objectProfile name="Default"/>
+    </objectProfiles>
+
+    <objectProfileViewsSet>
+        <!-- Specifiy the name of the profile  -->
+        <objectProfileViews name="Default">
+            <!-- Specifiy the name of the object type in the profile -->
+            <objectProfileViewsForObjectType name="SOXProcess">
+                <!-- Specifiy the views and their names -->
+                <objectProfileView type="Detail"/>
+                <objectProfileView type="Activity" name="Process AV"/>
+            </objectProfileViewsForObjectType>
+        </objectProfileViews>
+    </objectProfileViewsSet>
+
+    <jobTypes>
+        <!-- List of names of job types to export -->
+        <jobType name="SJTTemplate"/>
+    </jobTypes>
+
+    <jspBasedContentTypes>
+        <!-- List of names of object types to export -->
+        <contentType name="ExternalLoss"/>
+    </jspBasedContentTypes>
+
+    <dependencies>
+        <!-- List of names of object types to export -->
+        <dependencySet objectType="ExternalLoss"/>
+    </dependencies>
+
+    <ruleSets>
+        <!-- List of names of rule sets to export -->
+        <ruleSet name="Quarterly Reset"/>
+    </ruleSets>
+
+    <registry>
+        <!-- List of paths to export -->
+        <registryEntry name="/OpenPages/Applications/GRCM/Auto Naming/SOXBusEntity/Auto-Named/New Object"/>
+        <registryEntry name="/OpenPages/Applications/GRCM/Auto Naming/SOXBusEntity/Auto-Named/Copied Object"/>
+        <registryEntry name="/OpenPages/Applications/GRCM/Auto Naming/SOXBusEntity/Can be Edited"/>
+        <registryEntry name="/OpenPages/Applications/GRCM/Auto Naming/SOXBusEntity/Format"/>
+        <registryEntry name="/OpenPages/Applications/GRCM/Auto Naming/SOXBusEntity/Default Parent Name"/>
+    </registry>
+
+    <queryDefinitions>
+        <!-- List of filtered view names to export -->
+        <queryDefinition name="Processes By Owner"/>
+    </queryDefinitions>
+    
+    <subsystemExclusionFields>
+        <!-- List of object types to export -->
+        <subsystemExclusionObjectType name="SOXProcess"/>
+    </subsystemExclusionFields>
+
+    <objectStrings>
+        <localeStrings name="U.S. English">
+
+            <!-- for a specific object type -->
+            <objectTypeString name="SOXBusEntity"/>
+            <!-- for a specific field -->
+            <fieldString name="Entity Type" fieldGroup="OpenPagesStandardBusEntity"/>
+            <!-- for a specific enum value -->
+            <enumValueString name="Region" field="Entity Type" fieldGroup="OpenPagesStandardBusEntity"/>
+
+            <!-- for all field in a field group -->
+            <fieldString fieldGroup="OpenPagesStandardAccount"/>
+            <!-- for all enum value for a field -->
+            <enumValueString field="Account Type" fieldGroup="OpenPagesStandardAccount"/>
+
+            <!-- for all enum values in a field group -->
+            <enumValueString fieldGroup="OpenPagesStandardProcess"/>
+
+            <!-- for a specific view in a profile for an object type -->
+            <viewString name="Process AV" objectType="SOXProcess" profile="Default"/>
+            <!-- for all views in a profile for an object type -->
+            <viewString objectType="SOXProcess" profile="Default"/>
+            <!-- for all views in a profile -->
+            <viewString profile="Default"/>
+            
+            <!-- for a specific section in a view in a profile for an object type -->
+            <sectionString name="Section 1" viewName="Detail" objectType="SOXProcess" profile="Default"/>
+            <!-- for all sections in a view in a profile for an object type -->
+            <sectionString viewName="Detail" objectType="SOXProcess" profile="Default"/>
+            <!-- for all sections in a profile for an object type -->
+            <sectionString objectType="SOXProcess" profile="Default"/>
+            <!-- for all sections in a profile -->
+            <sectionString profile="Default"/>
+
+        </localeStrings>
+    </objectStrings>
+
+    <channels>
+        <channel name="Reporting">
+            <channelFolder name="/Hidden Reports">
+                <pageTemplate name="All Documentation Report Template"/>
+            </channelFolder>
+        </channel>
+    </channels>
+    
+    <roleTemplates>
+        <roleTemplate name="Process Owner"/>
+    </roleTemplates>
+
+    <currencies>
+       <currency isoCode="AUD"/>
+       <currency isoCode="JPY"/>
+    </currencies>
+
+    <exchangeRates>
+       <exchangeRate isoCode="AUD"/>
+    </exchangeRates>
+
+</openpagesConfigurationBOM>

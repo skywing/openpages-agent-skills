@@ -1,0 +1,13 @@
+<openpagesConfigurationBOM xmlFormatVersion="1.0">
+  <jspBasedContentTypes>
+    <contentType name="SOXIssue"/>
+  </jspBasedContentTypes>
+  <dependencies>
+    <dependencySet objectType="SOXIssue"/>
+  </dependencies>
+  <objectStrings>
+    <localeStrings name="U.S. English">
+      <objectTypeString name="SOXIssue"/>
+    </localeStrings>
+  </objectStrings>
+</openpagesConfigurationBOM>

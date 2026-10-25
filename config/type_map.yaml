@@ -1,0 +1,13 @@
+# REST V2 data_type names observed on the local 9.2.1 server (schema/local). Spec type -> data_type list.
+simple_string: [STRING_TYPE]
+medium_string: [MEDIUM_STRING_TYPE]
+long_string: [LARGE_STRING_TYPE]
+enum: [ENUM_TYPE]
+multi_enum: [MULTI_VALUE_ENUM]
+date: [DATE_TYPE]
+boolean: [BOOLEAN_TYPE]
+integer: [INTEGER_TYPE]
+decimal: [FLOAT_TYPE]
+long_string: [MEDIUM_STRING_TYPE, LARGE_STRING_TYPE]
+currency: [CURRENCY_TYPE]
+user_group: [STRING_TYPE]

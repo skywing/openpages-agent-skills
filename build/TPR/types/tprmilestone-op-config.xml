@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openpagesConfiguration xmlFormatVersion="1.31">
+  <nonFormBasedResources>
+    <resource name="/_op_sox/Project/Default/TPRMilestone" shortName="TPRMilestone" title="" parentFolder="/_op_sox/Project/Default" description="Application Folder" resourceType="Folder" subResourceType="Normal" storageServer="default-lfs" contentLength="" contentLocation="" multiVersionable="true" contentLanguage="en" fileType="" contentType="" sourceResource="" creator="OPSystem" creationDate="2026-06-20 03:40:15.0" primaryParent="" checkedOut="false" checkedOutBy="" checkedOutDate="" modifiedBy="OPSystem" modificationDate="2026-06-20 03:40:15.0" visibilityType="Normal" inheritAcls="false">
+        </resource>
+  </nonFormBasedResources>
+  <systemAdminMode enabled="true" />
+  <jspBasedContentTypes>
+    <contentType name="TPRMilestone" description="Milestone" rootFolder="/_op_sox/Project/Default/TPRMilestone" category="Secondary Compliance" multiVersionable="true" suppliedByVendor="false" searchEnabled="true" titleEnabled="false" titleRequired="false" nameDisplay="titleOnly" taggingEnabled="true" jspPath="/propertyForm/renderProperties.jsp" allowOverride="true">
+      <fileTypeAssignment name="txt (text/plain)" />
+    </contentType>
+  </jspBasedContentTypes>
+  <systemAdminMode enabled="false" />
+  <dependencies>
+    <dependencySet objectType="TPRMilestone">
+        </dependencySet>
+  </dependencies>
+  <objectStrings>
+    <localeStrings name="U.S. English">
+      <objectTypeString name="TPRMilestone" singularValue="Milestone" pluralValue="Milestones" suppliedByVendor="false" overriddenByUser="false" />
+    </localeStrings>
+  </objectStrings>
+</openpagesConfiguration>

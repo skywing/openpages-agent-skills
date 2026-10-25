@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openpagesConfiguration xmlFormatVersion="1.31">
+  <systemAdminMode enabled="true" />
+  <bundleTypes>
+    <bundleType name="TPR-Rem" description="TPR Remediation Field Group" type="Content Type" suppliedByVendor="false">
+      <propertyType name="Status" description="" dataType="Enumerated String" minValue="" maxValue="" defaultValue="1" required="true" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" isHierarchical="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <enumType name="Status" description="">
+          <enumValue name="Draft" value="1" displayOrder="1" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+          <enumValue name="In Review" value="2" displayOrder="2" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+          <enumValue name="Approved" value="3" displayOrder="3" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+          <enumValue name="Closed" value="4" displayOrder="4" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+        </enumType>
+        <rpsColumnDefinition columnName="status" contentTypeName="TPRRemediation" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="List" />
+      </propertyType>
+      <propertyType name="Severity" description="" dataType="Enumerated String" minValue="" maxValue="" defaultValue="" required="true" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" isHierarchical="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <enumType name="Severity" description="">
+          <enumValue name="Low" value="1" displayOrder="1" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+          <enumValue name="Medium" value="2" displayOrder="2" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+          <enumValue name="High" value="3" displayOrder="3" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+          <enumValue name="Critical" value="4" displayOrder="4" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+        </enumType>
+        <rpsColumnDefinition columnName="severity" contentTypeName="TPRRemediation" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="List" />
+      </propertyType>
+      <propertyType name="Target Date" description="" dataType="Date" minValue="" maxValue="" defaultValue="" required="true" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <rpsColumnDefinition columnName="target_date" contentTypeName="TPRRemediation" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="Date" />
+      </propertyType>
+      <propertyType name="Remediation Owner" description="" dataType="Simple String" minValue="" maxValue="" defaultValue="" required="true" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <rpsColumnDefinition columnName="remediation_owner" contentTypeName="TPRRemediation" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="User/Group Selector">
+          <displayTypeProperty name="includeDisabled">
+            <displayTypePropertyValue name="false" />
+          </displayTypeProperty>
+          <displayTypeProperty name="includeSubGroups">
+            <displayTypePropertyValue name="true" />
+          </displayTypeProperty>
+          <displayTypeProperty name="minimumAccess">
+            <displayTypePropertyValue name="" />
+          </displayTypeProperty>
+          <displayTypeProperty name="startingGroup">
+            <displayTypePropertyValue name="OpenPagesApplicationUsers" fullPath="" />
+          </displayTypeProperty>
+        </displayType>
+      </propertyType>
+      <propertyType name="Plan Summary" description="" dataType="Long String" minValue="" maxValue="" defaultValue="" required="false" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="Medium">
+        <rpsColumnDefinition columnName="plan_summary" contentTypeName="TPRRemediation" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="Text Area" />
+      </propertyType>
+      <propertyType name="Estimated Cost" description="" dataType="Currency" minValue="" maxValue="" defaultValue="" required="false" encrypted="false" currencyCode="USD" isDimension="false" isFact="false" multiValued="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <rpsColumnDefinition columnName="estimated_cost" contentTypeName="TPRRemediation" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="Currency">
+          <displayTypeProperty name="exchangeRateReadOnly" />
+        </displayType>
+      </propertyType>
+      <propertyType name="Vendor Confirmed" description="" dataType="Boolean" minValue="" maxValue="" defaultValue="false" required="false" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <rpsColumnDefinition columnName="vendor_confirmed" contentTypeName="TPRRemediation" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="Boolean" />
+      </propertyType>
+      <propertyType name="Open Milestones" description="" dataType="Integer" minValue="" maxValue="" defaultValue="" required="false" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <rpsColumnDefinition columnName="open_milestones" contentTypeName="TPRRemediation" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="Integer" />
+      </propertyType>
+      <propertyType name="Total Milestones" description="" dataType="Integer" minValue="" maxValue="" defaultValue="" required="false" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <rpsColumnDefinition columnName="total_milestones" contentTypeName="TPRRemediation" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="Integer" />
+      </propertyType>
+    </bundleType>
+    <bundleType name="TPR-Ms" description="" type="Content Type" suppliedByVendor="false">
+      <propertyType name="Status" description="" dataType="Enumerated String" minValue="" maxValue="" defaultValue="1" required="true" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" isHierarchical="false" searchEnabled="true" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <enumType name="Status" description="">
+          <enumValue name="Not Started" value="1" displayOrder="1" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+          <enumValue name="In Progress" value="2" displayOrder="2" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+          <enumValue name="Done" value="3" displayOrder="3" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+        </enumType>
+        <rpsColumnDefinition columnName="status" contentTypeName="TPRMilestone" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="List" />
+      </propertyType>
+      <propertyType name="Due Date" description="Due Date" dataType="Date" minValue="" maxValue="" defaultValue="" required="true" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <rpsColumnDefinition columnName="due_date" contentTypeName="TPRMilestone" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="Date" />
+      </propertyType>
+      <propertyType name="Percent Complete" description="" dataType="Integer" minValue="0" maxValue="100" defaultValue="" required="false" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <rpsColumnDefinition columnName="percent_complete" contentTypeName="TPRMilestone" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="Integer" />
+      </propertyType>
+    </bundleType>
+    <bundleType name="TPR-Fnd" description="" type="Content Type" suppliedByVendor="false">
+      <propertyType name="Source" description="" dataType="Enumerated String" minValue="" maxValue="" defaultValue="" required="false" encrypted="false" currencyCode="" isDimension="false" isFact="false" multiValued="false" isHierarchical="false" searchEnabled="false" includeConversion="true" suppliedByVendor="false" dataLength="">
+        <enumType name="Source" description="">
+          <enumValue name="Vendor Attestation" value="1" displayOrder="1" isCommentRequired="false" isAttachmentRequired="false" hidden="false" />
+        </enumType>
+        <rpsColumnDefinition columnName="source00" contentTypeName="Finding" />
+        <displayTypeAttributes>{ }</displayTypeAttributes>
+        <displayType name="List" />
+      </propertyType>
+    </bundleType>
+  </bundleTypes>
+  <systemAdminMode enabled="false" />
+  <objectProfiles explicitListing="false">
+    <objectProfile name="OpenPages Modules Master" description="Administrator profile for all solutions within OpenPages." defaultSelection="false" fallback="false" enabled="true">
+      <includedObjectType name="TPRRemediation" displayOrder="125">
+        <includedFieldGroup name="TPR-Rem">
+          <includedField name="Status" readOnly="false" required="true">
+            <displayType name="List" />
+          </includedField>
+          <includedField name="Severity" readOnly="false" required="true">
+            <displayType name="List" />
+          </includedField>
+          <includedField name="Target Date" readOnly="false" required="true">
+            <displayType name="Date" />
+          </includedField>
+          <includedField name="Remediation Owner" readOnly="false" required="true">
+            <displayType name="User/Group Selector" />
+          </includedField>
+          <includedField name="Plan Summary" readOnly="false" required="false">
+            <displayType name="Text Area" />
+          </includedField>
+          <includedField name="Estimated Cost" readOnly="false" required="false">
+            <displayType name="Currency" />
+          </includedField>
+          <includedField name="Vendor Confirmed" readOnly="false" required="false">
+            <displayType name="Boolean" />
+          </includedField>
+          <includedField name="Open Milestones" readOnly="false" required="false">
+            <displayType name="Integer" />
+          </includedField>
+          <includedField name="Total Milestones" readOnly="false" required="false">
+            <displayType name="Integer" />
+          </includedField>
+        </includedFieldGroup>
+      </includedObjectType>
+      <includedObjectType name="TPRMilestone" displayOrder="126">
+        <includedFieldGroup name="TPR-Ms">
+          <includedField name="Status" readOnly="false" required="true">
+            <displayType name="List" />
+          </includedField>
+          <includedField name="Due Date" readOnly="false" required="true">
+            <displayType name="Date" />
+          </includedField>
+          <includedField name="Percent Complete" readOnly="false" required="false">
+            <displayType name="Integer" />
+          </includedField>
+        </includedFieldGroup>
+      </includedObjectType>
+      <includedObjectType name="Finding" displayOrder="38">
+        <includedFieldGroup name="TPR-Fnd">
+          <includedField name="Source" readOnly="false" required="false">
+            <displayType name="List" />
+          </includedField>
+        </includedFieldGroup>
+      </includedObjectType>
+    </objectProfile>
+  </objectProfiles>
+  <objectStrings>
+    <localeStrings name="U.S. English">
+      <fieldString name="Status" fieldGroup="TPR-Rem" singularValue="Status" pluralValue="" guidance="Status" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="Draft" field="Status" fieldGroup="TPR-Rem" value="Draft" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="In Review" field="Status" fieldGroup="TPR-Rem" value="In Review" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="Approved" field="Status" fieldGroup="TPR-Rem" value="Approved" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="Closed" field="Status" fieldGroup="TPR-Rem" value="Closed" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Severity" fieldGroup="TPR-Rem" singularValue="Severity" pluralValue="" guidance="Severity" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="Low" field="Severity" fieldGroup="TPR-Rem" value="Low" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="Medium" field="Severity" fieldGroup="TPR-Rem" value="Medium" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="High" field="Severity" fieldGroup="TPR-Rem" value="High" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="Critical" field="Severity" fieldGroup="TPR-Rem" value="Critical" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Target Date" fieldGroup="TPR-Rem" singularValue="Target Date" pluralValue="" guidance="Target Date" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Remediation Owner" fieldGroup="TPR-Rem" singularValue="Remediation Owner" pluralValue="" guidance="Remediation Owner" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Plan Summary" fieldGroup="TPR-Rem" singularValue="Plan Summary" pluralValue="" guidance="Plan Summary" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Estimated Cost" fieldGroup="TPR-Rem" singularValue="Estimated Cost" pluralValue="" guidance="Estimated Cost" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Vendor Confirmed" fieldGroup="TPR-Rem" singularValue="Vendor Confirmed" pluralValue="" guidance="Vendor Confirmed" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Open Milestones" fieldGroup="TPR-Rem" singularValue="Open Milestones" pluralValue="" guidance="Open Milestones" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Total Milestones" fieldGroup="TPR-Rem" singularValue="Total Milestones" pluralValue="" guidance="Total Milestones" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Status" fieldGroup="TPR-Ms" singularValue="Status" pluralValue="" guidance="Status" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="Not Started" field="Status" fieldGroup="TPR-Ms" value="Not Started" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="In Progress" field="Status" fieldGroup="TPR-Ms" value="In Progress" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="Done" field="Status" fieldGroup="TPR-Ms" value="Done" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Due Date" fieldGroup="TPR-Ms" singularValue="Due Date" pluralValue="" guidance="Due Date" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Percent Complete" fieldGroup="TPR-Ms" singularValue="Percent Complete" pluralValue="" guidance="Percent Complete" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <fieldString name="Source" fieldGroup="TPR-Fnd" singularValue="Source" pluralValue="" guidance="Source" altValue="" suppliedByVendor="false" overriddenByUser="false" />
+      <enumValueString name="Vendor Attestation" field="Source" fieldGroup="TPR-Fnd" value="Vendor Attestation" suppliedByVendor="false" overriddenByUser="false" />
+    </localeStrings>
+  </objectStrings>
+</openpagesConfiguration>

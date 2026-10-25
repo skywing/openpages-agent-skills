@@ -1,0 +1,10 @@
+# Line endings: bash launchers stay LF (they break with CRLF); Windows launchers get CRLF on checkout.
+*.sh       text eol=lf
+op         text eol=lf
+om         text eol=lf
+*.cmd      text eol=crlf
+*.bat      text eol=crlf
+*.ps1      text eol=crlf
+*.py       text eol=lf
+*.yaml     text eol=lf
+*.md       text eol=lf

@@ -1,0 +1,23 @@
+<openpagesConfigurationBOM xmlFormatVersion="1.0">
+  <!-- Reference dump of the finished TPRRemediation (type, field group, strings, profile).
+       Replace PROFILE_NAME with the object profile you added TPRRemediation to. -->
+  <jspBasedContentTypes>
+    <contentType name="TPRRemediation"/>
+  </jspBasedContentTypes>
+  <dependencies>
+    <dependencySet objectType="TPRRemediation"/>
+  </dependencies>
+  <bundleTypes>
+    <bundleType name="TPR-Rem"/>
+  </bundleTypes>
+  <objectProfiles>
+    <objectProfile name="Remediation"/>
+  </objectProfiles>
+  <objectStrings>
+    <localeStrings name="U.S. English">
+      <objectTypeString name="TPRRemediation"/>
+      <fieldString fieldGroup="TPR-Rem"/>
+      <enumValueString fieldGroup="TPR-Rem"/>
+    </localeStrings>
+  </objectStrings>
+</openpagesConfigurationBOM>

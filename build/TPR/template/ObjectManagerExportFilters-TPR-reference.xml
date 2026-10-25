@@ -1,0 +1,33 @@
+<openpagesConfigurationBOM xmlFormatVersion="1.0">
+  <!-- Reference dump of the FINISHED TPR types as built in the UI: types, field groups, strings, profile entries.
+       Baseline for the generator (fields/relationships/profiles from the spec) and for diffs before promotion.
+       Copy next to ObjectManager.sh as ObjectManagerExportFilters.xml (back up the original first). -->
+  <jspBasedContentTypes>
+    <contentType name="TPRRemediation"/>
+    <contentType name="TPRMilestone"/>
+  </jspBasedContentTypes>
+  <dependencies>
+    <dependencySet objectType="TPRRemediation"/>
+    <dependencySet objectType="TPRMilestone"/>
+  </dependencies>
+  <bundleTypes>
+    <bundleType name="TPR-Rem"/>
+    <bundleType name="TPR-Ms"/>
+    <bundleType name="TPR-Fnd"/>   <!-- on Finding (type_extensions) -->
+  </bundleTypes>
+  <objectProfiles>
+    <objectProfile name="OpenPages Modules Master"/>
+  </objectProfiles>
+  <objectStrings>
+    <localeStrings name="U.S. English">
+      <objectTypeString name="TPRRemediation"/>
+      <objectTypeString name="TPRMilestone"/>
+      <fieldString fieldGroup="TPR-Rem"/>
+      <fieldString fieldGroup="TPR-Ms"/>
+      <fieldString fieldGroup="TPR-Fnd"/>
+      <enumValueString fieldGroup="TPR-Rem"/>
+      <enumValueString fieldGroup="TPR-Ms"/>
+      <enumValueString fieldGroup="TPR-Fnd"/>
+    </localeStrings>
+  </objectStrings>
+</openpagesConfigurationBOM>

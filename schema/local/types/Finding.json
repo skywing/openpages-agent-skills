@@ -1,0 +1,705 @@
+{
+  "id": "45",
+  "name": "Finding",
+  "localized_label": "Finding",
+  "localized_plural_label": "Findings",
+  "description": "Findings represent audit observations that may be reported to the business, the Audit Committee, or both. They may capture either reportable observations directly or individual facts that are later consolidated into broader Issues.",
+  "jsp_path": "/propertyForm/renderProperties.jsp",
+  "root_folder_path": "/_op_sox/Project/Default/ICDocumentation/Findings",
+  "root_folder_id": "524",
+  "is_title_enabled": false,
+  "is_title_required": false,
+  "field_definitions": [
+    {
+      "id": "28",
+      "name": "Resource ID",
+      "localized_label": "Resource ID",
+      "localized_guidance": "Resource ID",
+      "data_type": "ID_TYPE",
+      "required": true,
+      "description": "Resource ID",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "65",
+      "name": "Comment",
+      "localized_label": "Comment",
+      "localized_guidance": "Comment",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Version Comment",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "62",
+      "name": "Created By",
+      "localized_label": "Created By",
+      "localized_guidance": "The name of the user who created this object. It is set by the application and cannot be edited.",
+      "data_type": "INTEGER_TYPE",
+      "required": true,
+      "description": "The name of the user who created this object. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "61",
+      "name": "Creation Date",
+      "localized_label": "Creation Date",
+      "localized_guidance": "The date and time this object was created. It is set by the application and cannot be edited.",
+      "data_type": "DATE_TYPE",
+      "required": true,
+      "description": "The date and time this object was created. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "59",
+      "name": "Description",
+      "localized_label": "Description",
+      "localized_guidance": "Use to enter or edit a description of this object.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to enter or edit a description of this object.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "63",
+      "name": "Last Modification Date",
+      "localized_label": "Last Modification Date",
+      "localized_guidance": "The most recent date and time this object was changed. It is set by the application and cannot be edited.",
+      "data_type": "DATE_TYPE",
+      "required": true,
+      "description": "The most recent date and time this object was changed. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "64",
+      "name": "Last Modified By",
+      "localized_label": "Last Modified By",
+      "localized_guidance": "The name of the last user who edited this object. It is set by the application and cannot be edited.",
+      "data_type": "INTEGER_TYPE",
+      "required": true,
+      "description": "The name of the last user who edited this object. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "60",
+      "name": "Location",
+      "localized_label": "Folder",
+      "localized_guidance": "The path of this object within this object hierarchy. It cannot be edited after it is created.",
+      "data_type": "STRING_TYPE",
+      "required": true,
+      "description": "The path of this object within this object hierarchy. It cannot be edited after it is created.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "57",
+      "name": "Name",
+      "localized_label": "Name",
+      "localized_guidance": "The name of this object.",
+      "data_type": "STRING_TYPE",
+      "required": true,
+      "description": "The name of this object.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "68",
+      "name": "Orphan",
+      "localized_label": "Orphan",
+      "localized_guidance": "Indicates Direct if an object has no parents, and Indirect if the object has one or more parents but all parent paths contain a Direct orphan.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Displays the orphan status of the object.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "58",
+      "name": "Title",
+      "localized_label": "Title",
+      "localized_guidance": "The title of this object.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "The title of this object.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "333",
+      "name": "OPSS-Shared-Close:Ignore Trigger",
+      "localized_label": "Ignore Trigger",
+      "localized_guidance": "Set this field to Yes to disable triggers on this object.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Set this field to Yes to disable triggers on this object.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "915",
+          "name": "Yes",
+          "localized_label": "Yes",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "916",
+          "name": "No",
+          "localized_label": "No",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "332",
+      "name": "OPSS-Shared-Close:RdyToCls",
+      "localized_label": "Ready to Close",
+      "localized_guidance": "This is a read only field which indicates if this object has met all of the configured criteria to allow the Audit to be closed.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "This is a read only field which indicates if this object has met all of the configured criteria to allow the Audit to be closed.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "917",
+          "name": "Yes",
+          "localized_label": "Yes",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "918",
+          "name": "No",
+          "localized_label": "No",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "940",
+      "name": "OPSS-Finding:Impact",
+      "localized_label": "Impact",
+      "localized_guidance": "Use to indicate the severity of the impact of this finding.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the severity of the impact of this finding.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2330",
+          "name": "Significant",
+          "localized_label": "Significant",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2331",
+          "name": "More Than Inconsequential",
+          "localized_label": "More Than Inconsequential",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2332",
+          "name": "Inconsequential",
+          "localized_label": "Inconsequential",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2333",
+          "name": "Not Determined",
+          "localized_label": "Not Determined",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "951",
+      "name": "OPSS-Finding:MgmtActCompletion",
+      "localized_label": "Management Actual Completion",
+      "localized_guidance": "This is the actual date management completed their action in response to this finding.",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "This is the actual date management completed their action in response to this finding.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "950",
+      "name": "OPSS-Finding:MgmtExpCompletion",
+      "localized_label": "Management Expected Completion",
+      "localized_guidance": "This is the current date planned for management to complete their action in response to this finding.",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "This is the current date planned for management to complete their action in response to this finding.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "948",
+      "name": "OPSS-Finding:MgmtOwner",
+      "localized_label": "Management Owner",
+      "localized_guidance": "Use to indicate the management person responsible for addressing this finding.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to indicate the management person responsible for addressing this finding.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "954",
+      "name": "OPSS-Finding:MgmtResp",
+      "localized_label": "Management Response",
+      "localized_guidance": "Use to indicate a summary of management's response to this audit finding.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate a summary of management's response to this audit finding.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2336",
+          "name": "Agree, will create Action Plan",
+          "localized_label": "Agree, will create Action Plan",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2337",
+          "name": "Agree, Action Plan not needed",
+          "localized_label": "Agree, Action Plan not needed",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2338",
+          "name": "Disagree",
+          "localized_label": "Disagree",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2339",
+          "name": "Require clarification",
+          "localized_label": "Require clarification",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "955",
+      "name": "OPSS-Finding:MgmtRespComment",
+      "localized_label": "Management Response Comment",
+      "localized_guidance": "Use to record comments from management about this finding.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to record comments from management about this finding.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "953",
+      "name": "OPSS-Finding:MgmtRespStat",
+      "localized_label": "Management Response Status",
+      "localized_guidance": "Use to indicate if management has responded to this audit finding.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate if management has responded to this audit finding.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2334",
+          "name": "Waiting for Response",
+          "localized_label": "Waiting for Response",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2335",
+          "name": "Response Provided",
+          "localized_label": "Response Provided",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "952",
+      "name": "OPSS-Finding:MgmtSchedChgReason",
+      "localized_label": "Management Schedule Change Reason",
+      "localized_guidance": "If the Expected or Actual Completion Date is delayed, this is an explanation of the reason.  If there is more than one change, then new reasons should be added at the beginning.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "If the Expected or Actual Completion Date is delayed, this is an explanation of the reason.  If there is more than one change, then new reasons should be added at the beginning.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "949",
+      "name": "OPSS-Finding:MgmtSchedCompletion",
+      "localized_label": "Management Scheduled Completion",
+      "localized_guidance": "This is the original date planned for management to complete their action in response to this finding.",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "This is the original date planned for management to complete their action in response to this finding.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "943",
+      "name": "OPSS-Finding:Preparation Complete Date",
+      "localized_label": "Preparation Complete Date",
+      "localized_guidance": "Use to indicate the date when this finding was completed and ready for review.",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "Use to indicate the date when this finding was completed and ready for review.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "942",
+      "name": "OPSS-Finding:Preparer",
+      "localized_label": "Preparer",
+      "localized_guidance": "Use to indicate the person responsible for preparing this finding.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to indicate the person responsible for preparing this finding.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "941",
+      "name": "OPSS-Finding:Priority",
+      "localized_label": "Priority",
+      "localized_guidance": "Use to indicate the priority of this audit finding.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the priority of this audit finding.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2324",
+          "name": "High",
+          "localized_label": "High",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2325",
+          "name": "Medium",
+          "localized_label": "Medium",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2326",
+          "name": "Low",
+          "localized_label": "Low",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2327",
+          "name": "Not Determined",
+          "localized_label": "Not Determined",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "944",
+      "name": "OPSS-Finding:Recommendation",
+      "localized_label": "Recommendation",
+      "localized_guidance": "Use to record recommendations for management action, from the preparer of this finding.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to record recommendations for management action, from the preparer of this finding.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "939",
+      "name": "OPSS-Finding:Reportable",
+      "localized_label": "Reportable",
+      "localized_guidance": "Use to indicate if this Finding should be included in audit reports.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate if this Finding should be included in audit reports.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2328",
+          "name": "Yes",
+          "localized_label": "Yes",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2329",
+          "name": "No",
+          "localized_label": "No",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "947",
+      "name": "OPSS-Finding:Review Comments",
+      "localized_label": "Review Comments",
+      "localized_guidance": "Use to record comments from the reviewer of this finding.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to record comments from the reviewer of this finding.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "946",
+      "name": "OPSS-Finding:Review Complete Date",
+      "localized_label": "Review Complete Date",
+      "localized_guidance": "Use to indicate the date when the review of this finding was completed successfully.",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "Use to indicate the date when the review of this finding was completed successfully.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "945",
+      "name": "OPSS-Finding:Reviewer",
+      "localized_label": "Reviewer",
+      "localized_guidance": "Use to indicate the person responsible for reviewing this finding.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to indicate the person responsible for reviewing this finding.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "938",
+      "name": "OPSS-Finding:Status",
+      "localized_label": "Status",
+      "localized_guidance": "Use to indicate the current state of this audit finding.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the current state of this audit finding.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2340",
+          "name": "Open",
+          "localized_label": "Open",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2341",
+          "name": "Closed",
+          "localized_label": "Closed",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "3319",
+      "name": "TPR-Fnd:Source",
+      "localized_label": "Source",
+      "localized_guidance": "Source",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "9512",
+          "name": "Vendor Attestation",
+          "localized_label": "Vendor Attestation",
+          "index": 1,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    }
+  ],
+  "file_types": [],
+  "display_name": "titleOnly",
+  "associations": [
+    {
+      "id": "25",
+      "name": "AuditProgram",
+      "localized_label": "Audit",
+      "localized_plural_label": "Audits",
+      "association_definition_id": "69",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "27",
+      "name": "AuditPhase",
+      "localized_label": "Audit Section",
+      "localized_plural_label": "Audit Sections",
+      "association_definition_id": "59",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "44",
+      "name": "Engagement",
+      "localized_label": "Engagement",
+      "localized_plural_label": "Engagements",
+      "association_definition_id": "202",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "102",
+      "name": "Vendor",
+      "localized_label": "Vendor",
+      "localized_plural_label": "Vendors",
+      "association_definition_id": "1003",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "105",
+      "name": "Workpaper",
+      "localized_label": "Workpaper",
+      "localized_plural_label": "Workpapers",
+      "association_definition_id": "934",
+      "max": 2147483647,
+      "min": 1,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "4",
+      "name": "SOXDocument",
+      "localized_label": "File",
+      "localized_plural_label": "Files",
+      "association_definition_id": "213",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "6",
+      "name": "SOXIssue",
+      "localized_label": "Issue",
+      "localized_plural_label": "Issues",
+      "association_definition_id": "215",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "8",
+      "name": "SOXExternalDocument",
+      "localized_label": "Link",
+      "localized_plural_label": "Links",
+      "association_definition_id": "214",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "9",
+      "name": "SOXSignature",
+      "localized_label": "Signature",
+      "localized_plural_label": "Signatures",
+      "association_definition_id": "216",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "26",
+      "name": "ReviewComment",
+      "localized_label": "Audit Review Comment",
+      "localized_plural_label": "Audit Review Comments",
+      "association_definition_id": "212",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "161",
+      "name": "TPRRemediation",
+      "localized_label": "Remediation",
+      "localized_plural_label": "Remediations",
+      "association_definition_id": "1001",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    }
+  ]
+}

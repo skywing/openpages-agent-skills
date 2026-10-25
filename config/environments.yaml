@@ -1,0 +1,56 @@
+# Project environments. Secrets are NEVER stored here: each entry names
+# the environment variables that hold them. Keep this file in git; keep secrets in your shell/keychain.
+#
+# tier: dev | test | uat | prod      prod => writes are hard-blocked by opclient.py regardless of allow_writes
+# timezone: IANA name (e.g. America/New_York); omit = this machine's zone. Used for DATE fields.
+# auth: basic | bearer | oauth       oauth = native OAuth 2.0 client credentials
+#                                    (POST <base_url>/oauth2/endpoint/OPOauthProvider/token)
+
+# ObjectManager wrapper (./om), all optional:
+#   om_client_dir: openpages-tools-client           default $OP_OM_CLIENT, then <project>/openpages-tools-client,
+#                                                    then ~/aidev/openpages-tools-client (relative = from project root)
+#   om_java_home:  /Library/Java/.../Contents/Home  default: macOS java_home -v 21, then $JAVA_HOME
+#   om_rest_url:   https://<host>:<port>/grc/api    default <base_url>/grc/api (V1; the 9.2.1 client fails on V2)
+#   om_oauth_url:  https://<host>:<port>/oauth2/endpoint/OPOauthProvider   (auth: oauth; default from base_url)
+#   om_insecure_tls: true                            default: not verify_tls
+om_client_dir: ~/aidev/openpages/openpages-tools-client
+
+environments:
+  local:
+    base_url: https://aimpb.local:10111      # OpenPages app URL of the local container (no /opgrc suffix)
+    tier: dev
+    allow_writes: true
+    verify_tls: false                       # dev container only (self-signed cert, no subjectAltName); keep true elsewhere
+    # ca_file: config/certs/aimpb-local.pem # keep commented: when set, TLS is verified against it and verify_tls is ignored
+    timezone: America/New_York              # zone users see dates in; spec dates like 2026-12-31 are sent as midnight here
+    auth: basic
+    username_env: OP_USER                   # NAMES of environment variables, never the values
+    password_env: OP_PASSWORD
+
+  shared-dev:
+    # Shared development environment used by several developers and tutorial learners (skills/openpages-tutorial).
+    base_url: https://openpages-shared-dev.example.internal   # TODO: the shared-dev OpenPages URL (no /opgrc suffix)
+    tier: dev
+    allow_writes: true                      # learners build their own PX<CODE> solution here
+    verify_tls: true                        # false only if shared-dev has a self-signed certificate
+    timezone: America/New_York              # zone users see dates in
+    auth: basic                             # or oauth (client_id_env / client_secret_env)
+    username_env: SHARED_DEV_USER           # NAMES of environment variables, never the values
+    password_env: SHARED_DEV_PASSWORD
+
+  uat:
+    base_url: https://openpages-uat.example.internal
+    tier: uat
+    allow_writes: false                     # read-only: verify_spec / dump_schema only
+    verify_tls: true
+    auth: oauth
+    client_id_env: OP_UAT_CLIENT_ID
+    client_secret_env: OP_UAT_CLIENT_SECRET
+
+  prod:
+    base_url: https://openpages.example.internal
+    tier: prod                              # writes impossible from this tooling
+    verify_tls: true
+    auth: oauth
+    client_id_env: OP_PROD_CLIENT_ID
+    client_secret_env: OP_PROD_CLIENT_SECRET

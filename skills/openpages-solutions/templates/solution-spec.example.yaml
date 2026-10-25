@@ -1,0 +1,248 @@
+# Solution spec - the single source of truth for a custom OpenPages solution.
+# Scripts that read it: plan.py (build + package plans), verify_spec.py (spec vs live env),
+# seed.py / wf_test.py (test data + workflow scenarios).
+#
+# Conventions
+#   * New object types are created from a platform object type template (`template:`; SOXIssue by default,
+#     SOXTask for light child items). There is no UI to create object types in 9.2.x.
+#   * System names (object type `name`, field group `name`, field `name`) are IMMUTABLE after creation.
+#     Only labels can change. Get them right before building.
+#   * Prefix every custom system name with the solution key (here: TPR) to avoid collisions with
+#     IBM solution types and to make packaging filters trivial.
+#   * Object type names: letters/digits only, no spaces (e.g. TPRRemediation). Keep them short:
+#     IBM notes long type names with a similar beginning can cause issues.
+#   * Field group / field names: start with a letter; letters, digits, spaces, '-' and '_' only.
+#   * The REST API addresses a custom field as "<FieldGroup>:<Field>", e.g. "TPR-Rem:Status".
+#   * Field `type` values: boolean | date | integer | decimal | currency | enum | multi_enum |
+#     simple_string | medium_string | long_string | user_group | business_entity
+
+solution:
+  name: Third-Party Remediation Tracker
+  key: TPR
+  version: 0.1.0
+  target_version: 9.2.1
+  owner: <your-user>
+  description: >
+    Tracks remediation of third-party findings. A Remediation hangs under an Issue and owns
+    Milestones. Lifecycle: Draft -> Review -> Approved/Closed, with rework loop.
+
+object_types:
+  - name: TPRRemediation
+    template: SOXIssue          # platform type used as the ObjectManager template (references/custom-object-type.md)
+    label: Remediation
+    plural_label: Remediations
+    description: Remediation plan for a third-party issue
+    parents:
+      - { type: SOXIssue, primary: true }        # primary parent used when creating via REST
+    children: [TPRMilestone]
+    field_groups:
+      - name: TPR-Rem
+        fields:
+          - { name: Status, type: enum, required: true, values: [Draft, In Review, Approved, Closed], default: Draft }
+          - { name: Severity, type: enum, required: true, values: [Low, Medium, High, Critical] }
+          - { name: Target Date, type: date, required: true }
+          - { name: Remediation Owner, type: user_group, required: true }
+          - { name: Plan Summary, type: long_string }
+          - { name: Estimated Cost, type: currency }
+          - { name: Vendor Confirmed, type: boolean, default: false }
+          # set by the MANUAL calculation "TPR Open Milestones" (Close runs it); keep off views or read-only
+          - { name: Open Milestones, type: integer }
+          - { name: Total Milestones, type: integer }
+
+  - name: TPRMilestone
+    template: SOXTask
+    label: Milestone
+    plural_label: Milestones
+    parents:
+      - { type: TPRRemediation, primary: true }
+    field_groups:
+      - name: TPR-Ms
+        fields:
+          - { name: Status, type: enum, required: true, values: [Not Started, In Progress, Done] }
+          - { name: Due Date, type: date, required: true }
+          - { name: Percent Complete, type: integer }
+
+profiles:
+  # Profiles that must include the new types and fields (they must already exist in the target env).
+  - OpenPages Platform 3
+
+filters:
+  - { name: TPR Open Remediations, object_type: TPRRemediation, criteria: "Status != Closed" }
+
+views:
+  - name: TPRRemediation-Task
+    type: task                 # task | grid | creation | admin | report
+    object_type: TPRRemediation
+    copy_from: system          # build by copying the system Task View, then edit
+    sections:
+      - title: Overview
+        fields: [Name, Description, "TPR-Rem:Status", "TPR-Rem:Severity", "TPR-Rem:Target Date", "TPR-Rem:Remediation Owner"]
+      - title: Plan
+        fields: ["TPR-Rem:Plan Summary", "TPR-Rem:Estimated Cost", "TPR-Rem:Vendor Confirmed"]
+    relationships:
+      - { kind: grid, relationship: Children, object_type: TPRMilestone, actions: [New, Add, Delete],
+          fields: [Name, "TPR-Ms:Status", "TPR-Ms:Due Date", "TPR-Ms:Percent Complete"] }
+      - { kind: card, relationship: Parents, object_type: SOXIssue, actions: [Add, Set Primary Parent] }
+  - name: TPRRemediation-Grid
+    type: grid
+    object_type: TPRRemediation
+    columns: [Name, "TPR-Rem:Status", "TPR-Rem:Severity", "TPR-Rem:Target Date", "TPR-Rem:Remediation Owner"]
+  - name: TPRRemediation-Create
+    type: creation
+    object_type: TPRRemediation
+    fields: [Name, Description, "TPR-Rem:Severity", "TPR-Rem:Target Date", "TPR-Rem:Remediation Owner"]
+
+
+# relationships:   # links between EXISTING types the solution needs (UI: <child> > Relationships > New Relationship)
+#   - { parent: Vendor, child: Finding, reason: "response action creates a Finding under the assessed Vendor" }
+
+calculations:
+  # GRC Calculations (references/calculations.md). Built in Administration > Solution Configuration > Calculations.
+  - name: TPR Open Milestones
+    object_type: TPRRemediation
+    type: manual                 # manual | automatic | runtime. Manual = started only by a workflow "Run calculation"
+    description: Counts child milestones (all, and not yet Done); both are validated by the Close action.
+    inputs:
+      - { name: OpenMs, relationship: child, object_type: TPRMilestone, field: "TPR-Ms:Status",
+          filter: "TPR-Ms:Status != Done" }       # Filter By condition on the input operation (no inline WHERE)
+      - { name: AllMs, relationship: child, object_type: TPRMilestone, field: "System Fields:Name" }   # no filter
+    set:                                            # a calculation may have several Set Field operations (p.350)
+      - { field: "TPR-Rem:Open Milestones", expression: "if exists([$OpenMs$]) then count([$OpenMs$]) else 0 endif" }
+      - { field: "TPR-Rem:Total Milestones", expression: "if exists([$AllMs$]) then count([$AllMs$]) else 0 endif" }
+
+workflows:
+  - name: TPR Remediation Lifecycle
+    object_type: TPRRemediation
+    start: auto                # auto | manual
+    execute_as_system: false
+    stages:
+      - { name: Start, type: start, actions: [ { name: Begin, to: Draft, sets: { "TPR-Rem:Status": Draft } } ] }
+      - name: Draft
+        assignee: "field:TPR-Rem:Remediation Owner"
+        view: TPRRemediation-Task
+        actions:
+          - { name: Submit, to: Review, validations: ["TPR-Rem:Plan Summary is not empty"], sets: { "TPR-Rem:Status": In Review } }
+      - name: Review
+        assignee: "group:TPR Reviewers"
+        actions:
+          - { name: Approve, to: Approved, sets: { "TPR-Rem:Status": Approved } }
+          # comment kept OPTIONAL: a required action comment cannot be satisfied through REST API v2 on 9.2.1 (OP-08571),
+          # which blocks automated testing. Revisit (e.g. required "Rework Reason" field + validation) before production.
+          - { name: Rework,  to: Draft, comment: optional }
+      - name: Approved
+        actions:
+          # order matters: refresh the counts, then validate, then set Status
+          - { name: Close, to: End, operations: ["run calculation: TPR Open Milestones"],
+              validations: ["TPR-Rem:Total Milestones >= 1 (message: Add at least one milestone before closing)",
+                            "TPR-Rem:Open Milestones = 0 (message: All milestones must be Done before closing)"],
+              sets: { "TPR-Rem:Status": Closed } }
+      - { name: End, type: end }
+
+tests:
+  # Parent objects that already exist in the dev container (by id or full path).
+  fixtures:
+    issue: "7000"   # existing parent object: numeric id or "Type:Name" (REST cannot resolve folder paths)
+  scenarios:
+    - name: happy path to closed
+      create:
+        - ref: rem1
+          type: TPRRemediation
+          name: "TPR-TEST Remediation {run}"
+          parent: "@issue"
+          fields: { "TPR-Rem:Severity": High, "TPR-Rem:Target Date": "2026-12-31", "TPR-Rem:Remediation Owner": [OpenPagesAdministrator], "TPR-Rem:Plan Summary": "Patch vendor portal" }
+        - ref: ms1
+          type: TPRMilestone
+          name: "TPR-TEST Milestone {run}"
+          parent: "@rem1"
+          fields: { "TPR-Ms:Status": Done, "TPR-Ms:Due Date": "2026-11-30" }
+      workflow:
+        object: "@rem1"
+        expect_stage: Draft
+        steps:
+          - { action: Submit,  expect_stage: Review,   expect_fields: { "TPR-Rem:Status": In Review } }
+          - { action: Approve, expect_stage: Approved, expect_fields: { "TPR-Rem:Status": Approved } }
+          - { action: Close,   expect_state: completed }
+    - name: rework loop
+      create:
+        - { ref: rem2, type: TPRRemediation, name: "TPR-TEST Rework {run}", parent: "@issue",
+            fields: { "TPR-Rem:Severity": Low, "TPR-Rem:Target Date": "2026-12-31", "TPR-Rem:Remediation Owner": [OpenPagesAdministrator], "TPR-Rem:Plan Summary": "x" } }
+      workflow:
+        object: "@rem2"
+        steps:
+          - { action: Submit, expect_stage: Review }
+          - { action: Rework, expect_stage: Draft }
+    - name: submit blocked without plan summary
+      create:
+        - { ref: rem3, type: TPRRemediation, name: "TPR-TEST Negative {run}", parent: "@issue",
+            fields: { "TPR-Rem:Severity": Low, "TPR-Rem:Target Date": "2026-12-31", "TPR-Rem:Remediation Owner": [OpenPagesAdministrator] } }
+      workflow:
+        object: "@rem3"
+        steps:
+          - { action: Submit, expect_error: true, expect_stage: Draft }
+
+# ---------------------------------------------------------------------------------------------------------------
+# Questionnaires: built-in framework (QuestionnaireTemplate/Section/SubSection/QuestionTemplate, Program,
+# QuestionnaireAssessment). Authored in the Questionnaire Template Editor; this section is the design record used by
+# plan.py questionnaire (authoring checklist), verify_spec.py --lint-only (limits/dependencies) and qr_score.py
+# (expected scores). See references/questionnaires.md.
+#   question types: single | multiple | short_text | long_text | table | email | url | user_group | user | group |
+#                   date | decimal | integer            (only single/multiple are scored)
+#   answer score -1..9999 (-1 = excluded), weights 0..9999 (0 = excluded)
+questionnaires:
+  - name: TPR Vendor Remediation Attestation
+    description: Annual attestation of third-party remediation governance
+    scoring: simple                          # simple | weighted_average
+    format: { titles: false, auto_numbering: true, weight_and_score: true }
+    lifecycle: 3 Stage Lifecycle (with review)   # 2 Stage Lifecycle (no review) | 3 Stage ... | 4 Stage Lifecycle (with review and approval)
+    asset_types: [Vendor]                    # Resource | SOXProcess | SOXSubprocess | Vendor | Engagement | Employee
+    owners: { primary: <your-user>, reviewer: TPR Reviewers, approver: null }
+    sections:
+      - title: Governance
+        weight: 1
+        subsections:
+          - title: Ownership
+            weight: 1
+            questions:
+              - { id: q1, type: single, required: true, weight: 1,
+                  text: "Is there a named owner for remediation of findings at ${asset.name}?",
+                  answers: [ { text: "Yes", score: 10 }, { text: "No", score: 0 } ] }
+              - { id: q2, type: long_text, required: true, text: "Describe the current remediation plan.",
+                  show_when: { conditions: [ { question: q1, in: ["Yes"] } ] }, attachment: optional }
+              - { id: q3, type: multiple, required: true, weight: 1, text: "Which controls are in place?",
+                  answers: [ { text: MFA, score: 10 }, { text: Encryption, score: 10 }, { text: Logging, score: 5 },
+                             { text: None of the above, score: -1, exclusive: true } ] }
+      - title: Monitoring
+        weight: 1
+        subsections:
+          - title: Oversight
+            weight: 1
+            questions:
+              - { id: q4, type: single, required: true, weight: 1, text: "How often is the vendor reviewed?",
+                  answers: [ { text: Annually, score: 10 }, { text: Every 2 years, score: 5 }, { text: Never, score: 0 } ] }
+    response_actions:
+      - name: Issue when no remediation owner
+        when: { conditions: [ { question: q1, in: ["No"] } ] }
+        operation: create_object             # set_fields | create_object | copy_object
+        child_type: SOXIssue                 # must be a child of the asset type
+        object_name: "No remediation owner"  # omit if the type is auto-named
+        skip_if_exists: true                 # required in practice: reject -> resubmit re-runs the action
+        set: { "Description": "Raised by questionnaire: vendor has no named remediation owner" }
+    low_score_objects: { threshold: 4, object_type: SOXIssue }   # QuestionnaireScoreAssessmentAction
+    workflow:
+      name: TPR Questionnaire Assessment Workflow
+      copy_of: Questionnaire Assessment Workflow
+      operations:
+        - { action: Submit for Review, operation: questionnaire_response_action }
+        - { action: Submit for Review, operation: low_score_objects }
+    ai_models: []                            # names of Custom ML Models (Input type: Questionnaire) to associate
+    tests:
+      - name: all controls, reviewed annually
+        answers: { q1: "Yes", q2: "Quarterly patch cycle", q3: [MFA, Encryption, Logging], q4: Annually }
+        expect: { compliance: 100, risk: 0, hidden: [] }
+      - name: no owner, no controls
+        answers: { q1: "No", q3: [None of the above], q4: Every 2 years }
+        expect: { compliance: 25, risk: 15, hidden: [q2] }
+        expect_objects: [ { type: SOXIssue, name: "No remediation owner", under: asset } ]
+      - name: partial
+        answers: { q1: "Yes", q2: "x", q3: [MFA], q4: Never }
+        expect: { compliance: 46.67, risk: 16 }

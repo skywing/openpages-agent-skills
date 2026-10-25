@@ -1,0 +1,2 @@
+# Runtime dependencies for skills/openpages-solutions/scripts (everything else is Python stdlib).
+PyYAML>=6.0,<7

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<openpagesConfiguration xmlFormatVersion="1.31">
+  <systemAdminMode enabled="true" />
+  <contentTypeRelationshipSets>
+    <contentTypeRelationshipSet name="SOX Extended Object Model" inheritsFrom="SOX Object Model">
+      <contentTypeRelationship parent="SOXBusEntity" child="SeleniumSurvey" type="Association" enabled="true" minParents="0" maxParents="2147483647" minChildren="0" maxChildren="2147483647" />
+      <contentTypeRelationship parent="SOXBusEntity" child="SeleniumSurvey" type="Attachment" enabled="true" minParents="0" maxParents="2147483647" minChildren="0" maxChildren="2147483647" />
+      <contentTypeRelationship parent="Finding" child="TPRRemediation" type="Association" enabled="true" minParents="0" maxParents="1" minChildren="0" maxChildren="2147483647" />
+      <contentTypeRelationship parent="Vendor" child="Finding" type="Association" enabled="true" minParents="0" maxParents="2147483647" minChildren="0" maxChildren="2147483647" />
+      <contentTypeRelationship parent="TPRRemediation" child="TPRMilestone" type="Association" enabled="true" minParents="0" maxParents="2147483647" minChildren="0" maxChildren="2147483647" />
+    </contentTypeRelationshipSet>
+  </contentTypeRelationshipSets>
+  <systemAdminMode enabled="false" />
+</openpagesConfiguration>

@@ -1,0 +1,1683 @@
+{
+  "id": "128",
+  "name": "VendorSubsidiary",
+  "localized_label": "Vendor Subsidiary",
+  "localized_plural_label": "Vendor Subsidiaries",
+  "description": "A Vendor Subsidiary represents a subsidiary of a Vendor from which a firm procures goods or services.",
+  "jsp_path": "/propertyForm/renderProperties.jsp",
+  "root_folder_path": "/_op_sox/Project/Default/ICDocumentation/Vendor Subsidiaries",
+  "root_folder_id": "611",
+  "is_title_enabled": false,
+  "is_title_required": false,
+  "field_definitions": [
+    {
+      "id": "28",
+      "name": "Resource ID",
+      "localized_label": "Resource ID",
+      "localized_guidance": "Resource ID",
+      "data_type": "ID_TYPE",
+      "required": true,
+      "description": "Resource ID",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "65",
+      "name": "Comment",
+      "localized_label": "Comment",
+      "localized_guidance": "Comment",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Version Comment",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "62",
+      "name": "Created By",
+      "localized_label": "Created By",
+      "localized_guidance": "The name of the user who created this object. It is set by the application and cannot be edited.",
+      "data_type": "INTEGER_TYPE",
+      "required": true,
+      "description": "The name of the user who created this object. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "61",
+      "name": "Creation Date",
+      "localized_label": "Creation Date",
+      "localized_guidance": "The date and time this object was created. It is set by the application and cannot be edited.",
+      "data_type": "DATE_TYPE",
+      "required": true,
+      "description": "The date and time this object was created. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "59",
+      "name": "Description",
+      "localized_label": "Description",
+      "localized_guidance": "Use to enter or edit a description of this object.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to enter or edit a description of this object.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "63",
+      "name": "Last Modification Date",
+      "localized_label": "Last Modification Date",
+      "localized_guidance": "The most recent date and time this object was changed. It is set by the application and cannot be edited.",
+      "data_type": "DATE_TYPE",
+      "required": true,
+      "description": "The most recent date and time this object was changed. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "64",
+      "name": "Last Modified By",
+      "localized_label": "Last Modified By",
+      "localized_guidance": "The name of the last user who edited this object. It is set by the application and cannot be edited.",
+      "data_type": "INTEGER_TYPE",
+      "required": true,
+      "description": "The name of the last user who edited this object. It is set by the application and cannot be edited.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "60",
+      "name": "Location",
+      "localized_label": "Folder",
+      "localized_guidance": "The path of this object within this object hierarchy. It cannot be edited after it is created.",
+      "data_type": "STRING_TYPE",
+      "required": true,
+      "description": "The path of this object within this object hierarchy. It cannot be edited after it is created.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "57",
+      "name": "Name",
+      "localized_label": "Name",
+      "localized_guidance": "The name of this object.",
+      "data_type": "STRING_TYPE",
+      "required": true,
+      "description": "The name of this object.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false
+    },
+    {
+      "id": "68",
+      "name": "Orphan",
+      "localized_label": "Orphan",
+      "localized_guidance": "Indicates Direct if an object has no parents, and Indirect if the object has one or more parents but all parent paths contain a Direct orphan.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Displays the orphan status of the object.",
+      "computed": false,
+      "read_only": true,
+      "is_hierarchical": false,
+      "minimum": "1"
+    },
+    {
+      "id": "58",
+      "name": "Title",
+      "localized_label": "Title",
+      "localized_guidance": "The title of this object.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "The title of this object.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "930",
+      "name": "OPSS-CIA:Availability",
+      "localized_label": "Availability",
+      "localized_guidance": "Availability",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2300",
+          "name": "High",
+          "localized_label": "High",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2301",
+          "name": "Medium",
+          "localized_label": "Medium",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2302",
+          "name": "Low",
+          "localized_label": "Low",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2303",
+          "name": "Not Available",
+          "localized_label": "Not Available",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "928",
+      "name": "OPSS-CIA:Confidentiality",
+      "localized_label": "Confidentiality",
+      "localized_guidance": "Confidentiality",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2296",
+          "name": "High",
+          "localized_label": "High",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2297",
+          "name": "Medium",
+          "localized_label": "Medium",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2298",
+          "name": "Low",
+          "localized_label": "Low",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2299",
+          "name": "Not Available",
+          "localized_label": "Not Available",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "927",
+      "name": "OPSS-CIA:Criticality",
+      "localized_label": "Criticality",
+      "localized_guidance": "Use to indicate the overall criticality of the asset.",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Use to indicate the overall criticality of the asset.",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2292",
+          "name": "High",
+          "localized_label": "High",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2293",
+          "name": "Medium",
+          "localized_label": "Medium",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2294",
+          "name": "Low",
+          "localized_label": "Low",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2295",
+          "name": "Not Available",
+          "localized_label": "Not Available",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "929",
+      "name": "OPSS-CIA:Integrity",
+      "localized_label": "Integrity",
+      "localized_guidance": "Integrity",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "2304",
+          "name": "High",
+          "localized_label": "High",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "2305",
+          "name": "Medium",
+          "localized_label": "Medium",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "2306",
+          "name": "Low",
+          "localized_label": "Low",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "2307",
+          "name": "Not Available",
+          "localized_label": "Not Available",
+          "index": 4,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2908",
+      "name": "OPSS-VRM:Additional Details",
+      "localized_label": "Additional Details",
+      "localized_guidance": "Use to enter or edit a description of this object.",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Use to enter or edit a more detail description of this object.",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2933",
+      "name": "OPSS-VRM:Address",
+      "localized_label": "Address",
+      "localized_guidance": "Address",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Address",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2919",
+      "name": "OPSS-VRM:BCM Contact",
+      "localized_label": "BCM Contact",
+      "localized_guidance": "BCM Contact",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2916",
+      "name": "OPSS-VRM:Business Unit Owner",
+      "localized_label": "Business Unit Owner",
+      "localized_guidance": "Business Unit Owner",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2934",
+      "name": "OPSS-VRM:City",
+      "localized_label": "City",
+      "localized_guidance": "City",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "City",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2931",
+      "name": "OPSS-VRM:Comments",
+      "localized_label": "Comments",
+      "localized_guidance": "Comments",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Comments",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2917",
+      "name": "OPSS-VRM:Contract Owner",
+      "localized_label": "Contract Owner",
+      "localized_guidance": "Contract Owner",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Contract Owner",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2927",
+      "name": "OPSS-VRM:Employees",
+      "localized_label": "Employees",
+      "localized_guidance": "Employees",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Employees",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7831",
+          "name": "<100",
+          "localized_label": "<100",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7832",
+          "name": "100-1000",
+          "localized_label": "100-1000",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "7833",
+          "name": ">1000",
+          "localized_label": ">1000",
+          "index": 3,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2920",
+      "name": "OPSS-VRM:Eval Date",
+      "localized_label": "Evaluation Date",
+      "localized_guidance": "Evaluation Date",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "Evaluation Date",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2926",
+      "name": "OPSS-VRM:Global",
+      "localized_label": "Global",
+      "localized_guidance": "Global",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Global",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7829",
+          "name": "International",
+          "localized_label": "International",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7830",
+          "name": "Domestic",
+          "localized_label": "Domestic",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2932",
+      "name": "OPSS-VRM:Headquarters",
+      "localized_label": "Headquarters",
+      "localized_guidance": "Headquarters",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Headquarters",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2918",
+      "name": "OPSS-VRM:Info Sec Contact",
+      "localized_label": "Info Sec Contact",
+      "localized_guidance": "Info Sec Contact",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2930",
+      "name": "OPSS-VRM:Main Website",
+      "localized_label": "Main Website",
+      "localized_guidance": "Main Website",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Main Website",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2921",
+      "name": "OPSS-VRM:Previous Eval Date",
+      "localized_label": "Previous Evaluation",
+      "localized_guidance": "Previous Evaluation",
+      "data_type": "DATE_TYPE",
+      "required": false,
+      "description": "Previous Evaluation",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2923",
+      "name": "OPSS-VRM:Previous RR",
+      "localized_label": "Previous Risk Rating",
+      "localized_guidance": "Previous Risk Rating",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Previous Risk Rating",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7817",
+          "name": "High",
+          "localized_label": "High",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7818",
+          "name": "Medium",
+          "localized_label": "Medium",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "7819",
+          "name": "Low",
+          "localized_label": "Low",
+          "index": 3,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2925",
+      "name": "OPSS-VRM:Previous RR Justification",
+      "localized_label": "Previous Risk Rating Justification",
+      "localized_guidance": "Previous Risk Rating Justification",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Previous Risk Rating Justification",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2928",
+      "name": "OPSS-VRM:Public Company",
+      "localized_label": "Public Company",
+      "localized_guidance": "Public Company",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Public Company",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7825",
+          "name": "Yes",
+          "localized_label": "Yes",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7826",
+          "name": "No",
+          "localized_label": "No",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2913",
+      "name": "OPSS-VRM:QuestContact",
+      "localized_label": "Self-assessment Contact",
+      "localized_guidance": "Vendor Primary Contact",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Used for Self Assessment Questionnaires",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2922",
+      "name": "OPSS-VRM:Risk Rating",
+      "localized_label": "Risk Rating",
+      "localized_guidance": "Risk Rating",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Risk Rating",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7822",
+          "name": "High",
+          "localized_label": "High",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7823",
+          "name": "Medium",
+          "localized_label": "Medium",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "7824",
+          "name": "Low",
+          "localized_label": "Low",
+          "index": 3,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2924",
+      "name": "OPSS-VRM:Risk Rating Justification",
+      "localized_label": "Risk Rating Justification",
+      "localized_guidance": "Risk Rating Justification",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Risk Rating Justification",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2937",
+      "name": "OPSS-VRM:Services Provided",
+      "localized_label": "Services Provided",
+      "localized_guidance": "Services Provided",
+      "data_type": "MULTI_VALUE_ENUM",
+      "required": false,
+      "description": "Services Provided",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7816",
+          "name": "Default",
+          "localized_label": "Default",
+          "index": 1,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2935",
+      "name": "OPSS-VRM:State",
+      "localized_label": "State",
+      "localized_guidance": "State",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "State",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7757",
+          "name": "AL",
+          "localized_label": "AL",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7758",
+          "name": "AK",
+          "localized_label": "AK",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "7759",
+          "name": "AS",
+          "localized_label": "AS",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "7760",
+          "name": "AZ",
+          "localized_label": "AZ",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "7761",
+          "name": "AR",
+          "localized_label": "AR",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "7762",
+          "name": "CA",
+          "localized_label": "CA",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "7763",
+          "name": "CO",
+          "localized_label": "CO",
+          "index": 7,
+          "hidden": false
+        },
+        {
+          "id": "7764",
+          "name": "CT",
+          "localized_label": "CT",
+          "index": 8,
+          "hidden": false
+        },
+        {
+          "id": "7765",
+          "name": "DE",
+          "localized_label": "DE",
+          "index": 9,
+          "hidden": false
+        },
+        {
+          "id": "7766",
+          "name": "DC",
+          "localized_label": "DC",
+          "index": 10,
+          "hidden": false
+        },
+        {
+          "id": "7767",
+          "name": "FM",
+          "localized_label": "FM",
+          "index": 11,
+          "hidden": false
+        },
+        {
+          "id": "7768",
+          "name": "FL",
+          "localized_label": "FL",
+          "index": 12,
+          "hidden": false
+        },
+        {
+          "id": "7769",
+          "name": "GA",
+          "localized_label": "GA",
+          "index": 13,
+          "hidden": false
+        },
+        {
+          "id": "7770",
+          "name": "GU",
+          "localized_label": "GU",
+          "index": 14,
+          "hidden": false
+        },
+        {
+          "id": "7771",
+          "name": "HI",
+          "localized_label": "HI",
+          "index": 15,
+          "hidden": false
+        },
+        {
+          "id": "7772",
+          "name": "ID",
+          "localized_label": "ID",
+          "index": 16,
+          "hidden": false
+        },
+        {
+          "id": "7773",
+          "name": "IL",
+          "localized_label": "IL",
+          "index": 17,
+          "hidden": false
+        },
+        {
+          "id": "7774",
+          "name": "IN",
+          "localized_label": "IN",
+          "index": 18,
+          "hidden": false
+        },
+        {
+          "id": "7775",
+          "name": "IA",
+          "localized_label": "IA",
+          "index": 19,
+          "hidden": false
+        },
+        {
+          "id": "7776",
+          "name": "KS",
+          "localized_label": "KS",
+          "index": 20,
+          "hidden": false
+        },
+        {
+          "id": "7777",
+          "name": "KY",
+          "localized_label": "KY",
+          "index": 21,
+          "hidden": false
+        },
+        {
+          "id": "7778",
+          "name": "LA",
+          "localized_label": "LA",
+          "index": 22,
+          "hidden": false
+        },
+        {
+          "id": "7779",
+          "name": "ME",
+          "localized_label": "ME",
+          "index": 23,
+          "hidden": false
+        },
+        {
+          "id": "7780",
+          "name": "MH",
+          "localized_label": "MH",
+          "index": 24,
+          "hidden": false
+        },
+        {
+          "id": "7781",
+          "name": "MD",
+          "localized_label": "MD",
+          "index": 25,
+          "hidden": false
+        },
+        {
+          "id": "7782",
+          "name": "MA",
+          "localized_label": "MA",
+          "index": 26,
+          "hidden": false
+        },
+        {
+          "id": "7783",
+          "name": "MI",
+          "localized_label": "MI",
+          "index": 27,
+          "hidden": false
+        },
+        {
+          "id": "7784",
+          "name": "MN",
+          "localized_label": "MN",
+          "index": 28,
+          "hidden": false
+        },
+        {
+          "id": "7785",
+          "name": "MS",
+          "localized_label": "MS",
+          "index": 29,
+          "hidden": false
+        },
+        {
+          "id": "7786",
+          "name": "MO",
+          "localized_label": "MO",
+          "index": 30,
+          "hidden": false
+        },
+        {
+          "id": "7787",
+          "name": "MT",
+          "localized_label": "MT",
+          "index": 31,
+          "hidden": false
+        },
+        {
+          "id": "7788",
+          "name": "NE",
+          "localized_label": "NE",
+          "index": 32,
+          "hidden": false
+        },
+        {
+          "id": "7789",
+          "name": "NV",
+          "localized_label": "NV",
+          "index": 33,
+          "hidden": false
+        },
+        {
+          "id": "7790",
+          "name": "NH",
+          "localized_label": "NH",
+          "index": 34,
+          "hidden": false
+        },
+        {
+          "id": "7791",
+          "name": "NJ",
+          "localized_label": "NJ",
+          "index": 35,
+          "hidden": false
+        },
+        {
+          "id": "7792",
+          "name": "NM",
+          "localized_label": "NM",
+          "index": 36,
+          "hidden": false
+        },
+        {
+          "id": "7793",
+          "name": "NY",
+          "localized_label": "NY",
+          "index": 37,
+          "hidden": false
+        },
+        {
+          "id": "7794",
+          "name": "NC",
+          "localized_label": "NC",
+          "index": 38,
+          "hidden": false
+        },
+        {
+          "id": "7795",
+          "name": "ND",
+          "localized_label": "ND",
+          "index": 39,
+          "hidden": false
+        },
+        {
+          "id": "7796",
+          "name": "MP",
+          "localized_label": "MP",
+          "index": 40,
+          "hidden": false
+        },
+        {
+          "id": "7797",
+          "name": "OH",
+          "localized_label": "OH",
+          "index": 41,
+          "hidden": false
+        },
+        {
+          "id": "7798",
+          "name": "OK",
+          "localized_label": "OK",
+          "index": 42,
+          "hidden": false
+        },
+        {
+          "id": "7799",
+          "name": "OR",
+          "localized_label": "OR",
+          "index": 43,
+          "hidden": false
+        },
+        {
+          "id": "7800",
+          "name": "PW",
+          "localized_label": "PW",
+          "index": 44,
+          "hidden": false
+        },
+        {
+          "id": "7801",
+          "name": "PA",
+          "localized_label": "PA",
+          "index": 45,
+          "hidden": false
+        },
+        {
+          "id": "7802",
+          "name": "PR",
+          "localized_label": "PR",
+          "index": 46,
+          "hidden": false
+        },
+        {
+          "id": "7803",
+          "name": "RI",
+          "localized_label": "RI",
+          "index": 47,
+          "hidden": false
+        },
+        {
+          "id": "7804",
+          "name": "SC",
+          "localized_label": "SC",
+          "index": 48,
+          "hidden": false
+        },
+        {
+          "id": "7805",
+          "name": "SD",
+          "localized_label": "SD",
+          "index": 49,
+          "hidden": false
+        },
+        {
+          "id": "7806",
+          "name": "TN",
+          "localized_label": "TN",
+          "index": 50,
+          "hidden": false
+        },
+        {
+          "id": "7807",
+          "name": "TX",
+          "localized_label": "TX",
+          "index": 51,
+          "hidden": false
+        },
+        {
+          "id": "7808",
+          "name": "UT",
+          "localized_label": "UT",
+          "index": 52,
+          "hidden": false
+        },
+        {
+          "id": "7809",
+          "name": "VT",
+          "localized_label": "VT",
+          "index": 53,
+          "hidden": false
+        },
+        {
+          "id": "7810",
+          "name": "VI",
+          "localized_label": "VI",
+          "index": 54,
+          "hidden": false
+        },
+        {
+          "id": "7811",
+          "name": "VA",
+          "localized_label": "VA",
+          "index": 55,
+          "hidden": false
+        },
+        {
+          "id": "7812",
+          "name": "WA",
+          "localized_label": "WA",
+          "index": 56,
+          "hidden": false
+        },
+        {
+          "id": "7813",
+          "name": "WV",
+          "localized_label": "WV",
+          "index": 57,
+          "hidden": false
+        },
+        {
+          "id": "7814",
+          "name": "WI",
+          "localized_label": "WI",
+          "index": 58,
+          "hidden": false
+        },
+        {
+          "id": "7815",
+          "name": "WY",
+          "localized_label": "WY",
+          "index": 59,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2929",
+      "name": "OPSS-VRM:Strategic Vendor",
+      "localized_label": "Strategic Vendor",
+      "localized_guidance": "Strategic Vendor",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Strategic Vendor",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7827",
+          "name": "Yes",
+          "localized_label": "Yes",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7828",
+          "name": "No",
+          "localized_label": "No",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2911",
+      "name": "OPSS-VRM:VContactemail",
+      "localized_label": "Vendor Primary Contact email",
+      "localized_guidance": "Vendor Primary Contact",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2912",
+      "name": "OPSS-VRM:VContactPhone",
+      "localized_label": "Vendor Primary Contact phone number",
+      "localized_guidance": "Vendor Primary Contact",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2915",
+      "name": "OPSS-VRM:Vendor Owner",
+      "localized_label": "Vendor Owner",
+      "localized_guidance": "Vendor Owner",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2914",
+      "name": "OPSS-VRM:Vendor Owner Assigned",
+      "localized_label": "Vendor Owner Assigned",
+      "localized_guidance": "Vendor Owner Assigned",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7820",
+          "name": "Yes",
+          "localized_label": "Yes",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7821",
+          "name": "No",
+          "localized_label": "No",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2910",
+      "name": "OPSS-VRM:Vendor Primary Contact",
+      "localized_label": "Vendor Primary Contact",
+      "localized_guidance": "Vendor Primary Contact",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2909",
+      "name": "OPSS-VRM:Vendor Status",
+      "localized_label": "Vendor Status",
+      "localized_guidance": "Vendor Status",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Vendor Status",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7748",
+          "name": "New",
+          "localized_label": "New",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7749",
+          "name": "Due Diligence",
+          "localized_label": "Due Diligence",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "7750",
+          "name": "Review In Progress",
+          "localized_label": "Review In Progress",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "7751",
+          "name": "Ongoing Negotiations",
+          "localized_label": "Ongoing Negotiations",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "7752",
+          "name": "Approved",
+          "localized_label": "Approved",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "7753",
+          "name": "Rejected",
+          "localized_label": "Rejected",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "7754",
+          "name": "On-boarding",
+          "localized_label": "On-boarding",
+          "index": 7,
+          "hidden": false
+        },
+        {
+          "id": "7755",
+          "name": "Inactive",
+          "localized_label": "Inactive",
+          "index": 8,
+          "hidden": false
+        },
+        {
+          "id": "7756",
+          "name": "Terminated",
+          "localized_label": "Terminated",
+          "index": 9,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2936",
+      "name": "OPSS-VRM:Zip",
+      "localized_label": "Zip",
+      "localized_guidance": "Zip",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Zip",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2951",
+      "name": "TPRM-Vendor Subsidiary:Strategic Vendor Subsidiary",
+      "localized_label": "Strategic Vendor Subsidiary",
+      "localized_guidance": "Strategic Vendor Subsidiary",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "`",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7848",
+          "name": "Yes",
+          "localized_label": "Yes",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7849",
+          "name": "No",
+          "localized_label": "No",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2952",
+      "name": "TPRM-Vendor Subsidiary:Vendor Subsidiary Contact Email",
+      "localized_label": "Vendor Subsidiary Contact Email",
+      "localized_guidance": "Vendor Subsidiary Contact Email",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Vendor Subsidiary Contact Email",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2953",
+      "name": "TPRM-Vendor Subsidiary:Vendor Subsidiary Contact Phone",
+      "localized_label": "Vendor Subsidiary Contact Phone",
+      "localized_guidance": "Vendor Subsidiary Contact Phone",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Vendor Subsidiary Contact Phone",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2954",
+      "name": "TPRM-Vendor Subsidiary:Vendor Subsidiary Owner",
+      "localized_label": "Vendor Subsidiary Owner",
+      "localized_guidance": "Vendor Subsidiary Owner",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Vendor Subsidiary Owner",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2955",
+      "name": "TPRM-Vendor Subsidiary:Vendor Subsidiary Owner Assigned",
+      "localized_label": "Vendor Subsidiary Owner Assigned",
+      "localized_guidance": "Vendor Subsidiary Owner Assigned",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Vendor Subsidiary Owner Assigned",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7850",
+          "name": "Yes",
+          "localized_label": "Yes",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7851",
+          "name": "No",
+          "localized_label": "No",
+          "index": 2,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    },
+    {
+      "id": "2956",
+      "name": "TPRM-Vendor Subsidiary:Vendor Subsidiary Primary Contact",
+      "localized_label": "Vendor Subsidiary Primary Contact",
+      "localized_guidance": "Vendor Subsidiary Primary Contact",
+      "data_type": "STRING_TYPE",
+      "required": false,
+      "description": "Vendor Subsidiary Primary Contact",
+      "computed": false,
+      "read_only": false,
+      "is_hierarchical": false
+    },
+    {
+      "id": "2957",
+      "name": "TPRM-Vendor Subsidiary:Vendor Subsidiary Status",
+      "localized_label": "Vendor Subsidiary Status",
+      "localized_guidance": "Vendor Subsidiary Status",
+      "data_type": "ENUM_TYPE",
+      "required": false,
+      "description": "Vendor Subsidiary Status",
+      "computed": false,
+      "read_only": false,
+      "enum_values": [
+        {
+          "id": "7852",
+          "name": "New",
+          "localized_label": "New",
+          "index": 1,
+          "hidden": false
+        },
+        {
+          "id": "7853",
+          "name": "Due Diligence",
+          "localized_label": "Due Diligence",
+          "index": 2,
+          "hidden": false
+        },
+        {
+          "id": "7854",
+          "name": "Review in Progress",
+          "localized_label": "Review in Progress",
+          "index": 3,
+          "hidden": false
+        },
+        {
+          "id": "7855",
+          "name": "Ongoing Negotiations",
+          "localized_label": "Ongoing Negotiations",
+          "index": 4,
+          "hidden": false
+        },
+        {
+          "id": "7856",
+          "name": "Approved",
+          "localized_label": "Approved",
+          "index": 5,
+          "hidden": false
+        },
+        {
+          "id": "7857",
+          "name": "Rejected",
+          "localized_label": "Rejected",
+          "index": 6,
+          "hidden": false
+        },
+        {
+          "id": "7858",
+          "name": "On-boarding",
+          "localized_label": "On-boarding",
+          "index": 7,
+          "hidden": false
+        },
+        {
+          "id": "7859",
+          "name": "Inactive",
+          "localized_label": "Inactive",
+          "index": 8,
+          "hidden": false
+        },
+        {
+          "id": "7860",
+          "name": "Terminated",
+          "localized_label": "Terminated",
+          "index": 9,
+          "hidden": false
+        }
+      ],
+      "is_hierarchical": false
+    }
+  ],
+  "file_types": [],
+  "display_name": "titleOnly",
+  "associations": [
+    {
+      "id": "5",
+      "name": "SOXBusEntity",
+      "localized_label": "Business Entity",
+      "localized_plural_label": "Business Entities",
+      "association_definition_id": "711",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "15",
+      "name": "Program",
+      "localized_label": "Program",
+      "localized_plural_label": "Programs",
+      "association_definition_id": "453",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "71",
+      "name": "SOXProcess",
+      "localized_label": "Process",
+      "localized_plural_label": "Processes",
+      "association_definition_id": "770",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "90",
+      "name": "RiskAssessment",
+      "localized_label": "Risk Assessment",
+      "localized_plural_label": "Risk Assessments",
+      "association_definition_id": "604",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "97",
+      "name": "SOXSubprocess",
+      "localized_label": "Sub-Process",
+      "localized_plural_label": "Sub-Processes",
+      "association_definition_id": "822",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "102",
+      "name": "Vendor",
+      "localized_label": "Vendor",
+      "localized_plural_label": "Vendors",
+      "association_definition_id": "911",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "113",
+      "name": "Location",
+      "localized_label": "Location",
+      "localized_plural_label": "Locations",
+      "association_definition_id": "260",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Parent"
+    },
+    {
+      "id": "4",
+      "name": "SOXDocument",
+      "localized_label": "File",
+      "localized_plural_label": "Files",
+      "association_definition_id": "919",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "6",
+      "name": "SOXIssue",
+      "localized_label": "Issue",
+      "localized_plural_label": "Issues",
+      "association_definition_id": "921",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "8",
+      "name": "SOXExternalDocument",
+      "localized_label": "Link",
+      "localized_plural_label": "Links",
+      "association_definition_id": "920",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "9",
+      "name": "SOXSignature",
+      "localized_label": "Signature",
+      "localized_plural_label": "Signatures",
+      "association_definition_id": "922",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "14",
+      "name": "QuestionnaireAssessment",
+      "localized_label": "Questionnaire Assessment",
+      "localized_plural_label": "Questionnaire Assessments",
+      "association_definition_id": "918",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "37",
+      "name": "Contract",
+      "localized_label": "Contract",
+      "localized_plural_label": "Contracts",
+      "association_definition_id": "914",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "44",
+      "name": "Engagement",
+      "localized_label": "Engagement",
+      "localized_plural_label": "Engagements",
+      "association_definition_id": "915",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "47",
+      "name": "Incident",
+      "localized_label": "Incident",
+      "localized_plural_label": "Incidents",
+      "association_definition_id": "916",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "50",
+      "name": "KeyRiskIndicator",
+      "localized_label": "KRI",
+      "localized_plural_label": "KRIs",
+      "association_definition_id": "917",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "104",
+      "name": "Waiver",
+      "localized_label": "Waiver",
+      "localized_plural_label": "Waivers",
+      "association_definition_id": "924",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "109",
+      "name": "BCEvent",
+      "localized_label": "Business Continuity Event",
+      "localized_plural_label": "Business Continuity Events",
+      "association_definition_id": "913",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    },
+    {
+      "id": "129",
+      "name": "Subcontractor",
+      "localized_label": "Subcontractor",
+      "localized_plural_label": "Subcontractors",
+      "association_definition_id": "923",
+      "max": 2147483647,
+      "min": 0,
+      "is_enabled": true,
+      "relationship": "Child"
+    }
+  ]
+}
